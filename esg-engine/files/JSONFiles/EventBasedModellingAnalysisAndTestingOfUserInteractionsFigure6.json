@@ -1,0 +1,122 @@
+{
+	"ID" : 5,
+	"name" : "Paper: Event Based Modelling Analysis And Testing Of User Interactions Figure: 6 ",
+	"vertices" : [
+					{
+									"ID" : 0,
+									"event" : "["
+					},
+					{
+									"ID" : 1,
+									"event" : "Load a CD"
+					},
+					{
+									"ID" : 2,
+									"event" : "Select Track"
+					},
+					{
+									"ID" : 3,
+									"event" : "Play Track"
+					},
+					{
+									"ID" : 4,
+									"event" : "Mode"
+					},
+					{
+									"ID" : 5,
+									"event" : "Remove CD"
+					},
+					{
+									"ID" : 6,
+									"event" : "]"
+					}
+									 ],
+	"edges" : [
+					{
+									"ID" : 0,
+									"source" : 0,
+									"target" : 1
+					},
+					{
+									"ID" : 1,
+									"source" : 1,
+									"target" : 2
+					},
+					{
+									"ID" : 2,
+									"source" : 1,
+									"target" : 5
+					},
+					{
+									"ID" : 3,
+									"source" : 2,
+									"target" : 3
+					},
+					{
+									"ID" : 4,
+									"source" : 2,
+									"target" : 4
+					},
+					{
+									"ID" : 5,
+									"source" : 2,
+									"target" : 5
+					},
+					{
+									"ID" : 6,
+									"source" : 3,
+									"target" : 5
+					},
+					{
+									"ID" : 7,
+									"source" : 3,
+									"target" : 3
+					},
+					{
+									"ID" : 8,
+									"source" : 3,
+									"target" : 4
+					},
+					{
+									"ID" : 9,
+									"source" : 3,
+									"target" : 2
+					},
+					{
+									"ID" : 10,
+									"source" : 4,
+									"target" : 2
+					},
+					{
+									"ID" : 11,
+									"source" : 4,
+									"target" : 3
+					},
+					{
+									"ID" : 12,
+									"source" : 4,
+									"target" : 5
+					},
+					{
+									"ID" : 13,
+									"source" : 4,
+									"target" : 4
+					},
+					{
+									"ID" : 14,
+									"source" : 5,
+									"target" : 4
+					},
+					{
+									"ID" : 15,
+									"source" : 5,
+									"target" : 6
+					},
+					{
+									"ID" : 16,
+									"source" : 5,
+									"target" : 1
+					}
+				 ]
+
+}

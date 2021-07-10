@@ -1,0 +1,13 @@
+18: f, e, b, a, d, c, e, c, b, a, d, a, f, e, a, d, e, c
+16: f, b, a, d, e, b, a, c, d, c, d, b, a, d, f, e
+5: d, f, b, a, c
+9: d, e, a, c, c, d, a, d, e
+14: d, c, b, a, c, e, b, a, c, c, b, a, d, c
+12: d, b, a, d, b, a, c, e, a, b, a, c
+3: d, a, c
+4: b, a, c, c
+8: a, a, c, f, b, a, c, e
+6: a, f, b, a, c, d
+9: a, d, a, b, a, a, b, a, d
+5: a, c, b, a, c
+61: a, b, a, b, a, f, e, f, e, c, c, c, f, e, c, f, e, d, f, e, d, e, f, e, c, e, d, c, c, e, f, b, a, c, d, f, e, a, a, a, f, e, a, f, e, d, b, a, c, e, d, a, a, d, c, f, e, c, d, e, d

@@ -1,0 +1,10 @@
+3 : a, b, b
+3 : a, b, c
+3 : a, c, b
+3 : a, c, c
+2 : a, c
+3 : b, c, b
+3 : b, c, c
+2 : b, c
+3 : c, b, b
+3 : c, b, c

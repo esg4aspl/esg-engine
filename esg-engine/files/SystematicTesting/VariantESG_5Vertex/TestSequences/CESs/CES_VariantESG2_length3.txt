@@ -1,0 +1,10 @@
+7 : e, e, e, c, c, c, e
+4 : e, c, e, e
+27 : c, c, b, d, c, a, a, d, c, a, a, b, d, c, c, a, e, c, b, d, c, e, c, a, d, b, d
+2 : c, e
+12 : c, b, d, c, b, d, c, a, b, d, b, d
+2 : c, a
+2 : a, a
+2 : a, e
+2 : a, d
+9 : a, b, d, c, a, a, a, e, e

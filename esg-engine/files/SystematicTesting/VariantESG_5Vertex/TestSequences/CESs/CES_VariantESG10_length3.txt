@@ -1,0 +1,16 @@
+11 : c, d, e, a, a, d, a, a, a, d, e
+12 : c, e, c, e, a, d, b, e, c, d, b, e
+8 : c, a, a, b, e, c, b, e
+7 : c, d, a, d, a, b, e
+3 : c, a, d
+3 : e, d, a
+5 : e, c, a, b, e
+5 : e, a, b, e, d
+2 : c, e
+2 : c, d
+4 : c, b, e, c
+2 : c, a
+3 : b, e, a
+2 : a, a
+3 : a, b, e
+10 : a, d, e, d, e, c, e, d, b, e

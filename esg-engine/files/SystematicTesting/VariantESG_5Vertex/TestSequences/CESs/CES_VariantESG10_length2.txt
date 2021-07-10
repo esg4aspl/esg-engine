@@ -1,0 +1,4 @@
+7 : e, c, a, a, b, e, a
+1 : c
+2 : b, e
+15 : a, d, e, c, e, c, d, b, e, c, b, e, d, a, d

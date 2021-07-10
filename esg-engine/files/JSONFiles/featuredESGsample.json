@@ -1,0 +1,161 @@
+{
+  "name": "sample product",
+  "c-esg": {
+    "ID" : 0,
+	  "name" : "core ",
+    "vertices": [
+      {
+        "ID": 0,
+        "event": "["
+      },
+      {
+        "ID": 1,
+        "event": "get balance"
+      },
+      {
+        "ID": 2,
+        "event": "deposit"
+      },
+      {
+        "ID": 3,
+        "event": "]"
+      }
+    ],
+    "edges": [
+      {
+        "ID": 0,
+        "source": 0,
+        "target": 1
+      },
+      {
+        "ID": 1,
+        "source": 1,
+        "target": 2
+      },
+      {
+        "ID": 2,
+        "source": 2,
+        "target": 3
+      }
+    ]
+  },
+  "f-esgs": [
+    {
+    "ID" : 1,
+	  "name" : "f1",
+    "vertices": [
+      {
+        "ID": 0,
+        "event": "["
+      },
+      {
+        "ID": 1,
+        "event": "get balance"
+      },
+      {
+        "ID": 2,
+        "event": "deposit"
+      },
+      {
+        "ID": 3,
+        "event": "]"
+      }
+    ],
+    "edges": [
+      {
+        "ID": 0,
+        "source": 0,
+        "target": 1
+      },
+      {
+        "ID": 1,
+        "source": 1,
+        "target": 2
+      },
+      {
+        "ID": 2,
+        "source": 2,
+        "target": 3
+      }
+    ]
+    },
+        {
+    "ID" : 2,
+	  "name" : "f2",
+    "vertices": [
+      {
+        "ID": 0,
+        "event": "["
+      },
+      {
+        "ID": 1,
+        "event": "get balance"
+      },
+      {
+        "ID": 2,
+        "event": "deposit"
+      },
+      {
+        "ID": 3,
+        "event": "]"
+      }
+    ],
+    "edges": [
+      {
+        "ID": 0,
+        "source": 0,
+        "target": 1
+      },
+      {
+        "ID": 1,
+        "source": 1,
+        "target": 2
+      },
+      {
+        "ID": 2,
+        "source": 2,
+        "target": 3
+      }
+    ]
+    },
+        {
+    "ID" : 3,
+	  "name" : "f3",
+    "vertices": [
+      {
+        "ID": 0,
+        "event": "["
+      },
+      {
+        "ID": 1,
+        "event": "get balance"
+      },
+      {
+        "ID": 2,
+        "event": "deposit"
+      },
+      {
+        "ID": 3,
+        "event": "]"
+      }
+    ],
+    "edges": [
+      {
+        "ID": 3,
+        "source": 0,
+        "target": 1
+      },
+      {
+        "ID": 1,
+        "source": 1,
+        "target": 2
+      },
+      {
+        "ID": 2,
+        "source": 2,
+        "target": 3
+      }
+    ]
+    }
+    ]
+}

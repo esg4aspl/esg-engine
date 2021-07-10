@@ -1,0 +1,6 @@
+3 : c, b, b
+8 : c, a, a, a, c, a, c, b
+2 : b, b
+3 : a, a, b
+6 : a, c, a, b, b, b
+2 : a, b

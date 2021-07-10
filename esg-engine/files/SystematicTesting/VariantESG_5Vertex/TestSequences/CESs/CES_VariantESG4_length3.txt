@@ -1,0 +1,7 @@
+21 : e, c, b, e, c, b, d, b, e, b, d, b, d, b, c, b, c, b, a, e, b
+2 : e, b
+4 : e, a, e, b
+5 : d, b, a, e, b
+2 : c, b
+10 : c, a, e, b, e, a, e, b, d, b
+15 : a, e, b, c, a, e, b, a, e, c, a, e, a, e, b

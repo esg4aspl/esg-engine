@@ -1,0 +1,5 @@
+10 : b, a, d, a, d, a, c, a, c, a
+4 : b, a, d, a
+3 : b, a, c
+2 : b, a
+7 : b, a, d, c, a, d, c

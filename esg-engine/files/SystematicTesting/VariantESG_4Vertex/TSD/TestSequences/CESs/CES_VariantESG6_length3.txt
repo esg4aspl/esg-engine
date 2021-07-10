@@ -1,0 +1,8 @@
+24: a, a, a, c, b, b, b, c, b, c, a, a, d, a, a, b, b, c, d, a, c, a, c, d 
+8: a, c, c, b, c, c, a, d 
+3: b, b, c 
+11: a, d, a, d, a, b, c, a, b, c, a 
+6: a, b, c, c, d, a 
+4: b, c, c, c 
+2: a, c 
+2: a, a 

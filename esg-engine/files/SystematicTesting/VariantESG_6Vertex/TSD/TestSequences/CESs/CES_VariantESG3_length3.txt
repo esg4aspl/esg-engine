@@ -1,0 +1,7 @@
+13: c, b, a, e, c, b, a, c, b, a, f, b, a 
+20: a, e, d, a, e, a, e, b, a, e, d, c, b, a, e, d, b, a, e, d 
+20: c, e, c, e, d, c, e, a, c, e, b, a, e, a, f, c, b, a, e, a 
+8: c, a, e, c, a, c, a, f 
+8: a, c, d, a, c, d, c, a 
+9: c, d, b, a, f, c, e, c, d 
+13: a, f, c, a, c, d, c, d, a, f, c, d, a 

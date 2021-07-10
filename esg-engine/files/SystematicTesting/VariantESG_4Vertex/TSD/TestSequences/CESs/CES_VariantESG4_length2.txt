@@ -1,0 +1,4 @@
+7: c, a, a, c, b, c, d 
+1: a 
+3: d, b, d 
+5: b, b, c, a, d 

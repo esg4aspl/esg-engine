@@ -1,0 +1,5 @@
+8: f, d, a, c, b, a, c, b
+11: e, e, d, a, c, c, f, d, a, c, e
+7: d, a, c, a, d, a, c
+1: a
+10: c, b, b, f, d, a, c, b, d, a

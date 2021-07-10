@@ -1,0 +1,5 @@
+16: b, d, c, f, d, c, b, e, c, f, f, b, e, f, e, a 
+5: d, c, d, d, b 
+2: a, a 
+2: b, a 
+4: d, c, c, a 

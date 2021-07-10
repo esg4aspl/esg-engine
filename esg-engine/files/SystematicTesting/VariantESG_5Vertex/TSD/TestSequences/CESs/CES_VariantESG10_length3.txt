@@ -1,0 +1,11 @@
+23: a, a, a, b, e, a, a, d, e, a, b, e, c, e, a, d, b, e, d, e, c, a, a 
+3: a, b, e 
+2: e, a 
+12: c, e, c, b, e, c, d, e, d, b, e, c 
+5: a, d, a, a, d 
+19: c, a, b, e, c, d, b, e, c, d, a, b, e, c, e, d, a, d, a 
+3: e, c, e 
+7: c, b, e, c, a, d, e 
+2: c, d 
+2: e, d 
+4: b, e, c, a 

@@ -1,0 +1,7 @@
+5: b, c, a, c, b, 
+5: b, c, a, c, c, 
+5: b, c, a, b, a, 
+5: b, c, a, b, b, 
+3: b, c, b, 
+3: b, c, c, 
+4: b, c, a, a, 

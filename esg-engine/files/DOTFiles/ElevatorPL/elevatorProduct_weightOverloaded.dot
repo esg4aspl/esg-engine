@@ -1,0 +1,28 @@
+digraph G {
+rankdir = LR
+label = "elevatorProduct_weightOverloaded";
+esg4_vertex0 -> esg4_vertex4;
+esg4_vertex5 -> esg4_vertex6;
+esg4_vertex4 -> esg4_vertex2;
+esg4_vertex2 -> esg4_vertex1;
+esg4_vertex4 -> esg4_vertex1;
+esg4_vertex0 -> esg4_vertex1;
+esg4_vertex5 -> esg4_vertex5;
+esg4_vertex4 -> esg4_vertex4;
+esg4_vertex1 -> esg4_vertex7;
+esg4_vertex7 -> esg4_vertex5;
+esg4_vertex6 -> esg4_vertex8;
+esg4_vertex8 -> esg4_vertex3;
+esg4_vertex7 -> esg4_vertex9;
+esg4_vertex9 -> esg4_vertex6;
+esg4_vertex0 [label = "["]
+esg4_vertex4 [label = "push button to call elevator"]
+esg4_vertex5 [label = "press target floor button"]
+esg4_vertex6 [label = "leave elevator"]
+esg4_vertex2 [label = "wait leaving people"]
+esg4_vertex1 [label = "enter elevator"]
+esg4_vertex7 [label = "trigger sensorwith  increasing weight"]
+esg4_vertex8 [label = "trigger sensorwith  decreasing  weight"]
+esg4_vertex3 [label = "]"]
+esg4_vertex9 [label = "hear overloaded alarm"]
+}

@@ -1,0 +1,28 @@
+2: b, b
+2: b, a
+2: b, d
+2: b, e
+1: b
+4: b, f, a, a
+4: b, f, a, d
+4: b, f, a, c
+4: b, f, a, f
+4: b, f, a, e
+1: a
+4: b, c, d, b
+4: b, c, d, a
+4: b, c, d, d
+4: b, c, d, e
+1: d
+3: b, c, a
+3: b, c, c
+3: b, c, f
+3: b, c, e
+1: c
+3: b, f, f
+1: f
+4: b, f, e, b
+4: b, f, e, d
+4: b, f, e, c
+4: b, f, e, e
+1: e

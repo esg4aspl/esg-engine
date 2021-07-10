@@ -1,0 +1,8 @@
+20: d, c, c, c, d, c, d, b, a, c, c, b, a, b, a, d, c, b, d, c 
+5: d, b, d, b, a 
+9: b, a, c, d, a, c, b, a, c 
+5: b, d, a, b, d 
+7: d, a, d, b, a, d, a 
+3: d, c, d 
+3: d, c, c 
+3: d, a, d 

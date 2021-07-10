@@ -1,0 +1,19 @@
+3 : a, b, b
+3 : a, b, c
+3 : a, b, a
+3 : a, c, b
+3 : a, c, c
+3 : a, c, a
+2 : a, c
+3 : a, a, b
+3 : a, a, a
+2 : a, a
+3 : b, b, b
+3 : b, b, c
+3 : b, b, a
+3 : c, a, b
+3 : c, a, a
+2 : c, a
+3 : c, b, b
+3 : c, b, c
+3 : c, b, a

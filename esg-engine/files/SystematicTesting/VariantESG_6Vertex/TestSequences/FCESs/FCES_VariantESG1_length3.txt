@@ -1,0 +1,95 @@
+3: b, c, c
+3: b, c, f
+3: b, c, b
+3: b, c, a
+3: b, c, d
+3: b, c, e
+2: b, c
+3: b, f, c
+3: b, f, f
+3: b, f, b
+3: b, f, d
+3: b, f, a
+2: b, f
+5: b, f, a, b, b
+5: b, f, a, b, d
+5: b, f, a, b, a
+5: b, f, a, b, c
+5: b, f, a, b, e
+5: b, f, a, b, f
+2: a, b
+4: b, c, b, b
+4: b, c, b, d
+4: b, c, b, a
+4: b, c, b, c
+4: b, c, b, e
+4: b, c, b, f
+2: c, b
+4: b, c, d, c
+4: b, c, d, f
+4: b, c, d, b
+4: b, c, d, d
+4: b, c, d, a
+4: b, c, d, e
+2: c, d
+4: b, f, a, c
+4: b, f, a, f
+4: b, f, a, b
+4: b, f, a, d
+4: b, f, a, a
+4: b, f, a, e
+2: f, a
+4: b, f, b, b
+4: b, f, b, d
+4: b, f, b, a
+4: b, f, b, c
+4: b, f, b, e
+4: b, f, b, f
+2: f, b
+4: b, f, c, c
+4: b, f, c, f
+4: b, f, c, b
+4: b, f, c, a
+4: b, f, c, d
+4: b, f, c, e
+2: f, c
+4: b, f, d, c
+4: b, f, d, f
+4: b, f, d, b
+4: b, f, d, d
+4: b, f, d, a
+4: b, f, d, e
+2: f, d
+4: b, f, e, c
+4: b, f, e, f
+4: b, f, e, b
+4: b, f, e, d
+4: b, f, e, a
+4: b, f, e, e
+2: f, e
+5: b, f, d, c, c
+5: b, f, d, c, f
+5: b, f, d, c, b
+5: b, f, d, c, a
+5: b, f, d, c, d
+5: b, f, d, c, e
+2: d, c
+5: b, f, d, f, c
+5: b, f, d, f, f
+5: b, f, d, f, b
+5: b, f, d, f, d
+5: b, f, d, f, a
+2: d, f
+5: b, f, e, a, c
+5: b, f, e, a, f
+5: b, f, e, a, b
+5: b, f, e, a, d
+5: b, f, e, a, a
+5: b, f, e, a, e
+2: e, a
+5: b, f, e, f, c
+5: b, f, e, f, f
+5: b, f, e, f, b
+5: b, f, e, f, d
+5: b, f, e, f, a
+2: e, f

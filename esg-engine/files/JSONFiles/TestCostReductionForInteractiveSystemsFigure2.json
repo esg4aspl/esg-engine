@@ -1,0 +1,73 @@
+{
+	"ID" : 0,
+	"name" : "Paper: Test Cost Reduction For Interactive Systems Figure: 2 ",
+	"vertices" : [
+					{
+									"ID" : 0,
+									"event" : "["
+					},
+					{
+									"ID" : 1,
+									"event" : "pressure ON"
+					},
+					{
+									"ID" : 2,
+									"event" : "mover ON"
+					},
+					{
+									"ID" : 3,
+									"event" : "mover OFF"
+					},
+					{
+									"ID" : 4,
+									"event" : "pressure OFF"
+					},
+					{
+									"ID" : 5,
+									"event" : "]"
+					}
+									 ],
+	"edges" : [
+					{
+									"ID" : 0,
+									"source" : 0,
+									"target" : 1
+					},
+					{
+									"ID" : 1,
+									"source" : 1,
+									"target" : 2
+					},
+					{
+									"ID" : 2,
+									"source" : 2,
+									"target" : 3
+					},
+					{
+									"ID" : 3,
+									"source" : 3,
+									"target" : 2
+					},
+					{
+									"ID" : 4,
+									"source" : 3,
+									"target" : 4
+					},
+					{
+									"ID" : 5,
+									"source" : 4,
+									"target" : 5
+					},
+					{
+									"ID" : 6,
+									"source" : 1,
+									"target" : 4
+					},
+					{
+									"ID" : 7,
+									"source" : 4,
+									"target" : 1
+					}
+				 ]
+
+}

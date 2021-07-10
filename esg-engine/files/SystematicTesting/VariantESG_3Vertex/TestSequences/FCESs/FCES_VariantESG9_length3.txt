@@ -1,0 +1,20 @@
+3 : b, c, c
+3 : b, c, a
+4 : b, c, a, c
+4 : b, c, a, a
+4 : b, c, a, b
+2 : c, a
+4 : b, c, b, a
+4 : b, c, b, b
+4 : b, c, b, c
+2 : c, b
+4 : b, c, c, c
+4 : b, c, c, a
+2 : c, c
+5 : b, c, a, c, c
+5 : b, c, a, c, a
+2 : a, c
+5 : b, c, a, a, c
+5 : b, c, a, a, a
+5 : b, c, a, a, b
+2 : a, a

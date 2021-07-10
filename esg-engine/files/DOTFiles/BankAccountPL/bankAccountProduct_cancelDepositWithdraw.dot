@@ -1,0 +1,28 @@
+digraph G {
+rankdir = LR
+label = "bankAccountProduct_cancelDepositWithdraw";
+esg3_vertex2 -> esg3_vertex1;
+esg3_vertex0 -> esg3_vertex2;
+esg3_vertex3 -> esg3_vertex2;
+esg3_vertex3 -> esg3_vertex1;
+esg3_vertex0 -> esg3_vertex4;
+esg3_vertex4 -> esg3_vertex3;
+esg3_vertex2 -> esg3_vertex4;
+esg3_vertex4 -> esg3_vertex5;
+esg3_vertex5 -> esg3_vertex1;
+esg3_vertex2 -> esg3_vertex6;
+esg3_vertex0 -> esg3_vertex6;
+esg3_vertex6 -> esg3_vertex7;
+esg3_vertex7 -> esg3_vertex8;
+esg3_vertex8 -> esg3_vertex1;
+esg3_vertex8 -> esg3_vertex2;
+esg3_vertex2 [label = "get balance"]
+esg3_vertex1 [label = "]"]
+esg3_vertex0 [label = "["]
+esg3_vertex3 [label = "put money"]
+esg3_vertex4 [label = "deposit"]
+esg3_vertex5 [label = "cancel deposit"]
+esg3_vertex6 [label = "withdraw"]
+esg3_vertex7 [label = "enter withdraw amount"]
+esg3_vertex8 [label = "take money"]
+}

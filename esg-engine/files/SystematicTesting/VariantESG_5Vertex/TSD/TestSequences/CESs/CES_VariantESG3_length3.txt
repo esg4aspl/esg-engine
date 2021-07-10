@@ -1,0 +1,6 @@
+34: d, a, d, a, b, c, d, a, b, d, a, b, e, b, c, c, d, b, c, e, b, d, b, d, d, a, d, b, e, c, d, d, b, c 
+22: d, b, c, e, c, c, c, e, d, a, d, d, d, e, b, e, d, b, d, e, c, e 
+7: a, d, e, d, d, b, e 
+6: d, d, b, c, d, e 
+5: d, e, d, e, c 
+4: a, b, c, c 

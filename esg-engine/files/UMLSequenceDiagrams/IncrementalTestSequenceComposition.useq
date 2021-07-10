@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.3" icons="true" automaticImage="PNG" generate-combined-fragments="true">  
+  <object id="1" language="java" 
+    name="tr.edu.iyte.esg.testsequencecomposition.incremental.IncrementalTestSequenceComposer" project="ESG" 
+    file="/ESG/src/tr/edu/iyte/esg/testsequencecomposition/incremental/IncrementalTestSequenceComposer.java" 
+    binary="false" label="incrementalTestSequenceComposer" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="88" y="0"/>    
+    <execution id="2">      
+      <position height="114" width="0" x="0" y="85"/>    
+    </execution>    
+    <execution id="4">      
+      <position height="57" width="0" x="0" y="123"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="114" width="0" x="0" y="382"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="57" width="0" x="0" y="420"/>    
+    </execution>    
+    <execution id="12">      
+      <position height="19" width="232" x="5" y="508"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="114" width="0" x="0" y="238"/>    
+    </execution>    
+    <execution id="15">      
+      <position height="57" width="0" x="0" y="276"/>    
+    </execution>  
+  </object>  
+  <object id="18" language="java" name="tr.edu.iyte.esg.model.featuredesg.FeaturedESG" project="ESG" 
+    file="/ESG/src/tr/edu/iyte/esg/model/featuredesg/FeaturedESG.java" binary="false" label="featuredESG" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="502" y="0"/>    
+    <execution id="6">      
+      <position height="19" width="226" x="241" y="142"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="19" width="226" x="241" y="439"/>    
+    </execution>    
+    <execution id="19">      
+      <position height="114" width="0" x="0" y="451"/>    
+    </execution>    
+    <execution id="21">      
+      <position height="57" width="0" x="0" y="489"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="19" width="226" x="241" y="295"/>    
+    </execution>  
+  </object>  
+  <message id="3" 
+    operation="IncrementalTestSequenceComposer(tr.edu.iyte.esg.testsequencecomposition.incremental.FeaturedESG)" 
+    asynchronous="false" x="139" y="125">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="5" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="8" 
+    operation="buildNewFeaturedESGWithNewFeaturesIncrementally(java.util.Set&lt;tr.edu.iyte.esg.model.ESG&gt;):java.util.Set&lt;EventSequence&gt;" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10" asynchronous="false">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="14" 
+    operation="extendFeaturedESGWithNewFeaturesIncrementally(java.util.Set&lt;tr.edu.iyte.esg.model.ESG&gt;):java.util.Set&lt;EventSequence&gt;" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>  
+  <message id="16" asynchronous="false">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="17"/>  
+  </message>  
+  <message id="20" operation="FeaturedESG(tr.edu.iyte.esg.testsequencecomposition.incremental.FeaturedESG)" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="21"/>  
+  </message>  
+  <message id="22" asynchronous="true">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="12"/>  
+  </message>
+</sequence-diagram>

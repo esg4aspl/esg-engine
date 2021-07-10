@@ -1,0 +1,413 @@
+{
+	"ID": 1,
+	"name": "ESG for Age Application",
+	"vertices": [
+		{
+			"ID": 0,
+			"event": "["
+		},
+		{
+			"ID": 1,
+			"event": "Input Age Data",
+			"decisionTable" : true
+		},
+		{
+			"ID": 2,
+			"event": "Error/Warning"
+		},
+		{
+			"ID": 3,
+			"event": "Calculate"
+		},
+		{
+			"ID": 4,
+			"event": "]"
+		}
+	],
+	"edges": [
+		{
+			"ID": 0,
+			"source": 0,
+			"target": 1
+		},
+		{
+			"ID": 1,
+			"source": 1,
+			"target": 2
+		},
+		{
+			"ID": 2,
+			"source": 2,
+			"target": 1
+		},
+		{
+			"ID": 3,
+			"source": 1,
+			"target": 3
+		},
+		{
+			"ID": 4,
+			"source": 3,
+			"target": 1
+		},
+		{
+			"ID": 5,
+			"source": 3,
+			"target": 4
+		}
+	],
+	"decisionTables": [
+		{
+			"ID": 1,
+			"name": "Decision Table for Age Application",
+			"vertexID" : 1,
+			"conditions": [
+				{
+					"ID": 0,
+					"expressions": [
+						{
+							"ID": 0,
+							"expression": "age is Type Of Integer"
+						}
+					]
+				},
+				{
+					"ID": 1,
+					"expressions": [
+						{
+							"ID": 1,
+							"expression": "age > 0"
+						}
+					]
+				},
+				{
+					"ID": 2,
+					"expressions": [
+						{
+							"ID": 2,
+							"expression": "age < 150"
+						}
+					]
+				},
+				{
+					"ID": 3,
+					"expressions": [
+						{
+							"ID": 3,
+							"expression": "biologicalStage = ADOLESCENCE"
+						},
+						{
+							"ID": 4,
+							"expression": "age < adolescenceLB"
+						}
+					]
+				},
+				{
+					"ID": 4,
+					"expressions": [
+						{
+							"ID": 5,
+							"expression": "biologicalStage = ADULT"
+						},
+						{
+							"ID": 6,
+							"expression": "age < adultLB"
+						}
+					]
+				}
+			],
+			"actions": [
+				{
+					"ID": 0,
+					"actionEvent": 2
+				},
+				{
+					"ID": 1,
+					"actionEvent": 3
+				}
+			],
+			"rules": [
+				{
+					"ID": 0,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "age",
+							"type": "String",
+							"value": "A"
+						},
+						{
+							"ID": 1,
+							"name": "biologicalStage",
+							"type": "String",
+							"value": "ADULT"
+						}
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": false
+						},
+						{
+							"condition": 1,
+							"result": "-"
+						},
+						{
+							"condition": 2,
+							"result": "-"
+						},
+						{
+							"condition": 3,
+							"result": "-"
+						},
+						{
+							"condition": 4,
+							"result": "-"
+						}
+					],
+					"actionIDs": [0]
+				},
+				{
+					"ID": 1,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "age",
+							"type": "Integer",
+							"value": -1
+						},
+						{
+							"ID": 1,
+							"name": "biologicalStage",
+							"type": "String",
+							"value": "ADOLESCENCE"
+						}
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": false
+						},
+						{
+							"condition": 2,
+							"result": "-"
+						},
+						{
+							"condition": 3,
+							"result": "-"
+						},
+						{
+							"condition": 4,
+							"result": "-"
+						}
+					],
+					"actionIDs": [0]
+				},
+				{
+					"ID": 2,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "age",
+							"type": "Integer",
+							"value": 200
+						},
+						{
+							"ID": 1,
+							"name": "biologicalStage",
+							"type": "String",
+							"value": "ADULT"
+						}
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": false
+						},
+						{
+							"condition": 3,
+							"result": "-"
+						},
+						{
+							"condition": 4,
+							"result": "-"
+						}
+					],
+					"actionIDs": [0]
+				},
+				{
+					"ID": 3,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "age",
+							"type": "Integer",
+							"value": 18
+						},
+						{
+							"ID": 1,
+							"name": "biologicalStage",
+							"type": "String",
+							"value": "ADOLESCENCE"
+						}
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": "-"
+						}
+					],
+					"actionIDs": [0]
+				},
+				{
+					"ID": 4,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "age",
+							"type": "Integer",
+							"value": 18
+						},
+						{
+							"ID": 1,
+							"name": "biologicalStage",
+							"type": "String",
+							"value": "ADOLESCENCE"
+						}
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": "-"
+						}
+					],
+					"actionIDs": [1]
+				},
+				{
+					"ID": 5,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "age",
+							"type": "Integer",
+							"value": 25
+						},
+						{
+							"ID": 1,
+							"name": "biologicalStage",
+							"type": "String",
+							"value": "ADULT"
+						}
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": "-"
+						},
+						{
+							"condition": 4,
+							"result": false
+						}
+					],
+					"actionIDs": [0]
+				},
+				{
+					"ID": 6,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "age",
+							"type": "Integer",
+							"value": 18
+						},
+						{
+							"ID": 1,
+							"name": "biologicalStage",
+							"type": "String",
+							"value": "ADULT"
+						}
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": "-"
+						},
+						{
+							"condition": 4,
+							"result": true
+						}
+					],
+					"actionIDs": [1]
+				}
+			]
+		}
+	]
+}

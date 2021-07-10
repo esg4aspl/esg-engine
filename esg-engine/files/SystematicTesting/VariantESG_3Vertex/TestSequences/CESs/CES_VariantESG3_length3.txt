@@ -1,0 +1,2 @@
+11 : b, a, b, c, b, c, a, b, a, b, c
+6 : b, c, b, a, b, c

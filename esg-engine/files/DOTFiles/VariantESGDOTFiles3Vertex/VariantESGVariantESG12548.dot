@@ -1,0 +1,19 @@
+digraph G {
+rankdir = LR
+label = "";
+esg0_vertex0 -> esg0_vertex2;
+esg0_vertex0 -> esg0_vertex3;
+esg0_vertex2 -> esg0_vertex4;
+esg0_vertex1 -> esg0_vertex1;
+esg0_vertex2 -> esg0_vertex2;
+esg0_vertex3 -> esg0_vertex3;
+esg0_vertex1 -> esg0_vertex2;
+esg0_vertex1 -> esg0_vertex3;
+esg0_vertex2 -> esg0_vertex1;
+esg0_vertex3 -> esg0_vertex2;
+esg0_vertex0 [label = "["]
+esg0_vertex2 [label = "b"]
+esg0_vertex3 [label = "c"]
+esg0_vertex4 [label = "]"]
+esg0_vertex1 [label = "a"]
+}

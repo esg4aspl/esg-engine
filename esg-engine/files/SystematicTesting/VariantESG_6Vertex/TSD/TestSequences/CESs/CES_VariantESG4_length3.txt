@@ -1,0 +1,23 @@
+26: b, e, d, c, c, c, d, c, d, d, c, e, d, d, d, e, d, e, b, e, b, a, e, d, b, e 
+10: f, d, c, a, e, b, c, c, e, b 
+4: b, a, d, c 
+9: c, c, a, d, d, b, a, c, c 
+3: c, d, e 
+2: e, d 
+9: f, c, c, a, c, d, b, c, d 
+10: f, b, e, b, a, f, a, f, d, d 
+2: c, e 
+3: b, c, e 
+5: c, a, f, c, d 
+3: f, a, e 
+6: e, b, c, a, d, e 
+3: f, d, e 
+3: f, d, b 
+2: f, d 
+10: f, a, d, b, a, f, b, a, c, e 
+5: f, a, c, a, c 
+3: f, c, e 
+4: f, c, a, d 
+2: f, c 
+3: f, b, c 
+2: f, b 

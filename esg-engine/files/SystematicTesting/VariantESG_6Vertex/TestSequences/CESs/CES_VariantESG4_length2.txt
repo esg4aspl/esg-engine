@@ -1,0 +1,6 @@
+4: f, c, a, e
+13: f, b, e, d, c, c, e, b, c, d, b, a, d
+3: f, a, c
+1: e
+1: b
+6: c, a, f, d, d, e

@@ -1,0 +1,12 @@
+Number of nodes: 4
+Number of edges: 7
+Number of CESs: 2
+Number of events: 7
+Number of uncovered edges: 0
+Coverage: 100.0
+Number of coverage	Edge
+1	a, b
+2	b, a
+1	a, a
+1	b, b
+0	Number of uncovered edges 

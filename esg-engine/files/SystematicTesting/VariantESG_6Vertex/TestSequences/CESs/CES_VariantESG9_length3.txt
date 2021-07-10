@@ -1,0 +1,13 @@
+6: b, e, f, e, a, a
+12: b, e, f, d, b, e, c, d, c, f, b, a
+8: d, c, d, b, e, c, b, a
+4: b, e, f, b
+5: b, e, c, a, a
+3: d, c, b
+6: d, d, b, d, c, a
+4: d, b, a, a
+3: b, e, a
+3: b, d, b
+2: b, a
+3: a, a, a
+42: d, c, c, c, f, b, e, f, f, f, e, f, f, d, d, c, f, f, b, d, c, f, e, c, c, d, d, c, c, b, e, c, f, d, c, b, d, d, d, c, c, a

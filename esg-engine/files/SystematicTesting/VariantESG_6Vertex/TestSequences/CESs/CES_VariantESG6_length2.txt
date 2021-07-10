@@ -1,0 +1,4 @@
+14: f, e, c, c, f, e, b, a, d, f, e, a, d, e
+11: d, c, d, b, a, c, b, a, d, a, c
+7: b, a, a, f, b, a, d
+8: a, b, a, c, e, f, e, d

@@ -1,0 +1,150 @@
+{
+	"ID" : 1,
+	"name" : "ESGToBeBalanced",
+	"vertices" : [
+					{
+									"ID" : 0,
+									"event" : "["
+					},
+					{
+									"ID" : 1,
+									"event" : "a"						
+					},
+					{
+									"ID" : 2,
+									"event" : "b1"
+					},
+					{
+									"ID" : 3,
+									"event" : "b2"						
+					},
+					{
+									"ID" : 4,
+									"event" : "b3"						
+					},
+					{
+									"ID" : 5,
+									"event" : "b4"						
+					},
+					{
+									"ID" : 6,
+									"event" : "c"						
+					},
+					{
+									"ID" : 7,
+									"event" : "d"						
+					},
+					{
+									"ID" : 8,
+									"event" : "e"						
+					},
+					{
+									"ID" : 9,
+									"event" : "f"						
+					},
+					{
+									"ID" :10 ,
+									"event" : "x"						
+					},
+					{
+									"ID" : 11,
+									"event" : "y"						
+					},
+					{
+									"ID" : 12,
+									"event" : "z"						
+					},
+					{
+									"ID" : 13,
+									"event" : "]"						
+					}
+				 ],
+	"edges" : [
+					{
+									"ID" : 0,
+									"source" : 0,
+									"target" : 1
+					},
+					{
+									"ID" : 1,
+									"source" : 1,
+									"target" : 2
+					},
+					{
+									"ID" : 2,
+									"source" : 2,
+									"target" : 3							
+					},
+					{
+									"ID" : 3,
+									"source" : 3,
+									"target" : 4
+					},
+					{
+									"ID" : 4,
+									"source" : 3,
+									"target" : 5
+					},
+					{
+									"ID" : 5,
+									"source" : 5,
+									"target" : 4
+					},
+					{
+									"ID" : 6,
+									"source" : 4,
+									"target" : 6
+					},
+					{
+									"ID" : 7,
+									"source" : 6,
+									"target" : 7
+					},
+					{
+									"ID" : 8,
+									"source" : 6,
+									"target" : 8
+					},
+					{
+									"ID" : 9,
+									"source" : 6,
+									"target" : 9
+					},
+					{
+									"ID" : 10,
+									"source" : 7,
+									"target" : 13
+					},
+					{
+									"ID" : 11,
+									"source" : 8,
+									"target" : 13
+					},
+					{
+									"ID" : 12,
+									"source" : 9,
+									"target" : 13
+					},
+					{
+									"ID" : 13,
+									"source" : 0,
+									"target" : 10
+					},
+					{
+									"ID" : 14,
+									"source" : 10,
+									"target" : 11
+					},
+					{
+									"ID" : 15,
+									"source" : 11,
+									"target" : 12
+					},
+					{
+									"ID" : 16,
+									"source" : 12,
+									"target" : 6
+					}
+				 ]
+
+}

@@ -1,0 +1,11 @@
+9: f, d, a, d, a, c, e, d, a 
+8: c, e, e, d, a, c, c, e 
+16: d, a, c, b, a, d, a, c, a, d, a, c, f, d, a, c 
+18: a, d, a, c, b, d, a, c, b, f, d, a, c, b, b, a, c, b 
+17: c, c, c, b, b, d, a, c, b, b, f, d, a, c, b, b, b 
+11: e, d, a, c, c, a, c, c, f, d, a 
+3: c, b, a 
+3: a, c, c 
+3: e, e, e 
+2: c, a 
+4: c, f, d, a 

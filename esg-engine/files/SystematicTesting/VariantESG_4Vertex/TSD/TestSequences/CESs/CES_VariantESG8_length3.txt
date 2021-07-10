@@ -1,0 +1,7 @@
+12: d, b, a, b, a, d, b, d, b, c, b, a 
+2: b, a 
+8: b, d, c, b, d, a, b, d 
+17: d, c, b, c, b, a, d, c, b, a, b, c, b, a, d, a, d 
+2: d, a 
+3: c, b, a 
+4: b, c, b, a 

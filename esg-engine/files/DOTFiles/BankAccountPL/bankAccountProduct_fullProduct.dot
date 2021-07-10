@@ -1,0 +1,197 @@
+digraph bankAccountProduct_fullProduct {
+graph [fontname=Arial, fontcolor=blue, fontsize=26];
+node [fixedsize=false,fontsize=26]
+rankdir=LR
+subgraph cluster {
+
+label = " bankAccountProduct_fullProduct";
+subgraph cluster0 {
+rankdir=LR
+label = "core";
+esg0_vertex3 -> esg0_vertex2;
+esg0_vertex0 -> esg0_vertex3;
+esg0_vertex1 -> esg0_vertex3;
+esg0_vertex1 -> esg0_vertex2;
+esg0_vertex0 -> esg0_vertex4;
+esg0_vertex4 -> esg0_vertex1;
+esg0_vertex3 -> esg0_vertex4;
+esg0_vertex3 [label = "get balance"]
+esg0_vertex2 [label = "]"]
+esg0_vertex0 [label = "["]
+esg0_vertex1 [label = "put money"]
+esg0_vertex4 [label = "deposit"]
+}
+subgraph cluster1 {
+rankdir=LR
+label = "cancelDeposit";
+esg1_vertex1 -> esg1_vertex2;
+esg1_vertex0 -> esg1_vertex3;
+esg1_vertex3 -> esg1_vertex1;
+esg1_vertex4 -> esg1_vertex0;
+esg1_vertex1 [label = "(core,])"]
+esg1_vertex2 [label = "]"]
+esg1_vertex0 [label = "(core,deposit)"]
+esg1_vertex3 [label = "cancel deposit"]
+esg1_vertex4 [label = "["]
+}
+subgraph cluster2 {
+rankdir=LR
+label = "withdraw";
+esg2_vertex4 -> esg2_vertex1;
+esg2_vertex0 -> esg2_vertex5;
+esg2_vertex5 -> esg2_vertex1;
+esg2_vertex0 -> esg2_vertex4;
+esg2_vertex1 -> esg2_vertex6;
+esg2_vertex6 -> esg2_vertex2;
+esg2_vertex2 -> esg2_vertex7;
+esg2_vertex7 -> esg2_vertex3;
+esg2_vertex2 -> esg2_vertex4;
+esg2_vertex4 [label = "(core,get balance)"]
+esg2_vertex1 [label = "withdraw"]
+esg2_vertex0 [label = "["]
+esg2_vertex5 [label = "(core,[)"]
+esg2_vertex6 [label = "enter withdraw amount"]
+esg2_vertex2 [label = "take money"]
+esg2_vertex7 [label = "(core,])"]
+esg2_vertex3 [label = "]"]
+}
+subgraph cluster3 {
+rankdir=LR
+label = "cancelWithdraw";
+esg3_vertex1 -> esg3_vertex2;
+esg3_vertex0 -> esg3_vertex3;
+esg3_vertex3 -> esg3_vertex1;
+esg3_vertex4 -> esg3_vertex0;
+esg3_vertex1 [label = "(core,])"]
+esg3_vertex2 [label = "]"]
+esg3_vertex0 [label = "(withdraw,withdraw)"]
+esg3_vertex3 [label = "cancel withdraw"]
+esg3_vertex4 [label = "["]
+}
+subgraph cluster4 {
+rankdir=LR
+label = "interest";
+esg4_vertex0 -> esg4_vertex1;
+esg4_vertex1 -> esg4_vertex2;
+esg4_vertex4 -> esg4_vertex3;
+esg4_vertex2 -> esg4_vertex4;
+esg4_vertex2 -> esg4_vertex5;
+esg4_vertex5 -> esg4_vertex3;
+esg4_vertex3 -> esg4_vertex6;
+esg4_vertex0 [label = "["]
+esg4_vertex1 [label = "(core,[)"]
+esg4_vertex2 [label = "request an interest rate"]
+esg4_vertex4 [label = "confirm  interest rate is approved"]
+esg4_vertex3 [label = "(core,])"]
+esg4_vertex5 [label = "confirm  interest rate is disapproved"]
+esg4_vertex6 [label = "]"]
+}
+subgraph cluster5 {
+rankdir=LR
+label = "interestEstimation";
+esg5_vertex0 -> esg5_vertex1;
+esg5_vertex1 -> esg5_vertex2;
+esg5_vertex2 -> esg5_vertex3;
+esg5_vertex3 -> esg5_vertex4;
+esg5_vertex4 -> esg5_vertex5;
+esg5_vertex0 [label = "["]
+esg5_vertex1 [label = "(interest,confirm  interest rate is approved)"]
+esg5_vertex2 [label = "enter days left"]
+esg5_vertex3 [label = "get estimated interest for days left"]
+esg5_vertex4 [label = "(core,])"]
+esg5_vertex5 [label = "]"]
+}
+subgraph cluster6 {
+rankdir=LR
+label = "creditWorthiness";
+esg6_vertex0 -> esg6_vertex1;
+esg6_vertex1 -> esg6_vertex2;
+esg6_vertex4 -> esg6_vertex3;
+esg6_vertex2 -> esg6_vertex4;
+esg6_vertex2 -> esg6_vertex5;
+esg6_vertex5 -> esg6_vertex3;
+esg6_vertex3 -> esg6_vertex6;
+esg6_vertex0 [label = "["]
+esg6_vertex1 [label = "(core,[)"]
+esg6_vertex2 [label = "enter a credit amount"]
+esg6_vertex4 [label = "confirm credit approved"]
+esg6_vertex3 [label = "(core,])"]
+esg6_vertex5 [label = "confirm credit disapproved"]
+esg6_vertex6 [label = "]"]
+}
+subgraph cluster7 {
+rankdir=LR
+label = "dailyLimit";
+esg7_vertex3 -> esg7_vertex1;
+esg7_vertex0 -> esg7_vertex3;
+esg7_vertex1 -> esg7_vertex4;
+esg7_vertex5 -> esg7_vertex2;
+esg7_vertex1 -> esg7_vertex3;
+esg7_vertex0 -> esg7_vertex7;
+esg7_vertex7 -> esg7_vertex6;
+esg7_vertex6 -> esg7_vertex5;
+esg7_vertex6 -> esg7_vertex6;
+esg7_vertex4 -> esg7_vertex2;
+esg7_vertex1 -> esg7_vertex5;
+esg7_vertex3 [label = "(withdraw,enter withdraw amount)"]
+esg7_vertex1 [label = "confirm daily limit excess"]
+esg7_vertex0 [label = "["]
+esg7_vertex4 [label = "(cancelWithdraw,cancel withdraw)"]
+esg7_vertex5 [label = "(core,])"]
+esg7_vertex2 [label = "]"]
+esg7_vertex7 [label = "(core,[)"]
+esg7_vertex6 [label = "enter daily withdraw limit"]
+}
+subgraph cluster8 {
+rankdir=LR
+label = "overdraft";
+esg8_vertex0 -> esg8_vertex1;
+esg8_vertex1 -> esg8_vertex2;
+esg8_vertex0 -> esg8_vertex4;
+esg8_vertex4 -> esg8_vertex2;
+esg8_vertex2 -> esg8_vertex1;
+esg8_vertex7 -> esg8_vertex5;
+esg8_vertex5 -> esg8_vertex6;
+esg8_vertex0 -> esg8_vertex7;
+esg8_vertex6 -> esg8_vertex3;
+esg8_vertex5 -> esg8_vertex5;
+esg8_vertex2 -> esg8_vertex8;
+esg8_vertex8 -> esg8_vertex3;
+esg8_vertex2 -> esg8_vertex6;
+esg8_vertex0 [label = "["]
+esg8_vertex1 [label = "(withdraw,enter withdraw amount)"]
+esg8_vertex2 [label = "confirm overdraft limit excess"]
+esg8_vertex4 [label = "(dailyLimit,confirm daily limit excess)"]
+esg8_vertex7 [label = "(core,[)"]
+esg8_vertex5 [label = "enter overdraft limit"]
+esg8_vertex6 [label = "(core,])"]
+esg8_vertex3 [label = "]"]
+esg8_vertex8 [label = "(cancelWithdraw,cancel withdraw)"]
+}
+subgraph cluster9 {
+rankdir=LR
+label = "lock";
+esg9_vertex0 -> esg9_vertex1;
+esg9_vertex1 -> esg9_vertex2;
+esg9_vertex3 -> esg9_vertex4;
+esg9_vertex2 -> esg9_vertex3;
+esg9_vertex1 -> esg9_vertex5;
+esg9_vertex5 -> esg9_vertex3;
+esg9_vertex0 -> esg9_vertex7;
+esg9_vertex7 -> esg9_vertex6;
+esg9_vertex6 -> esg9_vertex5;
+esg9_vertex6 -> esg9_vertex4;
+esg9_vertex8 -> esg9_vertex6;
+esg9_vertex0 -> esg9_vertex8;
+esg9_vertex0 [label = "["]
+esg9_vertex1 [label = "(core,[)"]
+esg9_vertex2 [label = "lock"]
+esg9_vertex3 [label = "(core,])"]
+esg9_vertex4 [label = "]"]
+esg9_vertex5 [label = "unlock"]
+esg9_vertex7 [label = "(core,deposit)"]
+esg9_vertex6 [label = "confirm account is locked"]
+esg9_vertex8 [label = "(withdraw,withdraw)"]
+}
+}
+}

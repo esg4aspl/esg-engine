@@ -1,0 +1,8 @@
+17: c, f, a, b, a, b, f, a, e, b, a, e, a, b, e, b, f 
+2: b, a 
+3: b, f, a 
+17: c, d, a, b, e, a, e, d, e, d, a, e, d, e, b, e, d 
+4: b, e, d, a 
+4: c, d, e, a 
+2: c, d 
+2: c, f 

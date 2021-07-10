@@ -1,0 +1,4 @@
+23: a, d, a, a, c, d, c, c, e, f, e, d, e, a, b, a, f, b, a, d, b, a, d 
+7: d, f, e, c, b, a, c 
+8: b, a, c, f, e, b, a, d 
+2: f, e

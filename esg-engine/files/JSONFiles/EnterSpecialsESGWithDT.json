@@ -1,0 +1,5095 @@
+{
+	"ID": 1,
+	"name": "ESG for Age Application",
+	"vertices": [
+		{
+			"ID": 0,
+			"event": "["
+		},
+		{
+			"ID": 1,
+			"event": "Special data 1",
+			"decisionTable" : true
+		},
+		{
+			"ID": 2,
+			"event": "Special data 2",
+			"decisionTable" : true
+		},
+		{
+			"ID": 3,
+			"event": "add"
+		},
+	    {
+			"ID": 4,
+			"event": "error"
+		},
+	    {
+			"ID": 5,
+			"event": "edit Special"
+		},
+	    {
+			"ID": 6,
+			"event": "save"
+		},
+		{
+			"ID": 7,
+			"event": "cancel"
+		},
+		{
+			"ID": 8,
+			"event": "delete Special"
+		},
+		{
+			"ID": 9,
+			"event": "OK"
+		},
+		{
+			"ID": 10,
+			"event": "CANCEL"
+		},
+		{
+			"ID": 11,
+			"event": "]"
+		}
+	],
+	"edges": [
+		{
+			"ID": 0,
+			"source": 0,
+			"target": 1
+		},
+		{
+			"ID": 1,
+			"source": 1,
+			"target": 4
+		},
+		{
+			"ID": 2,
+			"source": 1,
+			"target": 3
+		},
+		{
+			"ID": 3,
+			"source": 2,
+			"target": 6
+		},
+		{
+			"ID": 4,
+			"source": 2,
+			"target": 4
+		},
+		{
+			"ID": 5,
+			"source": 2,
+			"target": 7
+		},
+		{
+			"ID": 6,
+			"source": 3,
+			"target": 5
+		},
+		{
+			"ID": 7,
+			"source": 3,
+			"target": 8
+		},
+		{
+			"ID": 8,
+			"source": 3,
+			"target": 11
+		},		
+		{
+			"ID": 9,
+			"source": 4,
+			"target": 1
+		},
+		{
+			"ID": 10,
+			"source": 4,
+			"target": 2
+		},
+		{
+			"ID": 11,
+			"source": 5,
+			"target": 2
+		},
+		{
+			"ID": 12,
+			"source": 5,
+			"target": 6
+		},
+		{
+			"ID": 13,
+			"source": 5,
+			"target": 7
+		},
+		{
+			"ID": 14,
+			"source": 6,
+			"target": 5
+		},
+		{
+			"ID": 15,
+			"source": 6,
+			"target": 8
+		},
+		{
+			"ID": 16,
+			"source": 7,
+			"target": 5
+		},
+		{
+			"ID": 17,
+			"source": 7,
+			"target": 8
+		},
+		{
+			"ID": 18,
+			"source": 7,
+			"target": 11
+		},
+		{
+			"ID": 19,
+			"source": 8,
+			"target": 9
+		},
+		{
+			"ID": 20,
+			"source": 8,
+			"target": 10
+		},
+		{
+			"ID": 21,
+			"source": 6,
+			"target": 11
+		},
+		{
+			"ID": 22,
+			"source": 9,
+			"target": 11
+		},
+		{
+			"ID": 23,
+			"source": 10,
+			"target": 8
+		},
+		{
+			"ID": 24,
+			"source": 10,
+			"target": 5
+		}
+	],
+	"decisionTables": [
+		{
+			"ID": 0,
+			"name": "Special Data 1",
+			"vertexID" : 1,
+			"conditions": [
+				{
+					"ID": 0,
+					"expressions": [
+						{
+							"ID": 0,
+							"expression": "ArrivalDate > TODAY"
+						}
+					]
+				},
+				{
+					"ID": 1,
+					"expressions": [
+						{
+							"ID": 1,
+							"expression": "DepartureDate > TODAY"
+						}
+					]
+				},
+				{
+					"ID": 2,
+					"expressions": [
+						{
+							"ID": 2,
+							"expression": "ArrivalDate > DepartureDate"
+						}
+					]
+				},
+				{
+					"ID": 3,
+					"expressions": [
+						{
+							"ID": 3,
+							"expression": "Room Type MATCHES([Single|Double|Suite])"
+						}
+					]
+				},
+				{
+					"ID": 4,
+					"expressions": [
+						{
+							"ID": 4,
+							"expression": "NoOfRooms MATCHES([1-9][0-9]*)"
+						}
+					]
+				},
+												{
+					"ID": 5,
+					"expressions": [
+						{
+							"ID": 5,
+							"expression": "TotalPrice MATCHES([1-9][0-9]*(,[0-9]{1,2})?)"
+						}
+					]
+				},
+				{
+					"ID": 6,
+					"expressions": [
+						{
+							"ID": 6,
+							"expression": "PhotoFileName = EMPTY"
+						}
+					]
+				},
+												{
+					"ID": 7,
+					"expressions": [
+						{
+							"ID": 7,
+							"expression": "PhotoFileType MATCHES([jpg|gif])"
+						}
+					]
+				},
+				{
+					"ID": 8,
+					"expressions": [
+						{
+							"ID": 8,
+							"expression": "PhotoFileSize > 0 MB"
+						}
+					]
+				},
+				{
+					"ID": 9,
+					"expressions": [
+						{
+							"ID": 9,
+							"expression": "PhotoFileSize < 1 MB"
+						}
+					]
+				},
+				{
+					"ID": 10,
+					"expressions": [
+						{
+							"ID": 10,
+							"expression": "DescriptionNat = EMPTY"
+						}
+					]
+				},
+				{
+					"ID": 11,
+					"expressions": [
+						{
+							"ID": 11,
+							"expression": "DescriptionNat MATCHES([:,;!@$€æöüß]+)"
+						}
+					]
+				},
+				{
+					"ID": 12,
+					"expressions": [
+						{
+							"ID": 12,
+							"expression": "DescriptionInt = EMPTY"
+						}
+					]
+				},
+				{
+					"ID": 13,
+					"expressions": [
+						{
+							"ID": 13,
+							"expression": "DescriptionInt MATCHES([:,;!@$€æöüß]+)"
+						}
+					]
+				},
+				{
+					"ID": 14,
+					"expressions": [
+						{
+							"ID": 14,
+							"expression": "Name MATCHES([a-zA-Z0-9]+)"
+						}
+					]
+				}								
+			],
+			"actions": [
+				{
+					"ID": 0,
+					"actionEvent": 3
+				},
+				{
+					"ID": 1,
+					"actionEvent": 4
+				}
+			],
+			"rules": [
+				{
+					"ID": 1,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Double"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 1
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 200.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.75
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": "-"
+						},
+						{
+							"condition": 2,
+							"result": "-"
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0] 
+				},
+				{
+					"ID": 2,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0] 
+				},
+				{
+					"ID": 3,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "26/12/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "30/12/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": false
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1] 
+				},
+				{
+					"ID": 4,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/20/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": false
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": false
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1] 
+				},
+				{
+					"ID": 5,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/24/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": false
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1] 
+				},
+				{
+					"ID": 6,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "abc"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": false
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1] 
+				},
+				{
+					"ID": 7,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "String",
+							"value": "A"
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": false
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1] 
+				},
+				{
+					"ID": 8,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "String",
+							"value": "ABC"
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": false
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1] 
+				},
+				{
+					"ID": 9,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 750.87
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "test.jpg"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": false
+						},
+						{
+							"condition": 7,
+							"result": true
+						},
+						{
+							"condition": 8,
+							"result": true
+						},
+						{
+							"condition": 9,
+							"result": true
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0] 
+				},
+				{
+					"ID": 10,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 750.87
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "test.png"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "png"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": false
+						},
+						{
+							"condition": 7,
+							"result": false
+						},
+						{
+							"condition": 8,
+							"result": true
+						},
+						{
+							"condition": 9,
+							"result": true
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1] 
+				},
+				{
+					"ID": 11,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 750.87
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "test.jpg"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": false
+						},
+						{
+							"condition": 7,
+							"result": true
+						},
+						{
+							"condition": 8,
+							"result": false
+						},
+						{
+							"condition": 9,
+							"result": true
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1]
+				},
+				{
+					"ID": 12,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 750.87
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "test.jpg"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 1.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": false
+						},
+						{
+							"condition": 7,
+							"result": true
+						},
+						{
+							"condition": 8,
+							"result": true
+						},
+						{
+							"condition": 9,
+							"result": false
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1]
+				},
+				{
+					"ID": 13,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "ABC"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "John Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": false
+						},
+						{
+							"condition": 11,
+							"result": true
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0]
+				},
+				{
+					"ID": 14,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "Integer",
+							"value": 56
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "John Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": false
+						},
+						{
+							"condition": 11,
+							"result": false
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1]
+				},
+				{
+					"ID": 15,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "ABC"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": false
+						},
+						{
+							"condition": 13,
+							"result": true
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0]
+				},
+				{
+					"ID": 16,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "Integer",
+							"value": 72
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": false
+						},
+						{
+							"condition": 13,
+							"result": false
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1]
+				},
+				{
+					"ID": 17,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "asdfg+"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": false
+						}
+					],
+					"actionIDs": [1]
+				}
+
+			]
+		},
+		{
+			"ID": 1,
+			"name": "Special Data 2",
+			"vertexID" : 2,
+			"conditions": [
+				{
+					"ID": 0,
+					"expressions": [
+						{
+							"ID": 0,
+							"expression": "ArrivalDate > TODAY"
+						}
+					]
+				},
+				{
+					"ID": 1,
+					"expressions": [
+						{
+							"ID": 1,
+							"expression": "DepartureDate > TODAY"
+						}
+					]
+				},
+				{
+					"ID": 2,
+					"expressions": [
+						{
+							"ID": 2,
+							"expression": "ArrivalDate > DepartureDate"
+						}
+					]
+				},
+				{
+					"ID": 3,
+					"expressions": [
+						{
+							"ID": 3,
+							"expression": "Room Type MATCHES([Single|Double|Suite])"
+						}
+					]
+				},
+				{
+					"ID": 4,
+					"expressions": [
+						{
+							"ID": 4,
+							"expression": "NoOfRooms MATCHES([1-9][0-9]*)"
+						}
+					]
+				},
+												{
+					"ID": 5,
+					"expressions": [
+						{
+							"ID": 5,
+							"expression": "TotalPrice MATCHES([1-9][0-9]*(,[0-9]{1,2})?)"
+						}
+					]
+				},
+				{
+					"ID": 6,
+					"expressions": [
+						{
+							"ID": 6,
+							"expression": "PhotoFileName = EMPTY"
+						}
+					]
+				},
+												{
+					"ID": 7,
+					"expressions": [
+						{
+							"ID": 7,
+							"expression": "PhotoFileType MATCHES([jpg|gif])"
+						}
+					]
+				},
+				{
+					"ID": 8,
+					"expressions": [
+						{
+							"ID": 8,
+							"expression": "PhotoFileSize > 0 MB"
+						}
+					]
+				},
+				{
+					"ID": 9,
+					"expressions": [
+						{
+							"ID": 9,
+							"expression": "PhotoFileSize < 1 MB"
+						}
+					]
+				},
+				{
+					"ID": 10,
+					"expressions": [
+						{
+							"ID": 10,
+							"expression": "DescriptionNat = EMPTY"
+						}
+					]
+				},
+				{
+					"ID": 11,
+					"expressions": [
+						{
+							"ID": 11,
+							"expression": "DescriptionNat MATCHES([:,;!@$€æöüß]+)"
+						}
+					]
+				},
+				{
+					"ID": 12,
+					"expressions": [
+						{
+							"ID": 12,
+							"expression": "DescriptionInt = EMPTY"
+						}
+					]
+				},
+				{
+					"ID": 13,
+					"expressions": [
+						{
+							"ID": 13,
+							"expression": "DescriptionInt MATCHES([:,;!@$€æöüß]+)"
+						}
+					]
+				},
+				{
+					"ID": 14,
+					"expressions": [
+						{
+							"ID": 14,
+							"expression": "Name MATCHES([a-zA-Z0-9]+)"
+						}
+					]
+				}								
+			],
+			"actions": [
+				{
+					"ID": 0,
+					"actionEvent": 4
+				},
+				{
+					"ID": 1,
+					"actionEvent": 6
+				},
+				{
+					"ID": 2,
+					"actionEvent": 7
+				}
+			],
+			"rules": [
+				{
+					"ID": 1,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Double"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 1
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 200.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.75
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": "-"
+						},
+						{
+							"condition": 2,
+							"result": "-"
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1,2]
+				},
+				{
+					"ID": 2,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1,2]
+				},
+				{
+					"ID": 3,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "26/12/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "30/12/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": false
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0,2]
+				},
+				{
+					"ID": 4,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/20/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": false
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": false
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0,2]
+				},
+				{
+					"ID": 5,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/24/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": false
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0,2]
+				},
+				{
+					"ID": 6,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "abc"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": false
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0,2]
+				},
+				{
+					"ID": 7,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "String",
+							"value": "A"
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": false
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0,2]
+				},
+				{
+					"ID": 8,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "String",
+							"value": "ABC"
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": false
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0,2]
+				},
+				{
+					"ID": 9,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 750.87
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "test.jpg"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": false
+						},
+						{
+							"condition": 7,
+							"result": true
+						},
+						{
+							"condition": 8,
+							"result": true
+						},
+						{
+							"condition": 9,
+							"result": true
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1,2]
+				},
+				{
+					"ID": 10,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 750.87
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "test.png"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "png"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": false
+						},
+						{
+							"condition": 7,
+							"result": false
+						},
+						{
+							"condition": 8,
+							"result": true
+						},
+						{
+							"condition": 9,
+							"result": true
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0,2]
+				},
+				{
+					"ID": 11,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 750.87
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "test.jpg"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": false
+						},
+						{
+							"condition": 7,
+							"result": true
+						},
+						{
+							"condition": 8,
+							"result": false
+						},
+						{
+							"condition": 9,
+							"result": true
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0,2]
+				},
+				{
+					"ID": 12,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 750.87
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "test.jpg"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 1.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": false
+						},
+						{
+							"condition": 7,
+							"result": true
+						},
+						{
+							"condition": 8,
+							"result": true
+						},
+						{
+							"condition": 9,
+							"result": false
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0,2]
+				},
+				{
+					"ID": 13,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "ABC"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "John Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": false
+						},
+						{
+							"condition": 11,
+							"result": true
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1,2]
+				},
+				{
+					"ID": 14,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "Integer",
+							"value": 56
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "John Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": false
+						},
+						{
+							"condition": 11,
+							"result": false
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0,2]
+				},
+				{
+					"ID": 15,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "ABC"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": false
+						},
+						{
+							"condition": 13,
+							"result": true
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [1,2]
+				},
+				{
+					"ID": 16,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "Integer",
+							"value": 72
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "Jane Doe"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": false
+						},
+						{
+							"condition": 13,
+							"result": false
+						},
+						{
+							"condition": 14,
+							"result": true
+						}
+					],
+					"actionIDs": [0,2]
+				},
+				{
+					"ID": 17,
+					"variables": [
+						{
+							"ID": 0,
+							"name": "ArrivalDate",
+							"type": "String",
+							"value": "12/30/2020"
+						},
+						{
+							"ID": 1,
+							"name": "DepartureDate",
+							"type": "String",
+							"value": "12/26/2020"
+						},
+						{
+							"ID": 2,
+							"name": "RoomType",
+							"type": "String",
+							"value": "Suite"
+						},
+						{
+							"ID": 3,
+							"name": "NoOfRooms",
+							"type": "Integer",
+							"value": 2
+						},
+						{
+							"ID": 4,
+							"name": "TotalPrice",
+							"type": "Double",
+							"value": 500.98
+						},
+						{
+							"ID": 5,
+							"name": "PhotoFileName",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 6,
+							"name": "PhotoFileType",
+							"type": "String",
+							"value": "jpg"
+						},
+						{
+							"ID": 7,
+							"name": "PhotoFileSize",
+							"type": "Double",
+							"value": 0.5
+						},
+						{
+							"ID": 8,
+							"name": "DescriptionNat",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 9,
+							"name": "DescriptionInt",
+							"type": "String",
+							"value": "EMPTY"
+						},
+						{
+							"ID": 10,
+							"name": "Name",
+							"type": "String",
+							"value": "asdfg+"
+						}
+
+					],
+					"conditionResults": [
+						{
+							"condition": 0,
+							"result": true
+						},
+						{
+							"condition": 1,
+							"result": true
+						},
+						{
+							"condition": 2,
+							"result": true
+						},
+						{
+							"condition": 3,
+							"result": true
+						},
+						{
+							"condition": 4,
+							"result": true
+						},
+						{
+							"condition": 5,
+							"result": true
+						},
+						{
+							"condition": 6,
+							"result": true
+						},
+						{
+							"condition": 7,
+							"result": "-"
+						},
+						{
+							"condition": 8,
+							"result": "-"
+						},
+						{
+							"condition": 9,
+							"result": "-"
+						},
+						{
+							"condition": 10,
+							"result": true
+						},
+						{
+							"condition": 11,
+							"result": "-"
+						},
+						{
+							"condition": 12,
+							"result": true
+						},
+						{
+							"condition": 13,
+							"result": "-"
+						},
+						{
+							"condition": 14,
+							"result": false
+						}
+					],
+					"actionIDs": [0,2]
+				}
+
+			]
+		}
+	]
+}

@@ -1,0 +1,2 @@
+The number of FCESs is the same: 2
+The number of events is the same: 6

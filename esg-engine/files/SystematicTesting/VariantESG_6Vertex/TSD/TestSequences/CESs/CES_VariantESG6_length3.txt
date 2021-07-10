@@ -1,0 +1,13 @@
+58: d, a, d, a, c, d, a, f, e, a, d, c, d, c, f, e, c, d, f, e, d, a, a, d, f, b, a, d, b, a, c, f, b, a, f, b, a, a, c, e, a, c, c, d, b, a, b, a, f, e, f, e, b, a, c, b, a, c 
+6: d, c, e, c, f, e 
+22: d, f, e, c, e, d, c, c, f, e, c, c, e, f, b, a, c, e, b, a, c, e 
+16: a, d, e, a, f, e, c, b, a, c, c, c, b, a, c, c 
+4: d, b, a, d 
+5: a, c, d, e, c 
+31: f, e, a, a, f, e, a, b, a, d, e, d, f, e, d, b, a, d, e, f, e, d, e, b, a, d, c, b, a, d, c 
+4: a, f, e, d 
+7: a, a, a, b, a, c, d 
+2: d, e 
+7: b, a, d, a, b, a, d 
+4: a, b, a, d 
+4: f, b, a, d 

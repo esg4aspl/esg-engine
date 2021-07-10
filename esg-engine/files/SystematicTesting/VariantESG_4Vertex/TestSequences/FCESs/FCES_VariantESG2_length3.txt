@@ -1,0 +1,51 @@
+3 : b, d, d
+3 : b, d, a
+3 : b, d, b
+3 : b, d, c
+3 : b, a, d
+3 : b, a, a
+3 : b, a, b
+3 : b, a, c
+3 : d, a, d
+3 : d, a, a
+3 : d, a, b
+3 : d, a, c
+3 : d, b, a
+3 : d, b, b
+3 : d, b, c
+3 : d, b, d
+2 : d, b
+3 : d, c, d
+3 : d, c, a
+3 : d, c, b
+3 : d, c, c
+4 : b, a, b, a
+4 : b, a, b, b
+4 : b, a, b, c
+4 : b, a, b, d
+2 : a, b
+4 : d, c, d, d
+4 : d, c, d, a
+4 : d, c, d, b
+4 : d, c, d, c
+2 : c, d
+4 : b, a, c, d
+4 : b, a, c, a
+4 : b, a, c, b
+4 : b, a, c, c
+2 : a, c
+4 : d, c, b, a
+4 : d, c, b, b
+4 : d, c, b, c
+4 : d, c, b, d
+2 : c, b
+4 : d, c, c, d
+4 : d, c, c, a
+4 : d, c, c, b
+4 : d, c, c, c
+2 : c, c
+4 : b, a, d, d
+4 : b, a, d, a
+4 : b, a, d, b
+4 : b, a, d, c
+2 : a, d

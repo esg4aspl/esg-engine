@@ -1,0 +1,10 @@
+3 : a, b, b
+3 : a, b, a
+2 : a, b
+3 : a, a, a
+3 : a, a, b
+3 : b, a, a
+3 : b, a, b
+3 : b, b, b
+3 : b, b, a
+2 : b, b

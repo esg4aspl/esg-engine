@@ -1,0 +1,4 @@
+11: b, c, d, c, d, f, b, c, b, c, d 
+10: b, f, b, f, a, b, c, d, f, a 
+24: b, f, c, d, f, c, b, f, d, c, b, f, e, f, e, a, b, f, e, f, b, f, e, a 
+17: b, f, e, f, a, b, f, e, f, c, d, f, d, f, e, f, d

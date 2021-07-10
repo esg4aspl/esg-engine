@@ -1,0 +1,45 @@
+3 : a, c, c
+3 : a, c, d
+3 : a, c, a
+3 : a, c, b
+2 : a, c
+3 : a, d, c
+3 : a, d, d
+3 : a, d, a
+3 : a, d, b
+3 : a, a, c
+3 : a, a, d
+3 : a, a, b
+3 : a, a, a
+3 : b, c, c
+3 : b, c, d
+3 : b, c, a
+3 : b, c, b
+2 : b, c
+3 : b, d, c
+3 : b, d, d
+3 : b, d, a
+3 : b, d, b
+3 : b, b, c
+3 : b, b, d
+3 : b, b, a
+3 : b, b, b
+2 : b, b
+3 : c, d, c
+3 : c, d, d
+3 : c, d, a
+3 : c, d, b
+3 : c, a, c
+3 : c, a, d
+3 : c, a, b
+3 : c, a, a
+3 : c, b, c
+3 : c, b, d
+3 : c, b, a
+3 : c, b, b
+2 : c, b
+3 : d, b, c
+3 : d, b, d
+3 : d, b, a
+3 : d, b, b
+2 : d, b

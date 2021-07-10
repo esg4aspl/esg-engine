@@ -1,0 +1,8 @@
+3: c, d, a
+2: c, d
+6: c, f, a, b, f, a
+2: c, f
+2: b, f
+9: b, e, b, a, e, a, b, e, a
+4: b, a, b, a
+23: c, d, e, d, a, e, d, e, b, f, a, e, d, e, a, e, b, e, d, a, b, e, d

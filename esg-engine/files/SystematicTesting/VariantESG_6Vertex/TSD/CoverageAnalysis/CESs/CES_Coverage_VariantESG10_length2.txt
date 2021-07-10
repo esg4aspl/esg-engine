@@ -1,0 +1,25 @@
+Number of nodes: 8
+Number of edges: 23
+Number of CESs: 3
+Number of events: 26
+Number of uncovered edges: 0
+Coverage: 100.0
+Number of coverage	Edge
+3	d, a
+1	a, d
+1	d, e
+1	e, d
+3	e, f
+1	f, e
+1	d, f
+1	f, d
+1	a, e
+1	e, b
+3	b, e
+1	a, b
+1	f, b
+1	c, b
+1	e, c
+1	c, d
+1	f, c
+0	Number of uncovered edges 

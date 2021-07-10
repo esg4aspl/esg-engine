@@ -1,0 +1,3 @@
+The number of CESs is the same: 7
+The number of events is the same: 33
+The coverage is the same: 100.0

@@ -1,0 +1,9 @@
+5: f, e, b, e, f
+24: f, d, a, e, d, a, e, c, d, e, d, f, b, e, d, e, c, b, e, d, a, b, e, c
+2: f, c
+2: f, b
+2: d, f
+5: d, e, b, e, b
+5: d, a, d, a, b
+2: c, b
+37: c, d, a, e, b, e, f, e, f, e, d, a, e, f, d, f, e, c, d, a, d, f, d, e, f, c, d, f, c, b, e, d, a, d, e, f, b

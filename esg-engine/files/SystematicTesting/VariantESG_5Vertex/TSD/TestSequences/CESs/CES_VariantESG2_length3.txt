@@ -1,0 +1,10 @@
+14: e, e, e, c, c, c, b, d, b, d, c, c, e, e 
+4: a, d, b, d 
+22: c, c, a, d, c, b, d, c, e, c, b, d, c, a, b, d, c, a, e, e, c, e 
+5: e, c, a, a, d 
+5: c, b, d, c, a 
+2: c, e 
+5: c, a, a, b, d 
+3: a, b, d 
+6: a, e, c, a, a, e 
+3: a, a, a 

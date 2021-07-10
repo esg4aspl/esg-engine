@@ -1,0 +1,83 @@
+{
+  "definitions": {}, 
+  "$schema": "SimpleESG Schema", 
+  "$id": "Simple ESG v1", 
+  "type": "object", 
+  "required": [
+    "ID", 
+    "name", 
+    "vertices", 
+    "edges"
+  ], 
+  "properties": {
+    "ID": {
+      "type": "integer", 
+      "examples": [
+        0
+      ]
+    }, 
+    "name": {
+      "type": "string",  
+      "examples": [
+        "SimpleESG"
+      ], 
+      "pattern": "^(.*)$"
+    }, 
+    "vertices": {
+      "type": "array", 
+      "items": {
+        "type": "object", 
+        "required": [
+          "ID", 
+          "event"
+        ], 
+        "properties": {
+          "ID": {
+            "type": "integer", 
+            "examples": [
+              0
+            ]
+          }, 
+          "event": {
+            "type": "string", 
+            "examples": [
+              "["
+            ], 
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }, 
+    "edges": {
+      "type": "array", 
+      "items": {
+        "type": "object",  
+        "required": [
+          "ID", 
+          "source", 
+          "target"
+        ], 
+        "properties": {
+          "ID": {
+            "type": "integer", 
+            "examples": [
+              0
+            ]
+          }, 
+          "source": {
+            "type": "integer",  
+            "examples": [
+              0
+            ]
+          }, 
+          "target": {
+            "type": "integer",  
+            "examples": [
+              1
+            ]
+          }
+        }
+      }
+    }
+  }
+}

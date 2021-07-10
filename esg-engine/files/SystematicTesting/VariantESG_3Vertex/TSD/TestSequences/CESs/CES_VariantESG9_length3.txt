@@ -1,0 +1,4 @@
+16: b, c, c, c, a, a, a, c, c, b, c, a, c, a, c, b 
+4: b, c, b, c 
+4: b, c, a, c 
+3: b, c, c 

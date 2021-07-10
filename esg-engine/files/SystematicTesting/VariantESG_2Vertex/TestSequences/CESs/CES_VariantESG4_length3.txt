@@ -1,0 +1,4 @@
+3 : b, b, a
+2 : b, a
+6 : a, a, a, b, a, a
+7 : a, b, b, b, a, b, a

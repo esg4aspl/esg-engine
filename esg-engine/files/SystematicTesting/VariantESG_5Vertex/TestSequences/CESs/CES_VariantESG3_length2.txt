@@ -1,0 +1,2 @@
+3 : d, b, c
+17 : a, d, a, b, c, c, e, d, b, e, c, d, e, b, d, d, e

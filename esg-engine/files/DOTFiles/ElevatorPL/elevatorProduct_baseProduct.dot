@@ -1,0 +1,21 @@
+digraph G {
+rankdir = LR
+label = "elevatorProduct_baseProduct";
+esg1_vertex0 -> esg1_vertex4;
+esg1_vertex5 -> esg1_vertex6;
+esg1_vertex6 -> esg1_vertex3;
+esg1_vertex4 -> esg1_vertex2;
+esg1_vertex2 -> esg1_vertex1;
+esg1_vertex4 -> esg1_vertex1;
+esg1_vertex1 -> esg1_vertex5;
+esg1_vertex0 -> esg1_vertex1;
+esg1_vertex5 -> esg1_vertex5;
+esg1_vertex4 -> esg1_vertex4;
+esg1_vertex0 [label = "["]
+esg1_vertex4 [label = "push button to call elevator"]
+esg1_vertex5 [label = "press target floor button"]
+esg1_vertex6 [label = "leave elevator"]
+esg1_vertex3 [label = "]"]
+esg1_vertex2 [label = "wait leaving people"]
+esg1_vertex1 [label = "enter elevator"]
+}

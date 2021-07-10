@@ -1,0 +1,19 @@
+2 : a, a
+2 : a, e
+2 : d, d
+2 : d, e
+1 : d
+3 : a, b, a
+3 : a, b, d
+3 : a, b, b
+3 : a, b, c
+1 : b
+3 : a, c, a
+3 : a, c, d
+3 : a, c, c
+3 : a, c, e
+1 : c
+4 : a, b, e, a
+4 : a, b, e, d
+4 : a, b, e, e
+1 : e

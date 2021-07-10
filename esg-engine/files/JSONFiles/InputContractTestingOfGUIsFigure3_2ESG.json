@@ -1,0 +1,91 @@
+{
+	"ID" : 2,
+	"name" : "Paper: Input Contract Testing of GUIs Figure: 2 ",
+	"vertices" : [
+					{
+									"ID" : 0,
+									"event" : "["
+					},
+					{
+									"ID" : 1,
+									"event" : "xa"
+					},
+					{
+									"ID" : 2,
+									"event" : "ab"
+					},
+					{
+									"ID" : 3,
+									"event" : "ac"
+					},
+					{
+									"ID" : 4,
+									"event" : "bc"
+					},
+					{
+									"ID" : 5,
+									"event" : "bz"
+					},
+					{
+									"ID" : 6,
+									"event" : "cb"
+					},
+					{
+									"ID" : 7,
+									"event" : "]"
+					}
+									 ],
+	"edges" : [
+					{
+									"ID" : 0,
+									"source" : 0,
+									"target" : 1
+					},
+					{
+									"ID" : 1,
+									"source" : 1,
+									"target" : 2
+					},
+					{
+									"ID" : 2,
+									"source" : 1,
+									"target" : 3
+					},
+					{
+									"ID" : 3,
+									"source" : 2,
+									"target" : 4
+					},
+					{
+									"ID" : 4,
+									"source" : 2,
+									"target" : 5
+					},
+					{
+									"ID" : 5,
+									"source" : 3,
+									"target" : 6
+					},
+					{
+									"ID" : 6,
+									"source" : 6,
+									"target" : 4
+					},
+					{
+									"ID" : 7,
+									"source" : 6,
+									"target" : 5
+					},
+					{
+									"ID" : 8,
+									"source" : 4,
+									"target" : 6
+					},
+					{
+									"ID" : 9,
+									"source" : 5,
+									"target" : 7
+					}
+				 ]
+
+}

@@ -1,0 +1,10 @@
+35: d, a, b, e, e, e, c, b, e, c, e, e, b, e, b, a, b, a, c, b, a, d, a, c, e, c, d, a, d, a, b, b, e, a, b 
+9: c, b, b, a, b, e, c, a, b 
+5: c, e, b, b, b 
+12: e, e, a, c, d, a, c, a, c, c, c, b 
+12: e, c, c, e, a, d, a, c, c, d, a, b 
+4: c, d, a, b 
+2: e, b 
+5: c, a, d, a, b 
+3: e, a, b 
+4: c, c, a, b 

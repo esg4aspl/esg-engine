@@ -1,0 +1,34 @@
+3 : a, b, b
+3 : a, b, a
+3 : a, b, c
+3 : a, b, d
+3 : a, a, b
+3 : a, a, c
+3 : a, a, d
+2 : a, a
+3 : c, b, b
+3 : c, b, a
+3 : c, b, c
+3 : c, b, d
+3 : c, c, b
+3 : c, c, a
+3 : c, c, c
+3 : c, c, d
+3 : d, c, b
+3 : d, c, a
+3 : d, c, c
+3 : d, c, d
+3 : d, d, b
+3 : d, d, a
+3 : d, d, c
+3 : d, d, d
+4 : a, b, c, b
+4 : a, b, c, a
+4 : a, b, c, c
+4 : a, b, c, d
+2 : b, c
+4 : a, b, d, b
+4 : a, b, d, a
+4 : a, b, d, c
+4 : a, b, d, d
+2 : b, d

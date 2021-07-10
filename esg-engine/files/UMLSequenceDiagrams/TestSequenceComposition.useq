@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.3" icons="true" automaticImage="PNG" generate-combined-fragments="true">  
+  <object id="1" language="java" name="tr.edu.iyte.esg.testsequencecomposition.FullTestSequenceComposer" project="ESG" 
+    file="/ESG/src/tr/edu/iyte/esg/testsequencecomposition/FullTestSequenceComposer.java" binary="false" 
+    label="fullTestSequenceComposer" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="51" y="0"/>    
+    <execution id="2">      
+      <position height="76" width="0" x="0" y="77"/>    
+    </execution>    
+    <execution id="4">      
+      <position height="19" width="0" x="0" y="115"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="76" width="0" x="0" y="183"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="19" width="0" x="0" y="221"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="76" width="0" x="0" y="292"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="19" width="0" x="0" y="330"/>    
+    </execution>  
+  </object>  
+  <message id="3" 
+    operation="FullTestSequenceComposer(java.util.Map&lt;java.lang.String,java.util.Set&lt;tr.edu.iyte.esg.testgeneration.EventSequence&gt;&gt;,java.util.Set&lt;java.lang.String&gt;,java.util.Set&lt;java.lang.String&gt;,int)" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="compose():void" asynchronous="false">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="9" operation="getCompleteSequences():java.util.Set&lt;EventSequence&gt;" asynchronous="false">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>
+</sequence-diagram>

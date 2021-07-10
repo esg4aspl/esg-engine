@@ -1,0 +1,5 @@
+27: b, e, c, d, b, e, a, b, e, d, e, d, b, c, d, e, c, b, e, d, e, a, b, c, b, c, b 
+3: b, c, b 
+3: c, d, b 
+2: c, b 
+2: a, b 

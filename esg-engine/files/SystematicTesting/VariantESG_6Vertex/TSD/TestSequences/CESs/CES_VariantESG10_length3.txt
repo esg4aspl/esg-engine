@@ -1,0 +1,9 @@
+39: d, f, e, d, a, e, d, a, d, a, d, e, d, a, e, b, e, d, e, d, a, e, f, e, c, b, e, c, d, f, d, f, b, e, b, e, f, e, b 
+6: d, a, d, f, c, b 
+9: f, e, f, d, a, b, e, d, f 
+4: f, d, e, c 
+2: f, b 
+5: c, b, e, f, b 
+13: d, e, b, e, f, c, d, a, e, c, d, e, f 
+2: f, c 
+4: c, d, a, b

@@ -1,0 +1,9 @@
+6: d, c, b, e, c, b 
+3: a, c, b 
+6: a, b, e, b, e, c 
+3: a, d, c 
+3: d, a, c 
+4: d, b, e, b 
+3: d, a, b 
+4: d, a, d, a 
+3: a, d, b 

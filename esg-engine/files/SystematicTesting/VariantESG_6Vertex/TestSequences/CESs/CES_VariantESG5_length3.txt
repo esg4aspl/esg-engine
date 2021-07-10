@@ -1,0 +1,9 @@
+2: f, e
+10: f, c, b, e, a, f, a, e, b, e
+5: f, a, d, b, e
+12: e, d, b, c, b, d, b, e, a, e, a, f
+5: e, b, d, b, e
+3: e, a, e
+8: b, e, d, b, e, b, c, e
+8: b, d, b, e, a, d, b, e
+47: b, c, d, b, d, b, c, b, c, e, d, b, e, a, f, e, d, b, e, a, f, a, f, e, b, e, a, e, d, b, c, e, b, e, a, f, c, e, a, f, e, a, f, c, d, b, e
