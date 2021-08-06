@@ -11,6 +11,11 @@ public class VertexRefinedByESG extends Vertex {
 
 	public ESG getSubESG() {
 		return subESG;
-	}	
+	}
+	
+	@Override
+	public String toString() {
+		return subESG.toString();
+	}
 
 }

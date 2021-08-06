@@ -115,6 +115,15 @@ public class ESG {
 		}
 		return null;
 	}
+	
+	public Vertex getVertexByEventName(String eventName) {
+		for (Vertex vertex : vertexList) {
+			if (vertex.getEvent().getName().equals(eventName))
+				return vertex;
+		}
+		return null;
+		
+	}
 
 	public Vertex getPseudoStartVertex() {
 		for (Vertex vertex : vertexList) {

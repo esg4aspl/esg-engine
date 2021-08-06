@@ -16,8 +16,6 @@ import tr.edu.iyte.esg.model.validation.ValidationResult;
 public class MXEFileToModelApp {
 
 	public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException {
-		// TODO Auto-generated method stub
-
 		String fileName = "files/Cases/ElevatorPL/overloaded.mxe";
 		ESG ESG = null;
 		try {

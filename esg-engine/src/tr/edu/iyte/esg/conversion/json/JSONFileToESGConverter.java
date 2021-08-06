@@ -17,6 +17,7 @@ import tr.edu.iyte.esg.model.EventSimple;
 import tr.edu.iyte.esg.model.Model;
 import tr.edu.iyte.esg.model.Vertex;
 import tr.edu.iyte.esg.model.VertexRefinedByDT;
+import tr.edu.iyte.esg.model.VertexRefinedByESG;
 import tr.edu.iyte.esg.model.comparators.VertexComparator;
 import tr.edu.iyte.esg.model.decisiontable.Action;
 import tr.edu.iyte.esg.model.decisiontable.BooleanResult;
@@ -222,23 +223,34 @@ public class JSONFileToESGConverter {
 
 				String JSONEvent = JSONVertex.getString("event");
 				Event event = eventLookUp(ESG, JSONEvent);
-				//Vertex vertex = new VertexSimple(ESG.getNextVertexID(), event);
+				
 				int vertexID = JSONVertex.getInt("ID");
 				boolean isWithDecisionTable = false;
+				boolean isRefinedVertex = false;
 				try {
 					isWithDecisionTable = JSONVertex.getBoolean("decisionTable");
 				}catch(JSONException exception){
 					
 				}
-				Vertex vertex = null;
-				if(!isWithDecisionTable) {
-					vertex = new VertexSimple(vertexID, event);
-				}else {
-					vertex = new VertexRefinedByDT(vertexID, event);
+				try {
+					isRefinedVertex = JSONVertex.getBoolean("isRefinedVertex");
+				}catch(JSONException exception){
+					
 				}
-				
-				 
-				//System.out.println(vertex.toString());
+				Vertex vertex = null;
+				if(!isWithDecisionTable && !isRefinedVertex) {
+					vertex = new VertexSimple(vertexID, event);
+				}else if(isWithDecisionTable){
+					vertex = new VertexRefinedByDT(vertexID, event);
+				}else if(isRefinedVertex) {
+					try {
+						JSONObject subESGObject = JSONVertex.getJSONObject("subESG");
+						ESG subESG = parseJSONObjectForESGSimpleCreation(subESGObject);
+						vertex = new VertexRefinedByESG(vertexID, event, subESG);
+					}catch(JSONException exception){
+						
+					}
+				}
 				
 				/**
 				 * Vertex is added to ESG vertex list

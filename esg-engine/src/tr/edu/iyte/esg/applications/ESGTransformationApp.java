@@ -18,7 +18,7 @@ public class ESGTransformationApp {
 		String fileName = "files/Cases/BankAccountPL/bankAccountProduct-baseProduct.mxe";
 		ESG ESG = null;
 		try {
-			ESG = MXEFiletoESGConverter.parseMXEFileForESGSimpleCreation(fileName, "bankAccountProduct_baseProduct", 1);
+			ESG = MXEFiletoESGConverter.parseMXEFileForESGSimpleCreation(fileName, 1, "bankAccountProduct_baseProduct");
 		} catch (SAXException | IOException | ParserConfigurationException e) {
 
 			e.printStackTrace();

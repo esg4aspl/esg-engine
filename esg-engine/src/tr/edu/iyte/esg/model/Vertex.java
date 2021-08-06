@@ -28,6 +28,7 @@ public abstract class Vertex {
 		return false;
 	}
 	
+	@Override
 	public String toString() {
 		return getEvent().getName() + " ";
 	}
