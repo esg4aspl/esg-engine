@@ -1,0 +1,160 @@
+digraph G {
+rankdir = LR
+subgraph clusterLogin_subESG {
+label = Login_subESG
+color = "blue"
+label = "Login_subESG";
+esg1_vertex0 -> esg1_vertex1;
+esg1_vertex1 -> esg1_vertex3;
+esg1_vertex1 -> esg1_vertex2;
+esg1_vertex2 -> esg1_vertex3;
+esg1_vertex2 -> esg1_vertex4;
+esg1_vertex4 -> esg1_vertex5;
+esg1_vertex0 [label = "[", shape = "ellipse"]
+esg1_vertex1 [label = "User name Entered"]
+esg1_vertex1 [label = "User name Entered", shape = "ellipse"]
+esg1_vertex3 [label = "Show Error"]
+esg1_vertex2 [label = "Password Entered"]
+esg1_vertex2 [label = "Password Entered", shape = "ellipse"]
+esg1_vertex4 [label = "Login Successful"]
+esg1_vertex4 [label = "Login Successful", shape = "ellipse"]
+esg1_vertex5 [label = "]"]
+}
+subgraph clusterWithdraw_subESG {
+label = Withdraw_subESG
+color = "blue"
+label = "Withdraw_subESG";
+esg2_vertex0 -> esg2_vertex1;
+esg2_vertex1 -> esg2_vertex2;
+esg2_vertex2 -> esg2_vertex3;
+esg2_vertex2 -> esg2_vertex4;
+esg2_vertex4 -> esg2_vertex5;
+esg2_vertex0 [label = "[", shape = "ellipse"]
+esg2_vertex1 [label = "Withdraw Amount Entered"]
+esg2_vertex1 [label = "Withdraw Amount Entered", shape = "ellipse"]
+esg2_vertex2 [label = "Amount Confirmed"]
+esg2_vertex2 [label = "Amount Confirmed", shape = "ellipse"]
+esg2_vertex3 [label = "Show Error"]
+esg2_vertex4 [label = "Withdraw Successful"]
+esg2_vertex4 [label = "Withdraw Successful", shape = "ellipse"]
+esg2_vertex5 [label = "]"]
+}
+subgraph clusterDeposit_subESG {
+label = Deposit_subESG
+color = "blue"
+subgraph clusterI_subESG {
+label = "I_subESG";
+esg4_vertex0 -> esg4_vertex1;
+esg4_vertex1 -> esg4_vertex2;
+esg4_vertex2 -> esg4_vertex3;
+esg4_vertex2 -> esg4_vertex4;
+esg4_vertex4 -> esg4_vertex5;
+esg4_vertex0 [label = "[", shape = "ellipse"]
+esg4_vertex1 [label = "I1"]
+esg4_vertex1 [label = "I1", shape = "ellipse"]
+esg4_vertex2 [label = "I2"]
+esg4_vertex2 [label = "I2", shape = "ellipse"]
+esg4_vertex3 [label = "I3"]
+esg4_vertex4 [label = "I4"]
+esg4_vertex4 [label = "I4", shape = "ellipse"]
+esg4_vertex5 [label = "]"]
+}
+label = "Deposit_subESG";
+esg3_vertex0 -> esg3_vertex1;
+esg3_vertex1 -> esg3_vertex2;
+esg3_vertex1 -> esg3_vertex3;
+esg3_vertex2 -> esg3_vertex3;
+esg3_vertex2 -> esg3_vertex4;
+esg3_vertex4 -> esg3_vertex5;
+esg3_vertex0 [label = "[", shape = "ellipse"]
+esg3_vertex1 [label = "Money Entered"]
+esg3_vertex1 [label = "Money Entered", shape = "ellipse"]
+esg3_vertex2 [label = "Amount Confirmed"]
+esg3_vertex3 [label = "Show Error"]
+esg3_vertex2 [label = "Amount Confirmed", shape = "ellipse"]
+esg3_vertex4 [label = "I"]
+esg3_vertex4 [label = "I", shape = "doublecircle"]
+esg3_vertex5 [label = "]"]
+}
+subgraph cluster2AgeDecisionTable {
+label = "Table Properties"
+color = "red"
+n2[shape=none label=<<table border="0" cellborder="1" cellspacing="0">
+<tr>
+<td>C0</td>
+<td>age is type of integer AND age less than 150</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>age bigger than 0 OR age bigger than or eq. 15</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>biologicalState = ADOLESCENE AND age less than adolesceneLB</td>
+</tr>
+<tr>
+<td>A0</td>
+<td>Login</td>
+</tr>
+<tr>
+<td>A1</td>
+<td>OTP Verified</td>
+</tr>
+</table>>];
+}
+subgraph clusterAgeDecisionTable {
+label = DT_OTPVerified
+color = "blue"
+n1[shape=none label=<<table border="0" cellborder="1" cellspacing="0">
+<tr>
+<td>      -     </td>
+<td>     R0    </td>
+<td>     R1    </td>
+</tr>
+<tr>
+<td>    C0     </td>
+<td><i>      T    </i></td>
+<td><i>      T    </i></td>
+</tr>
+<tr>
+<td>    C1     </td>
+<td><i>      T    </i></td>
+<td><i>      F    </i></td>
+</tr>
+<tr>
+<td>    C2     </td>
+<td><i>      F    </i></td>
+<td><i>      F    </i></td>
+</tr>
+<tr>
+<td>    A0     </td>
+<td><i>      X    </i></td>
+<td>      -    </td>
+</tr>
+<tr>
+<td>    A1     </td>
+<td>      -    </td>
+<td><i>      X    </i></td>
+</tr>
+</table>>];
+}
+label = "refinedESG";
+esg0_vertex0 -> esg0_vertex1;
+esg0_vertex1 -> esg0_vertex2;
+esg0_vertex1 -> esg0_vertex3;
+esg0_vertex2 -> esg0_vertex4;
+esg0_vertex3 -> esg0_vertex4;
+esg0_vertex4 -> esg0_vertex5;
+esg0_vertex4 -> esg0_vertex1;
+esg0_vertex4 -> esg0_vertex4;
+esg0_vertex0 [label = "[", shape = "ellipse"]
+esg0_vertex1 [label = "Login"]
+esg0_vertex1 [label = "Login", shape = "doublecircle"]
+esg0_vertex2 [label = "Withdraw"]
+esg0_vertex3 [label = "Deposit"]
+esg0_vertex2 [label = "Withdraw", shape = "doublecircle"]
+esg0_vertex4 [label = "OTP Verified"]
+esg0_vertex3 [label = "Deposit", shape = "doublecircle"]
+esg0_vertex4 [label = "OTP Verified", shape = "tripleoctagon"]
+esg0_vertex5 [label = "]"]
+}

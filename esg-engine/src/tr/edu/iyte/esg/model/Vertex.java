@@ -1,14 +1,22 @@
 package tr.edu.iyte.esg.model;
 
-public abstract class Vertex {
+public abstract class Vertex implements Convertable {
 
 	final private int ID;
 	final protected Event event;
 	private int degree;
+	protected String color;
 	
 	public Vertex(int ID, Event event) {
 		this.ID = ID;
 		this.event = event;
+		degree = 0;
+	}
+	
+	public Vertex(int ID, Event event, String color) {
+		this.ID = ID;
+		this.event = event;
+		this.color = color;
 		degree = 0;
 	}
 

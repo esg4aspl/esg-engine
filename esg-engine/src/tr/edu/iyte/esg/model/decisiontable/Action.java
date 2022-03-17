@@ -26,10 +26,4 @@ public class Action {
 	public String toString() {
 		return actionEvent.getEvent().getName();
 	}
-
-
-
-	
-	
-	
 }

@@ -18,4 +18,16 @@ public class VertexRefinedByESG extends Vertex {
 		return subESG.toString();
 	}
 
+	public String getShape() {
+		return "\", shape = doublecircle";
+	}
+
+	public String getDotLanguageFormat() {
+		return event.getName() + " ";
+	}
+
+	@Override
+	public String getColor() {
+		return "turquoise";
+	}
 }
