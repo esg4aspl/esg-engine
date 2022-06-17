@@ -125,6 +125,16 @@ public class ESG {
 		
 	}
 
+	public Edge getEdgeBySourceEventNameTargetEventName(String source, String target) {
+		for (Edge edge : edgeList) {
+			if (edge.getSource().getEvent().getName().equals(source)
+					&& edge.getTarget().getEvent().getName().equals(target)) {
+				return edge;
+			}
+		}
+		return null;
+	}
+
 	public Vertex getPseudoStartVertex() {
 		for (Vertex vertex : vertexList) {
 			if (vertex.isPseudoStartVertex())
@@ -217,6 +227,7 @@ public class ESG {
 	public void removeEdge(Edge edge) {
 
 		edgeList.remove(edge);
+		System.out.println(edge.toString());
 		Set<Vertex> targetSet = null;
 
 		edge.getSource().inDegree();
@@ -255,10 +266,10 @@ public class ESG {
 	}
 
 	public void addDecisionTable(Vertex vertex, DecisionTable decisionTable) {
-		decisionTableMap.put(vertex,decisionTable);
+		decisionTableMap.put(vertex, decisionTable);
 	}
 
-	public void removeDecisionTable(Vertex vertex,DecisionTable decisionTable) {
+	public void removeDecisionTable(Vertex vertex, DecisionTable decisionTable) {
 		decisionTableMap.remove(vertex, decisionTable);
 	}
 
@@ -267,7 +278,6 @@ public class ESG {
 			addVertex(vertex);
 		}
 	}
-
 
 	public void addEdgeList(List<Edge> edgeList) {
 		for (Edge edge : edgeList) {
@@ -280,7 +290,6 @@ public class ESG {
 			addEvent(event);
 		}
 	}
-
 
 	private String vertexListToString() {
 		String vertexListToString = "Vertex List as (ID)Event: \n";
