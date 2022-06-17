@@ -1,0 +1,153 @@
+{
+	"ID": 0,
+	"name":"refinedESG",
+	"vertices":[
+		{
+			"ID": 0,
+			"event":"["
+		},
+		{
+				"ID": 1,
+				"event":"Step 2 (DE)",
+				"isRefinedVertex" : true,
+				"subESG": {
+					"ID": 1,
+					"name": "Step 2 (DE)_subESG",
+					"vertices":[
+					{
+						"ID": 0,
+						"event":"["
+					}, 
+					{
+						"ID": 1,
+						"event":"A",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 2,
+						"event":"B",
+						"isRefinedVertex" : false,
+						"color": "black"
+					}
+							
+					,{
+						"ID": 3,
+						"event":"]"
+					}
+					],
+					"edges":[
+					{
+						"ID": 0,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 1,
+						"source": 1,
+						"target": 2,
+						"color":"black"			
+					}
+					,{
+						"ID": 2,
+						"source": 2,
+						"target": 3,
+						"color":"black"						
+					}
+					]
+					}
+				},
+		{
+			"ID": 2,
+			"event":"Edit Capacities",
+			"isRefinedVertex" : false,
+			"color": "black"
+		},
+		{
+			"ID": 3,
+			"event":"Click Accept",
+			"isRefinedVertex" : false,
+			"color": "black"
+		}
+		
+		,{
+			"ID": 4,
+			"event":"]"
+		}
+		],
+		"edges":[
+		{
+			"ID": 0,
+			"source": 0,
+			"target": 1,
+			"color":"black"			
+		},
+		{
+			"ID": 1,
+			"source": 0,
+			"target": 2,
+			"color":"black"			
+		},
+		{
+			"ID": 2,
+			"source": 1,
+			"target": 2,
+			"color":"black"			
+		},
+		{
+			"ID": 3,
+			"source": 2,
+			"target": 1,
+			"color":"black"			
+		},
+		{
+			"ID": 4,
+			"source": 1,
+			"target": 3,
+			"color":"black"			
+		},
+		{
+			"ID": 5,
+			"source": 3,
+			"target": 1,
+			"color":"black"			
+		},
+		{
+			"ID": 6,
+			"source": 1,
+			"target": 4,
+			"color":"black"			
+		},
+		{
+			"ID": 7,
+			"source": 2,
+			"target": 3,
+			"color":"black"			
+		},
+		{
+			"ID": 8,
+			"source": 3,
+			"target": 2,
+			"color":"black"			
+		},
+		{
+			"ID": 9,
+			"source": 2,
+			"target": 4,
+			"color":"black"			
+		},
+		{
+			"ID": 10,
+			"source": 2,
+			"target": 2,
+			"color":"black"			
+		}
+		,{
+			"ID": 11,
+			"source": 3,
+			"target": 4,
+			"color":"black"						
+		}
+		]
+}

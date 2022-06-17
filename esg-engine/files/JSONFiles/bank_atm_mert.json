@@ -1,0 +1,624 @@
+{
+	"ID": 0,
+	"name":"refinedESG",
+	"vertices":[
+		{
+			"ID": 0,
+			"event":"[",
+			"isRefinedVertex" : false,
+			"color": "black"
+		},
+		{
+				"ID": 1,
+				"event":"Login",
+				"isRefinedVertex" : true,
+				"subESG": {
+					"ID": 1,
+					"name": "Login_subESG",
+					"vertices":[
+					{
+						"ID": 0,
+						"event":"[",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 1,
+						"event":"Username Entered",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 2,
+						"event":"Password Entered",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 3,
+						"event":"Correct Password",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 4,
+						"event":"Wrong Password",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 5,
+						"event":"Show Error",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 6,
+						"event":"Card Blocked",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 7,
+						"event":"Card Retained",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 8,
+						"event":"]",
+						"isRefinedVertex" : false,
+						"color": "black"
+					}
+							
+					],
+					"edges":[
+					{
+						"ID": 0,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 1,
+						"source": 1,
+						"target": 2,
+						"color":"black"			
+					},
+					{
+						"ID": 2,
+						"source": 2,
+						"target": 3,
+						"color":"black"			
+					},
+					{
+						"ID": 3,
+						"source": 2,
+						"target": 4,
+						"color":"black"			
+					},
+					{
+						"ID": 4,
+						"source": 4,
+						"target": 5,
+						"color":"black"			
+					},
+					{
+						"ID": 5,
+						"source": 5,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 6,
+						"source": 3,
+						"target": 8,
+						"color":"black"			
+					},
+					{
+						"ID": 7,
+						"source": 4,
+						"target": 6,
+						"color":"black"			
+					},
+					{
+						"ID": 8,
+						"source": 6,
+						"target": 7,
+						"color":"black"			
+					},
+					{
+						"ID": 9,
+						"source": 7,
+						"target": 8,
+						"color":"black"			
+					}
+					]
+					}
+				},
+		{
+				"ID": 2,
+				"event":"Withdraw",
+				"isRefinedVertex" : true,
+				"subESG": {
+					"ID": 2,
+					"name": "Withdraw_subESG",
+					"vertices":[
+					{
+						"ID": 0,
+						"event":"[",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 1,
+						"event":"Amount Entered",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 2,
+						"event":"Amount Confirmed",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 3,
+						"event":"Balance Updated",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 4,
+						"event":"Session Refreshed",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 5,
+						"event":"Amount Invalid",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 6,
+						"event":"Show Error",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 7,
+						"event":"]",
+						"isRefinedVertex" : false,
+						"color": "black"
+					}
+							
+					],
+					"edges":[
+					{
+						"ID": 0,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 1,
+						"source": 1,
+						"target": 2,
+						"color":"black"			
+					},
+					{
+						"ID": 2,
+						"source": 2,
+						"target": 3,
+						"color":"black"			
+					},
+					{
+						"ID": 3,
+						"source": 3,
+						"target": 4,
+						"color":"black"			
+					},
+					{
+						"ID": 4,
+						"source": 4,
+						"target": 7,
+						"color":"black"			
+					},
+					{
+						"ID": 5,
+						"source": 1,
+						"target": 5,
+						"color":"black"			
+					},
+					{
+						"ID": 6,
+						"source": 5,
+						"target": 6,
+						"color":"black"			
+					},
+					{
+						"ID": 7,
+						"source": 6,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 8,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 9,
+						"source": 6,
+						"target": 7,
+						"color":"black"			
+					}
+					]
+					}
+				},
+		{
+				"ID": 3,
+				"event":"Deposit",
+				"isRefinedVertex" : true,
+				"subESG": {
+					"ID": 3,
+					"name": "Deposit_subESG",
+					"vertices":[
+					{
+						"ID": 0,
+						"event":"[",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 1,
+						"event":"Amount Entered",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 2,
+						"event":"Amount Confirmed",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 3,
+						"event":"Balance Updated",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 4,
+						"event":"Session Refreshed",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 5,
+						"event":"Amount Invalid",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 6,
+						"event":"Show Error",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 7,
+						"event":"]",
+						"isRefinedVertex" : false,
+						"color": "black"
+					}
+							
+					],
+					"edges":[
+					{
+						"ID": 0,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 1,
+						"source": 1,
+						"target": 2,
+						"color":"black"			
+					},
+					{
+						"ID": 2,
+						"source": 2,
+						"target": 3,
+						"color":"black"			
+					},
+					{
+						"ID": 3,
+						"source": 3,
+						"target": 4,
+						"color":"black"			
+					},
+					{
+						"ID": 4,
+						"source": 4,
+						"target": 7,
+						"color":"black"			
+					},
+					{
+						"ID": 5,
+						"source": 1,
+						"target": 5,
+						"color":"black"			
+					},
+					{
+						"ID": 6,
+						"source": 5,
+						"target": 6,
+						"color":"black"			
+					},
+					{
+						"ID": 7,
+						"source": 6,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 8,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 9,
+						"source": 6,
+						"target": 7,
+						"color":"black"			
+					}
+					]
+					}
+				},
+		{
+				"ID": 4,
+				"event":"Print Bill",
+				"isRefinedVertex" : true,
+				"subESG": {
+					"ID": 4,
+					"name": "Print Bill_subESG",
+					"vertices":[
+					{
+						"ID": 0,
+						"event":"[",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 1,
+						"event":"Bill Requested",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 2,
+						"event":"Bill Printed",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 3,
+						"event":"Email sent",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 4,
+						"event":"SMS sent",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 5,
+						"event":"Show Error",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 6,
+						"event":"]",
+						"isRefinedVertex" : false,
+						"color": "black"
+					}
+							
+					],
+					"edges":[
+					{
+						"ID": 0,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 1,
+						"source": 1,
+						"target": 2,
+						"color":"black"			
+					},
+					{
+						"ID": 2,
+						"source": 2,
+						"target": 3,
+						"color":"black"			
+					},
+					{
+						"ID": 3,
+						"source": 2,
+						"target": 4,
+						"color":"black"			
+					},
+					{
+						"ID": 4,
+						"source": 1,
+						"target": 5,
+						"color":"black"			
+					},
+					{
+						"ID": 5,
+						"source": 4,
+						"target": 6,
+						"color":"black"			
+					},
+					{
+						"ID": 6,
+						"source": 5,
+						"target": 6,
+						"color":"black"			
+					},
+					{
+						"ID": 7,
+						"source": 3,
+						"target": 6,
+						"color":"black"			
+					}
+					]
+					}
+				},
+		{
+				"ID": 5,
+				"event":"Logout",
+				"isRefinedVertex" : true,
+				"subESG": {
+					"ID": 5,
+					"name": "Logout_subESG",
+					"vertices":[
+					{
+						"ID": 0,
+						"event":"[",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 1,
+						"event":"Logout Requested",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 2,
+						"event":"Clear Session",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 3,
+						"event":"Eject Card",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 4,
+						"event":"Show Message",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 5,
+						"event":"]",
+						"isRefinedVertex" : false,
+						"color": "black"
+					}
+							
+					],
+					"edges":[
+					{
+						"ID": 0,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 1,
+						"source": 1,
+						"target": 2,
+						"color":"black"			
+					},
+					{
+						"ID": 2,
+						"source": 2,
+						"target": 3,
+						"color":"black"			
+					},
+					{
+						"ID": 3,
+						"source": 3,
+						"target": 4,
+						"color":"black"			
+					},
+					{
+						"ID": 4,
+						"source": 4,
+						"target": 5,
+						"color":"black"			
+					}
+					]
+					}
+				},
+		{
+			"ID": 6,
+			"event":"]",
+			"isRefinedVertex" : false,
+			"color": "black"
+		}
+	],
+		"edges":[
+		{
+			"ID": 0,
+			"source": 0,
+			"target": 1,
+			"color":"black"			
+		},
+		{
+			"ID": 0,
+			"source": 0,
+			"target": 1,
+			"color":"black"			
+		},
+		{
+			"ID": 1,
+			"source": 1,
+			"target": 2,
+			"color":"black"			
+		},
+		{
+			"ID": 2,
+			"source": 1,
+			"target": 3,
+			"color":"black"			
+		},
+		{
+			"ID": 3,
+			"source": 2,
+			"target": 4,
+			"color":"black"			
+		},
+		{
+			"ID": 4,
+			"source": 3,
+			"target": 4,
+			"color":"black"			
+		},
+		{
+			"ID": 5,
+			"source": 4,
+			"target": 5,
+			"color":"black"			
+		},
+		{
+			"ID": 6,
+			"source": 5,
+			"target": 6,
+			"color":"black"			
+		}
+		]
+}

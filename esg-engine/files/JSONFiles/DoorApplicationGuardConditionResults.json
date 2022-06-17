@@ -1,0 +1,21 @@
+{
+   "guardConditions" : [
+   {
+   "ID":0,
+   "conditionName":"door_is_opened",
+   "result":false,
+   "edgesToBeRemoved":[
+                        "[->close"
+                     ]
+   },   
+   {
+   "ID":1,
+   "conditionName":"door_is_locked",
+   "result":false,
+   "edgesToBeRemoved":[
+                        "close->unlock"
+                     ]
+   }
+   ]
+}
+      
