@@ -23,18 +23,5 @@ public class VertexRefinedByDT extends Vertex {
 		return decisionTable;
 	}
 
-	public String getShape() {
-		return "\", shape = tripleoctagon";
-	}
-
-	@Override
-	public String getDotLanguageFormat() {
-		return super.toString();
-	}
-
-	@Override
-	public String getColor() {
-		return "purple";
-	}
 
 }

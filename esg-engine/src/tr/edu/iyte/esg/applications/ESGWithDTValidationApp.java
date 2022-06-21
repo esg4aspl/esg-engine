@@ -96,21 +96,21 @@ public class ESGWithDTValidationApp {
 		expr6 = new Expression(decisionTable.getNextExpressionID(),"age < adultLB");
 		
 		condition0 = new Condition(0);
-		condition0.addEvaluable(expr0);
+		condition0.addExpression(expr0);
 		
 		condition1 = new Condition(1);
-		condition1.addEvaluable(expr1);
+		condition1.addExpression(expr1);
 		
 		condition2 = new Condition(2);
-		condition2.addEvaluable(expr2);
+		condition2.addExpression(expr2);
 		
 		condition3 = new Condition(3);
-		condition3.addEvaluable(expr3);
-		condition3.addEvaluable(expr4);
+		condition3.addExpression(expr3);
+		condition3.addExpression(expr4);
 		
 		condition4 = new Condition(4);
-		condition4.addEvaluable(expr5);
-		condition4.addEvaluable(expr6);
+		condition4.addExpression(expr5);
+		condition4.addExpression(expr6);
 	}
 	
 	private static void initializeActions() {
