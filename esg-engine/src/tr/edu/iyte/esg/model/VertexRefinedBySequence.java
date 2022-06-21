@@ -23,4 +23,17 @@ public class VertexRefinedBySequence extends Vertex {
 		return (sequence.getSize()==1) && 
 				(sequence.getElement(0).isPseudoEndVertex());
 	}
+	
+	public String getShape() {
+		return "\", shape = ellipse";
+	}
+
+	public String getDotLanguageFormat() {
+		return super.toString();
+	}
+
+	@Override
+	public String getColor() {
+		return "black";
+	}
 }

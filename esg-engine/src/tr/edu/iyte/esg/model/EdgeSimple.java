@@ -8,4 +8,12 @@ public class EdgeSimple extends Edge {
 		super(ID, source, target);
 	}
 
+	public EdgeSimple(int ID, Vertex source, Vertex target, String color) {
+		super(ID, source, target, color);
+	}
+
+	@Override
+	public String getColor() {
+		return color;
+	}
 }

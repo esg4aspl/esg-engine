@@ -1,6 +1,6 @@
 package tr.edu.iyte.esg.model.decisiontable;
 
-public class Expression {
+public class Expression implements Evaluable {
 	
 	private int ID;
 	private String expression;
@@ -24,6 +24,7 @@ public class Expression {
 		return expression;
 	}
 
-
-
+	public String evaluate() {
+		return expression.trim();
+	}
 }

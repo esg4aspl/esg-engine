@@ -6,42 +6,35 @@ import java.util.List;
 public class Condition {
 
 	private int ID;
-	private List<Expression> expressionList;
+	private List<Evaluable> evaluableList;
 	
 	
 	public Condition(int ID) {
 		this.ID = ID;
-		this.expressionList = new LinkedList<Expression>();
+		this.evaluableList = new LinkedList<Evaluable>();
 	}
 
 	public int getID() {
 		return ID;
 	}
 
-	public List<Expression> getExpressionList() {
-		return expressionList;
+	public List<Evaluable> getEvaluableList() {
+		return evaluableList;
 	}
 	
-	public void addExpression(Expression expression) {
-		this.expressionList.add(expression);
+	public void addEvaluable(Evaluable evaluable) {
+		this.evaluableList.add(evaluable);
 	}
 	
 	@Override
 	public String toString() {
 		String str = "";
 		
-		if(expressionList.size() > 1) {
-			for(int i = 0; i < expressionList.size() - 1; i++) {
-				str += expressionList.get(i).toString() + " AND ";
-			}
-			str += expressionList.get(expressionList.size() - 1).toString();
-		}else
-			str += expressionList.get(0).toString();
+		for(Evaluable eval: evaluableList) {
+			str += eval.evaluate();
+		}
 		
 		return str;
-		
-
-		
 	}
 
 	

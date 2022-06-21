@@ -4,6 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,6 +25,7 @@ import tr.edu.iyte.esg.model.comparators.VertexComparator;
 import tr.edu.iyte.esg.model.decisiontable.Action;
 import tr.edu.iyte.esg.model.decisiontable.BooleanResult;
 import tr.edu.iyte.esg.model.decisiontable.Condition;
+import tr.edu.iyte.esg.model.decisiontable.Connective;
 import tr.edu.iyte.esg.model.decisiontable.DCResult;
 import tr.edu.iyte.esg.model.decisiontable.DecisionTable;
 import tr.edu.iyte.esg.model.decisiontable.DoubleVariable;
@@ -92,6 +96,19 @@ public class JSONFileToESGConverter {
 	}
 	
 	/**
+	 * Parse the given file to create a model with a list of ESGs with DT
+	 * 
+	 * @param fileName
+	 * @return
+	 * @throws FileNotFoundException
+	 */
+	public Model parseJSONFileForModelCreationWithDT(String fileName) throws FileNotFoundException {
+		ESG ESG = parseJSONFileForESGWithDTCreation(fileName);
+		model.addESG(ESG);
+		return model;
+	}
+	
+	/**
 	 * Parse the given file to create a simple ESG
 	 * 
 	 * @param fileName
@@ -141,6 +158,11 @@ public class JSONFileToESGConverter {
 
 			JSONArray JSONEdges = esgJsonObject.getJSONArray("edges");
 			createESGEdges(ESG, JSONEdges);
+			
+			if(esgJsonObject.has("decisionTables")) {
+				JSONArray JSONDecisionTables = esgJsonObject.getJSONArray("decisionTables");
+				createESGDecisionTables(ESG, JSONDecisionTables);
+			}
 
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -170,9 +192,10 @@ public class JSONFileToESGConverter {
 			JSONArray JSONEdges = esgJsonObject.getJSONArray("edges");
 			createESGEdges(ESG, JSONEdges);
 			
-			JSONArray JSONDecisionTables = esgJsonObject.getJSONArray("decisionTables");
-			createESGDecisionTables(ESG, JSONDecisionTables);
-			
+			if(esgJsonObject.has("decisionTables")) {
+				JSONArray JSONDecisionTables = esgJsonObject.getJSONArray("decisionTables");
+				createESGDecisionTables(ESG, JSONDecisionTables);
+			}
 
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -239,7 +262,11 @@ public class JSONFileToESGConverter {
 				}
 				Vertex vertex = null;
 				if(!isWithDecisionTable && !isRefinedVertex) {
-					vertex = new VertexSimple(vertexID, event);
+					String color = "black";
+					if(JSONVertex.has("color")) {
+						color = JSONVertex.getString("color");
+					}
+					vertex = new VertexSimple(vertexID, event, color);
 				}else if(isWithDecisionTable){
 					vertex = new VertexRefinedByDT(vertexID, event);
 				}else if(isRefinedVertex) {
@@ -284,8 +311,13 @@ public class JSONFileToESGConverter {
 				//System.out.println("target" + JSONTarget);
 				Vertex source = vertexLookUp(ESG, JSONSource);
 				Vertex target = vertexLookUp(ESG, JSONTarget);
+				
+				String color = "black";
+				if(JSONEdge.has("color")) {
+					color = JSONEdge.getString("color");
+				}
 
-				Edge edge = new EdgeSimple(ESG.getNextEdgeID(), source, target);
+				Edge edge = new EdgeSimple(ESG.getNextEdgeID(), source, target, color);
 				
 				/**
 				 * Edge is added to ESG edge list
@@ -330,12 +362,28 @@ public class JSONFileToESGConverter {
 				((VertexRefinedByDT)vertex).setDecisionTable(decisionTable);
 				ESG.addDecisionTable(vertex, decisionTable);
 				
-								
+				createRulesActionEdges(ESG, decisionTable, vertex);		
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 
+	}
+	
+	/**
+	 * Creates Rule's action edges 
+	 */
+	private static void createRulesActionEdges(ESG ESG, DecisionTable dt, Vertex source) {
+		List<Rule> rList = dt.getRuleList();
+		for(Rule r: dt.getRuleList()) {
+			Set<Action> actions = dt.getAction(r);
+			for(Action a: actions) {
+				if(a != null) {
+					Edge edge = new EdgeSimple(999, source, a.getActionEvent());
+					ESG.addEdge(edge);
+				}
+			}
+		}
 	}
 	
 	/**
@@ -366,15 +414,29 @@ public class JSONFileToESGConverter {
 		try {
 			for (int i = 0; i < expressions.length(); i++) {
 				JSONObject JSONExpression = expressions.getJSONObject(i);
-				int ID = JSONExpression.getInt("ID");
-				String exp = JSONExpression.getString("expression");
-				Expression expression = new Expression(ID, exp);
-				condition.addExpression(expression);
+				addEvaluable(JSONExpression, condition);
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 
+	}
+	
+	private static void addEvaluable(JSONObject JSONExpression, Condition condition) {
+		try {
+			int ID = JSONExpression.getInt("ID");
+			String exp = JSONExpression.getString("expression");
+			Expression expression = new Expression(ID, exp);
+			condition.addEvaluable(expression);
+		} catch (JSONException e) {
+			try {
+				String connectiveType = JSONExpression.getString("connective");
+				Connective connective = new Connective(connectiveType);
+				condition.addEvaluable(connective);
+			}  catch (JSONException ex) {
+				ex.printStackTrace();
+			}
+		}
 	}
 	
 	/**
@@ -414,6 +476,7 @@ public class JSONFileToESGConverter {
 				JSONObject JSONRule = rules.getJSONObject(i);
 				int ID = JSONRule.getInt("ID");
 				Rule rule = new Rule(ID);
+				decisionTable.addRule(rule);
 				
 				JSONArray variables = JSONRule.getJSONArray("variables");
 				createRuleVariables(rule, variables);

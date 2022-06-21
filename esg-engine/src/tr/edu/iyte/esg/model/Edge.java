@@ -6,7 +6,7 @@ public abstract class Edge {
 	final private Vertex source;
 	final private Vertex target;
 	final private Label label;
-	
+	protected String color;
 	
 	public Edge(int ID, Vertex source, Vertex target){
 		this.ID = ID;
@@ -20,6 +20,14 @@ public abstract class Edge {
 		this.source = source;
 		this.target = target;
 		this.label = label;
+	}
+	
+	public Edge(int ID, Vertex source, Vertex target, String color){
+		this.ID = ID;
+		this.source = source;
+		this.target = target;
+		this.color = color;
+		label = null;
 	}
 
 	public int getID() {
@@ -37,6 +45,8 @@ public abstract class Edge {
 	public Label getLabel() {
 		return label;
 	}
+	
+	public abstract String getColor();
 	
 	public String toString() {
 		return "<" + getSource().getEvent().getName() + " - " + getTarget().getEvent().getName() + ">"; 

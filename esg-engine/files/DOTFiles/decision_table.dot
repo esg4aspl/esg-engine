@@ -1,0 +1,185 @@
+digraph G {
+rankdir = LR
+subgraph clusterSendBill_subESG {
+label = SendBill_subESG
+color = "blue"
+label = "Send Bill_subESG";
+esg5_vertex0 -> esg5_vertex1[ color = black];
+esg5_vertex1 -> esg5_vertex2[ color = black];
+esg5_vertex1 -> esg5_vertex3[ color = black];
+esg5_vertex2 -> esg5_vertex4[ color = black];
+esg5_vertex3 -> esg5_vertex4[ color = black];
+esg5_vertex0 [label = "[", shape = ellipse, color=black]
+esg5_vertex1 [label = "Bill Requested", shape = ellipse, color=black]
+esg5_vertex2 [label = "SMS sent", shape = ellipse, color=black]
+esg5_vertex3 [label = "E-mail sent", shape = ellipse, color=black]
+esg5_vertex4 [label = "]", shape = ellipse, color=black]
+}
+subgraph clusterSetBalance_subESG {
+label = SetBalance_subESG
+color = "blue"
+subgraph clusterDeposit_subESG {
+label = Deposit_subESG
+color = "red"
+label = "Deposit_subESG";
+esg4_vertex0 -> esg4_vertex1[ color = black];
+esg4_vertex1 -> esg4_vertex2[ color = black];
+esg4_vertex2 -> esg4_vertex3[ color = black];
+esg4_vertex3 -> esg4_vertex4[ color = black];
+esg4_vertex0 [label = "[", shape = ellipse, color=black]
+esg4_vertex1 [label = "SMS Sent", shape = ellipse, color=black]
+esg4_vertex2 [label = "Balance Updated", shape = ellipse, color=black]
+esg4_vertex3 [label = "Card Ejected", shape = ellipse, color=black]
+esg4_vertex4 [label = "]", shape = ellipse, color=black]
+}
+label = "Set Balance_subESG";
+esg3_vertex0 -> esg3_vertex1[ color = black];
+esg3_vertex1 -> esg3_vertex2[ color = black];
+esg3_vertex1 -> esg3_vertex3[ color = black];
+esg3_vertex2 -> esg3_vertex3[ color = black];
+esg3_vertex2 -> esg3_vertex1[ color = black];
+esg3_vertex2 -> esg3_vertex4[ color = black];
+esg3_vertex3 -> esg3_vertex5[ color = black];
+esg3_vertex4 -> esg3_vertex5[ color = black];
+esg3_vertex0 [label = "[", shape = ellipse, color=black]
+esg3_vertex1 [label = "Money Entered", shape = ellipse, color=black]
+esg3_vertex2 [label = "Amount Confirmed", shape = ellipse, color=black]
+esg3_vertex3 [label = "Show Error", shape = ellipse, color=black]
+esg3_vertex4 [label = "Deposit", shape = doublecircle, color=turquoise]
+esg3_vertex5 [label = "]", shape = ellipse, color=black]
+}
+subgraph clusterWithdraw_subESG {
+label = Withdraw_subESG
+color = "blue"
+label = "Withdraw_subESG";
+esg2_vertex0 -> esg2_vertex1[ color = black];
+esg2_vertex1 -> esg2_vertex2[ color = black];
+esg2_vertex2 -> esg2_vertex3[ color = black];
+esg2_vertex2 -> esg2_vertex1[ color = black];
+esg2_vertex2 -> esg2_vertex4[ color = black];
+esg2_vertex3 -> esg2_vertex5[ color = black];
+esg2_vertex4 -> esg2_vertex5[ color = black];
+esg2_vertex0 [label = "[", shape = ellipse, color=black]
+esg2_vertex1 [label = "Withdraw Amount Entered", shape = ellipse, color=black]
+esg2_vertex2 [label = "Amount Confirmed", shape = ellipse, color=black]
+esg2_vertex3 [label = "Show Error", shape = ellipse, color=black]
+esg2_vertex4 [label = "Withdraw Successful", shape = ellipse, color=black]
+esg2_vertex5 [label = "]", shape = ellipse, color=black]
+}
+subgraph clusterLogin_subESG {
+label = Login_subESG
+color = "blue"
+subgraph cluster2PasswordTable {
+label = "Table Properties"
+color = "red"
+n2[shape=none label=<<table border="0" cellborder="1" cellspacing="0">
+<tr>
+<td>C0</td>
+<td>password is type of string</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>password length greater than or eq. 10 AND password length less than 100</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>password should have upper case AND password should have lower case</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>password should have special character OR password should contain number</td>
+</tr>
+<tr>
+<td>A0</td>
+<td>User name Entered</td>
+</tr>
+<tr>
+<td>A1</td>
+<td>Login Successful</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Show Error</td>
+</tr>
+</table>>];
+}
+subgraph clusterPasswordTable {
+label = DT_PasswordEntered
+color = "blue"
+n1[shape=none label=<<table border="0" cellborder="1" cellspacing="0">
+<tr>
+<td>      -     </td>
+<td>     R0    </td>
+<td>     R1    </td>
+</tr>
+<tr>
+<td>    C0     </td>
+<td><i>      T    </i></td>
+<td><i>      T    </i></td>
+</tr>
+<tr>
+<td>    C1     </td>
+<td><i>      F    </i></td>
+<td><i>      T    </i></td>
+</tr>
+<tr>
+<td>    C2     </td>
+<td><i>      F    </i></td>
+<td><i>      T    </i></td>
+</tr>
+<tr>
+<td>    C3     </td>
+<td><i>      T    </i></td>
+<td><i>      T    </i></td>
+</tr>
+<tr>
+<td>    A0     </td>
+<td><i>      X    </i></td>
+<td>      -    </td>
+</tr>
+<tr>
+<td>    A1     </td>
+<td>      -    </td>
+<td><i>      X    </i></td>
+</tr>
+<tr>
+<td>    A2     </td>
+<td><i>      X    </i></td>
+<td>      -    </td>
+</tr>
+</table>>];
+}
+label = "Login_subESG";
+esg1_vertex0 -> esg1_vertex1[ color = black];
+esg1_vertex1 -> esg1_vertex3[ color = black];
+esg1_vertex1 -> esg1_vertex2[ color = black];
+esg1_vertex2 -> esg1_vertex3[ color = black];
+esg1_vertex2 -> esg1_vertex4[ color = black];
+esg1_vertex3 -> esg1_vertex5[ color = black];
+esg1_vertex4 -> esg1_vertex5[ color = black];
+esg1_vertex2 -> esg1_vertex1[ color = null];
+esg1_vertex2 -> esg1_vertex3[ color = null];
+esg1_vertex2 -> esg1_vertex4[ color = null];
+esg1_vertex0 [label = "[", shape = ellipse, color=black]
+esg1_vertex1 [label = "User name Entered", shape = ellipse, color=red]
+esg1_vertex3 [label = "Show Error", shape = ellipse, color=black]
+esg1_vertex2 [label = "Password Entered", shape = tripleoctagon, color=purple]
+esg1_vertex4 [label = "Login Successful", shape = ellipse, color=black]
+esg1_vertex5 [label = "]", shape = ellipse, color=black]
+}
+label = "refinedESG";
+esg0_vertex0 -> esg0_vertex1[ color = black];
+esg0_vertex1 -> esg0_vertex2[ color = red];
+esg0_vertex1 -> esg0_vertex3[ color = blue];
+esg0_vertex2 -> esg0_vertex4[ color = green];
+esg0_vertex3 -> esg0_vertex4[ color = orange];
+esg0_vertex4 -> esg0_vertex5[ color = red];
+esg0_vertex5 -> esg0_vertex6[ color = black];
+esg0_vertex0 [label = "[", shape = ellipse, color=black]
+esg0_vertex1 [label = "Login", shape = doublecircle, color=turquoise]
+esg0_vertex2 [label = "Withdraw", shape = doublecircle, color=turquoise]
+esg0_vertex3 [label = "Set Balance", shape = doublecircle, color=turquoise]
+esg0_vertex4 [label = "OTP Verified", shape = ellipse, color=black]
+esg0_vertex5 [label = "Send Bill", shape = doublecircle, color=turquoise]
+esg0_vertex6 [label = "]", shape = ellipse, color=black]
+}

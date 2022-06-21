@@ -1,0 +1,16 @@
+digraph G {
+rankdir = LR
+label = "refinedESG";
+esg0_vertex0 -> esg0_vertex1[ color = black];
+esg0_vertex1 -> esg0_vertex2[ color = black];
+esg0_vertex2 -> esg0_vertex3[ color = black];
+esg0_vertex3 -> esg0_vertex2[ color = black];
+esg0_vertex2 -> esg0_vertex4[ color = black];
+esg0_vertex4 -> esg0_vertex5[ color = black];
+esg0_vertex0 [label = "[", shape = ellipse, color=black]
+esg0_vertex1 [label = "a", shape = ellipse, color=black]
+esg0_vertex2 [label = "b", shape = ellipse, color=black]
+esg0_vertex3 [label = "c", shape = ellipse, color=black]
+esg0_vertex4 [label = "d", shape = ellipse, color=black]
+esg0_vertex5 [label = "]", shape = ellipse, color=black]
+}
