@@ -46,6 +46,22 @@ public class JSONFileToModelConverterWithSchemaValidation {
 
 		return model;
 	}
-
+	
+	/**
+	 * JSON file is parsed with DecisionTable Model is created from parsing Necessary validation is
+	 * performed
+	 * @return Model
+	 */
+	public Model JSONFileToModelConverterWithDT() {
+		JSONFileToESGConverter parser = new JSONFileToESGConverter();
+		Model model = null;
+		try {
+			model = parser.parseJSONFileForModelCreationWithDT(JSONFile);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		return model;
+	}
 }
 

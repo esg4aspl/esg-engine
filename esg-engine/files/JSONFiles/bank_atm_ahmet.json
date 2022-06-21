@@ -1,0 +1,612 @@
+{
+	"ID": 0,
+	"name":"refinedESG",
+	"vertices":[
+		{
+			"ID": 0,
+			"event":"[",
+			"isRefinedVertex" : false,
+			"color": "black"
+		},
+		{
+				"ID": 1,
+				"event":"Login",
+				"isRefinedVertex" : true,
+				"subESG": {
+					"ID": 1,
+					"name": "Login_subESG",
+					"vertices":[
+					{
+						"ID": 0,
+						"event":"[",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 1,
+						"event":"Username Entered",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 2,
+						"event":"Show Error",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 3,
+						"event":"PE",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 4,
+						"event":"Wrong P",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 5,
+						"event":"CP",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 6,
+						"event":"CB",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 7,
+						"event":"CR",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 8,
+						"event":"]",
+						"isRefinedVertex" : false,
+						"color": "black"
+					}
+							
+					],
+					"edges":[
+					{
+						"ID": 0,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 1,
+						"source": 1,
+						"target": 3,
+						"color":"black"			
+					},
+					{
+						"ID": 2,
+						"source": 3,
+						"target": 4,
+						"color":"black"			
+					},
+					{
+						"ID": 3,
+						"source": 4,
+						"target": 2,
+						"color":"black"			
+					},
+					{
+						"ID": 4,
+						"source": 2,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 5,
+						"source": 3,
+						"target": 5,
+						"color":"black"			
+					},
+					{
+						"ID": 6,
+						"source": 4,
+						"target": 6,
+						"color":"black"			
+					},
+					{
+						"ID": 7,
+						"source": 6,
+						"target": 7,
+						"color":"black"			
+					},
+					{
+						"ID": 8,
+						"source": 7,
+						"target": 8,
+						"color":"black"			
+					},
+					{
+						"ID": 9,
+						"source": 5,
+						"target": 8,
+						"color":"black"			
+					}
+					]
+					}
+				},
+		{
+				"ID": 2,
+				"event":"Withdraw",
+				"isRefinedVertex" : true,
+				"subESG": {
+					"ID": 2,
+					"name": "Withdraw_subESG",
+					"vertices":[
+					{
+						"ID": 0,
+						"event":"[",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 1,
+						"event":"Amount Entered",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 2,
+						"event":"Amount c",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 3,
+						"event":"BU",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 4,
+						"event":"SR",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 5,
+						"event":"AI",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 6,
+						"event":"SE",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 7,
+						"event":"]",
+						"isRefinedVertex" : false,
+						"color": "black"
+					}
+							
+					],
+					"edges":[
+					{
+						"ID": 0,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 1,
+						"source": 1,
+						"target": 2,
+						"color":"black"			
+					},
+					{
+						"ID": 2,
+						"source": 2,
+						"target": 3,
+						"color":"black"			
+					},
+					{
+						"ID": 3,
+						"source": 3,
+						"target": 4,
+						"color":"black"			
+					},
+					{
+						"ID": 4,
+						"source": 4,
+						"target": 7,
+						"color":"black"			
+					},
+					{
+						"ID": 5,
+						"source": 1,
+						"target": 5,
+						"color":"black"			
+					},
+					{
+						"ID": 6,
+						"source": 5,
+						"target": 6,
+						"color":"black"			
+					},
+					{
+						"ID": 7,
+						"source": 6,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 8,
+						"source": 6,
+						"target": 7,
+						"color":"black"			
+					}
+					]
+					}
+				},
+		{
+				"ID": 3,
+				"event":"Deposit",
+				"isRefinedVertex" : true,
+				"subESG": {
+					"ID": 3,
+					"name": "Deposit_subESG",
+					"vertices":[
+					{
+						"ID": 0,
+						"event":"[",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 1,
+						"event":"Amount Entered",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 2,
+						"event":"Amount c",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 3,
+						"event":"BU",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 4,
+						"event":"SR",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 5,
+						"event":"AI",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 6,
+						"event":"SE",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 7,
+						"event":"]",
+						"isRefinedVertex" : false,
+						"color": "black"
+					}
+							
+					],
+					"edges":[
+					{
+						"ID": 0,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 1,
+						"source": 1,
+						"target": 2,
+						"color":"black"			
+					},
+					{
+						"ID": 2,
+						"source": 2,
+						"target": 3,
+						"color":"black"			
+					},
+					{
+						"ID": 3,
+						"source": 3,
+						"target": 4,
+						"color":"black"			
+					},
+					{
+						"ID": 4,
+						"source": 4,
+						"target": 7,
+						"color":"black"			
+					},
+					{
+						"ID": 5,
+						"source": 1,
+						"target": 5,
+						"color":"black"			
+					},
+					{
+						"ID": 6,
+						"source": 5,
+						"target": 6,
+						"color":"black"			
+					},
+					{
+						"ID": 7,
+						"source": 6,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 8,
+						"source": 6,
+						"target": 7,
+						"color":"black"			
+					}
+					]
+					}
+				},
+		{
+				"ID": 4,
+				"event":"PB",
+				"isRefinedVertex" : true,
+				"subESG": {
+					"ID": 4,
+					"name": "PB_subESG",
+					"vertices":[
+					{
+						"ID": 0,
+						"event":"[",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 1,
+						"event":"BR",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 2,
+						"event":"BP",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 3,
+						"event":"ES",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 4,
+						"event":"SS",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 5,
+						"event":"SE",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 6,
+						"event":"]",
+						"isRefinedVertex" : false,
+						"color": "black"
+					}
+							
+					],
+					"edges":[
+					{
+						"ID": 0,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 1,
+						"source": 1,
+						"target": 2,
+						"color":"black"			
+					},
+					{
+						"ID": 2,
+						"source": 2,
+						"target": 3,
+						"color":"black"			
+					},
+					{
+						"ID": 3,
+						"source": 2,
+						"target": 3,
+						"color":"black"			
+					},
+					{
+						"ID": 4,
+						"source": 2,
+						"target": 4,
+						"color":"black"			
+					},
+					{
+						"ID": 5,
+						"source": 1,
+						"target": 5,
+						"color":"black"			
+					},
+					{
+						"ID": 6,
+						"source": 3,
+						"target": 6,
+						"color":"black"			
+					},
+					{
+						"ID": 7,
+						"source": 4,
+						"target": 6,
+						"color":"black"			
+					},
+					{
+						"ID": 8,
+						"source": 5,
+						"target": 6,
+						"color":"black"			
+					}
+					]
+					}
+				},
+		{
+				"ID": 5,
+				"event":"Logout",
+				"isRefinedVertex" : true,
+				"subESG": {
+					"ID": 5,
+					"name": "Logout_subESG",
+					"vertices":[
+					{
+						"ID": 0,
+						"event":"[",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 1,
+						"event":"LR",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 2,
+						"event":"CS",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 3,
+						"event":"EC",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 4,
+						"event":"SM",
+						"isRefinedVertex" : false,
+						"color": "black"
+					},
+					{
+						"ID": 5,
+						"event":"]",
+						"isRefinedVertex" : false,
+						"color": "black"
+					}
+							
+					],
+					"edges":[
+					{
+						"ID": 0,
+						"source": 0,
+						"target": 1,
+						"color":"black"			
+					},
+					{
+						"ID": 1,
+						"source": 1,
+						"target": 2,
+						"color":"black"			
+					},
+					{
+						"ID": 2,
+						"source": 2,
+						"target": 3,
+						"color":"black"			
+					},
+					{
+						"ID": 3,
+						"source": 3,
+						"target": 4,
+						"color":"black"			
+					},
+					{
+						"ID": 4,
+						"source": 4,
+						"target": 5,
+						"color":"black"			
+					}
+					]
+					}
+				},
+		{
+			"ID": 6,
+			"event":"]",
+			"isRefinedVertex" : false,
+			"color": "black"
+		}
+	],
+		"edges":[
+		{
+			"ID": 0,
+			"source": 0,
+			"target": 1,
+			"color":"black"			
+		},
+		{
+			"ID": 1,
+			"source": 1,
+			"target": 2,
+			"color":"black"			
+		},
+		{
+			"ID": 2,
+			"source": 1,
+			"target": 3,
+			"color":"black"			
+		},
+		{
+			"ID": 3,
+			"source": 2,
+			"target": 4,
+			"color":"black"			
+		},
+		{
+			"ID": 4,
+			"source": 3,
+			"target": 4,
+			"color":"black"			
+		},
+		{
+			"ID": 5,
+			"source": 4,
+			"target": 5,
+			"color":"black"			
+		},
+		{
+			"ID": 6,
+			"source": 5,
+			"target": 6,
+			"color":"black"			
+		}
+		]
+}

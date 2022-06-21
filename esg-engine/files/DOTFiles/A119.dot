@@ -1,0 +1,33 @@
+digraph G {
+rankdir = LR
+subgraph clusterStep2_subESG {
+label = Step2_subESG
+color = "blue"
+label = "Step 2 (DE)_subESG";
+esg1_vertex0 -> esg1_vertex1[ color = black];
+esg1_vertex1 -> esg1_vertex2[ color = black];
+esg1_vertex2 -> esg1_vertex3[ color = black];
+esg1_vertex0 [label = "[", shape = ellipse, color=black]
+esg1_vertex1 [label = "A", shape = ellipse, color=black]
+esg1_vertex2 [label = "B", shape = ellipse, color=black]
+esg1_vertex3 [label = "]", shape = ellipse, color=black]
+}
+label = "refinedESG";
+esg0_vertex0 -> esg0_vertex1[ color = black];
+esg0_vertex0 -> esg0_vertex2[ color = black];
+esg0_vertex1 -> esg0_vertex2[ color = black];
+esg0_vertex2 -> esg0_vertex1[ color = black];
+esg0_vertex1 -> esg0_vertex3[ color = black];
+esg0_vertex3 -> esg0_vertex1[ color = black];
+esg0_vertex1 -> esg0_vertex4[ color = black];
+esg0_vertex2 -> esg0_vertex3[ color = black];
+esg0_vertex3 -> esg0_vertex2[ color = black];
+esg0_vertex2 -> esg0_vertex4[ color = black];
+esg0_vertex2 -> esg0_vertex2[ color = black];
+esg0_vertex3 -> esg0_vertex4[ color = black];
+esg0_vertex0 [label = "[", shape = ellipse, color=black]
+esg0_vertex1 [label = "Step 2 (DE)", shape = doublecircle, color=turquoise]
+esg0_vertex2 [label = "Edit Capacities", shape = ellipse, color=black]
+esg0_vertex3 [label = "Click Accept", shape = ellipse, color=black]
+esg0_vertex4 [label = "]", shape = ellipse, color=black]
+}
