@@ -9,7 +9,7 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
     <build>
-        <sourceDirectory>src</sourceDirectory>
+        <sourceDirectory>esg-engine/src</sourceDirectory>
     </build>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.jgrapht/jgrapht-core -->
