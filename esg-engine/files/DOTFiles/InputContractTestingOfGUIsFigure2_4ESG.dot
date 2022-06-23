@@ -1,30 +1,30 @@
 digraph G {
 rankdir = LR
 label = "Paper: Input Contract Testing of GUIs Figure: 2 ";
-esg2_vertex0 -> esg2_vertex1;
-esg2_vertex0 -> esg2_vertex2;
-esg2_vertex0 -> esg2_vertex3;
-esg2_vertex1 -> esg2_vertex4;
-esg2_vertex2 -> esg2_vertex5;
-esg2_vertex3 -> esg2_vertex6;
-esg2_vertex3 -> esg2_vertex7;
-esg2_vertex4 -> esg2_vertex8;
-esg2_vertex4 -> esg2_vertex9;
-esg2_vertex6 -> esg2_vertex10;
-esg2_vertex7 -> esg2_vertex5;
-esg2_vertex10 -> esg2_vertex8;
-esg2_vertex10 -> esg2_vertex9;
-esg2_vertex8 -> esg2_vertex10;
-esg2_vertex9 -> esg2_vertex5;
-esg2_vertex0 [label = "["]
-esg2_vertex1 [label = "xabc"]
-esg2_vertex2 [label = "xabz"]
-esg2_vertex3 [label = "xacb"]
-esg2_vertex4 [label = "abcb"]
-esg2_vertex5 [label = "]"]
-esg2_vertex6 [label = "acbc"]
-esg2_vertex7 [label = "acbz"]
-esg2_vertex8 [label = "bcbc"]
-esg2_vertex9 [label = "bcbz"]
-esg2_vertex10 [label = "cbcb"]
+esg2_vertex0 -> esg2_vertex1[ color = black];
+esg2_vertex0 -> esg2_vertex2[ color = black];
+esg2_vertex0 -> esg2_vertex3[ color = black];
+esg2_vertex1 -> esg2_vertex4[ color = black];
+esg2_vertex2 -> esg2_vertex5[ color = black];
+esg2_vertex3 -> esg2_vertex6[ color = black];
+esg2_vertex3 -> esg2_vertex7[ color = black];
+esg2_vertex4 -> esg2_vertex8[ color = black];
+esg2_vertex4 -> esg2_vertex9[ color = black];
+esg2_vertex6 -> esg2_vertex10[ color = black];
+esg2_vertex7 -> esg2_vertex5[ color = black];
+esg2_vertex10 -> esg2_vertex8[ color = black];
+esg2_vertex10 -> esg2_vertex9[ color = black];
+esg2_vertex8 -> esg2_vertex10[ color = black];
+esg2_vertex9 -> esg2_vertex5[ color = black];
+esg2_vertex0 [label = "[", shape = ellipse, color=black]
+esg2_vertex1 [label = "xabc", shape = ellipse, color=black]
+esg2_vertex2 [label = "xabz", shape = ellipse, color=black]
+esg2_vertex3 [label = "xacb", shape = ellipse, color=black]
+esg2_vertex4 [label = "abcb", shape = ellipse, color=black]
+esg2_vertex5 [label = "]", shape = ellipse, color=black]
+esg2_vertex6 [label = "acbc", shape = ellipse, color=black]
+esg2_vertex7 [label = "acbz", shape = ellipse, color=black]
+esg2_vertex8 [label = "bcbc", shape = ellipse, color=black]
+esg2_vertex9 [label = "bcbz", shape = ellipse, color=black]
+esg2_vertex10 [label = "cbcb", shape = ellipse, color=black]
 }
