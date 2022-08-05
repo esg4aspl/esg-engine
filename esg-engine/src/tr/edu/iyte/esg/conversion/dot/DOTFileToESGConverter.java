@@ -57,7 +57,7 @@ public class DOTFileToESGConverter {
 						ESG.addEvent(event);
 						Vertex vertex = new VertexSimple(ESG.getNextVertexID(), event);
 						ESG.addVertex(vertex);
-						tagVertexMap.put(vertexTag.strip(), vertex);
+						tagVertexMap.put(vertexTag.trim(), vertex);
 
 					}
 				}
@@ -86,8 +86,8 @@ public class DOTFileToESGConverter {
 						String sourceTag = lineArray[0];
 						String targetTag = lineArray[1].substring(0, lineArray[1].length()-1);
 						//System.out.println(sourceTag + "->" + targetTag);
-						Vertex source = tagVertexMap.get(sourceTag.strip());
-						Vertex target = tagVertexMap.get(targetTag.strip());
+						Vertex source = tagVertexMap.get(sourceTag.trim());
+						Vertex target = tagVertexMap.get(targetTag.trim());
 						Edge edge = new EdgeSimple(ESG.getNextEdgeID(), source, target);
 						ESG.addEdge(edge);
 					}
