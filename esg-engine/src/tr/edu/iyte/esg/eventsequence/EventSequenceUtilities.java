@@ -15,7 +15,7 @@ import java.util.Set;
 
 import tr.edu.iyte.esg.model.Vertex;
 
-public class EventSequenceUtilties {
+public class EventSequenceUtilities {
 
 	public static void esgEventSequenceSetPrinter(Set<EventSequence> composedSequences) {
 		for (EventSequence es : composedSequences) {
