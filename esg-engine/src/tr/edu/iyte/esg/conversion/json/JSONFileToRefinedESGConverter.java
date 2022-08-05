@@ -8,7 +8,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-import tr.edu.iyte.esg.conversion.json.JSONFileToESGConverter;
 import tr.edu.iyte.esg.model.ESG;
 
 public class JSONFileToRefinedESGConverter extends JSONFileToESGConverter {

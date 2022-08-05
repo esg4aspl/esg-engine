@@ -25,7 +25,6 @@ import tr.edu.iyte.esg.model.decisiontable.Action;
 import tr.edu.iyte.esg.model.decisiontable.DecisionTable;
 import tr.edu.iyte.esg.model.decisiontable.Rule;
 import tr.edu.iyte.esg.model.sequenceesg.Sequence;
-import tr.edu.iyte.esg.testgeneration.TestSuite;
 import tr.edu.iyte.esg.testgeneration.faulty.FaultyEventSequenceGenerator;
 
 public class TestSuiteGenerator {

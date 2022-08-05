@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Set;
 
 import org.json.JSONArray;
@@ -374,7 +373,6 @@ public class JSONFileToESGConverter {
 	 * Creates Rule's action edges 
 	 */
 	private static void createRulesActionEdges(ESG ESG, DecisionTable dt, Vertex source) {
-		List<Rule> rList = dt.getRuleList();
 		for(Rule r: dt.getRuleList()) {
 			Set<Action> actions = dt.getAction(r);
 			for(Action a: actions) {
@@ -624,10 +622,5 @@ public class JSONFileToESGConverter {
 
 		return vertex;
 	}
-	
-
-	
-
-
 }
 
