@@ -10,6 +10,12 @@ ESG structure, its features and positive/negative test generation are implemente
 - Generate test suite of an ESG with sub-ESG
 - Do systematic testing of ESGs such as with two vertices, three vertices etc.
 
+# How to use esg-engine in Eclipse IDE
+
+Clone esg-engine project. 
+Open Eclipse IDE. 
+Follow File -> Import -> Maven -> Existing Maven Projects and select the cloned project. 
+
 ## Xtext & ImageViewer Installation
 1. Go to Help -> Eclipse Marketplace
 2. Search Xtend 2.26.0 and install
