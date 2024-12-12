@@ -14,6 +14,7 @@ import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
 
+import tr.edu.iyte.esg.coverageanalysis.TestSequenceCoverageAnalyser;
 import tr.edu.iyte.esg.coverageanalysis.TestSequenceCoverageAnalysisFromFile;
 import tr.edu.iyte.esg.model.ESG;
 import tr.edu.iyte.esg.model.Vertex;
