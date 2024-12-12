@@ -13,7 +13,7 @@ import tr.edu.iyte.esg.model.decisiontable.DecisionTable;
 
 public class ESG {
 
-	final private int ID;
+	protected int ID;
 	final private String name;
 	private int lastVertexID, lastEdgeID, lastEventID, lastDecisionTableID, lastSubEsgID;
 	private List<Vertex> vertexList;
@@ -227,7 +227,7 @@ public class ESG {
 	public void removeEdge(Edge edge) {
 
 		edgeList.remove(edge);
-		System.out.println(edge.toString());
+//		System.out.println(edge.toString());
 		Set<Vertex> targetSet = null;
 
 		edge.getSource().inDegree();
