@@ -14,7 +14,7 @@ import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
 
-import tr.edu.iyte.esg.coverageanalysis.TestSequenceCoverageAnalyser;
+import tr.edu.iyte.esg.coverageanalysis.TestSequenceCoverageAnalysisFromFile;
 import tr.edu.iyte.esg.model.ESG;
 import tr.edu.iyte.esg.model.Vertex;
 
@@ -23,7 +23,7 @@ public class EventCoverageBasedEventSequenceGenerator {
 	private static Graph<String, DefaultEdge> directedGraph;
 
 	public static void eventSequenceGenerator(String mxeFileName) {
-		ESG productESG = TestSequenceCoverageAnalyser.buildESGFromMXEFile(mxeFileName);
+		ESG productESG = TestSequenceCoverageAnalysisFromFile.buildESGFromMXEFile(mxeFileName);
 		directedGraph = constructGraphForShortestPath(productESG);
 		printTestSuite(testSequenceGenerator(productESG));
 	}
