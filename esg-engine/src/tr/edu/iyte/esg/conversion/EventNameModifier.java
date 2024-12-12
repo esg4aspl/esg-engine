@@ -43,7 +43,7 @@ public class EventNameModifier {
 		} else {
 			String trimmed = eventName.trim();
 			if (trimmed.contains(" ")) {
-				//System.out.println("eventName:" + eventName + " :" + eventName.length());
+//				System.out.println("eventName:" + eventName + " :" + eventName.length());
 				String newEventName = "";
 				String[] eventNameArray = trimmed.split("\\s+");
 
@@ -51,10 +51,10 @@ public class EventNameModifier {
 					newEventName += eventNameArray[i] + space;
 				}
 				newEventName += eventNameArray[eventNameArray.length - 1];
-				//System.out.println("newEventName:"+ newEventName + " :" + newEventName.length());
+//				System.out.println("newEventName:"+ newEventName + " :" + newEventName.length());
 				
 				if(newEventName.contains(",")) {
-					//System.out.println("newEventName:"+ newEventName + " :" + newEventName.length());
+//					System.out.println("newEventName:"+ newEventName + " :" + newEventName.length());
 					String n_newEventName = "";
 					String[] eventNameArray2 = newEventName.split(",[ ]*");
 					//System.out.println(eventNameArray2.length);
@@ -62,7 +62,7 @@ public class EventNameModifier {
 						n_newEventName += eventNameArray2[j] + ",";
 					}
 					n_newEventName += eventNameArray2[eventNameArray2.length - 1];
-					//System.out.println("n_newEventName " + n_newEventName + " :" + n_newEventName.length());
+//					System.out.println("n_newEventName " + n_newEventName + " :" + n_newEventName.length());
 					return n_newEventName;
 				}
 				
