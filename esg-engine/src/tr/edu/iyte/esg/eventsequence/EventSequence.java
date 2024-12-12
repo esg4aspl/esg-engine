@@ -60,13 +60,14 @@ public class EventSequence {
 	 */
 	public List<Vertex> predecessors(Vertex event) {
 		List<Vertex> predessors = new LinkedList<Vertex>();
-		int indexOfEvent = eventSequenceList.indexOf(event);
+		int indexOfEvent = eventSequenceList.lastIndexOf(event);
 
 		for (int i = 0; i < indexOfEvent; i++) {
 			predessors.add(eventSequenceList.get(i));
 		}
 		return predessors;
 	}
+	
 
 	/**
 	 * Returns a list of Vertex that represents the successors of a given Vertex in
@@ -127,6 +128,15 @@ public class EventSequence {
 		}
 		return list;
 	}
+	
+	public boolean containsEvent(Vertex vertex) {
+		
+		String eventSequence = this.toString();	
+		String subSequence = vertex.toString().trim();
+		
+		return eventSequence.contains(subSequence);
+	
+	}
 
 //	@Override
 //	public String toString() {
@@ -141,12 +151,9 @@ public class EventSequence {
 	
 	public boolean hasSubsequence(EventSequence subsequence) {
 		
-		String eventSequence = this.toString();
-		
+		String eventSequence = this.toString();	
 		String subSequence = subsequence.toString();
-		
-		
-		
+	
 		return eventSequence.contains(subSequence);
 	}
 	
