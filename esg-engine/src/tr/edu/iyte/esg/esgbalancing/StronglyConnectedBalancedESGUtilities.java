@@ -64,7 +64,7 @@ public class StronglyConnectedBalancedESGUtilities {
 		for (Vertex positiveDegreeVertex : positiveDegreeVertexPartition) {
 			bipartiteGraph.addVertex(positiveDegreeVertex);
 			for (Vertex negativeDegreeVertex : negativeDegreeVertexPartition) {			
-				String name = "<" + positiveDegreeVertex.toString() + "- " + negativeDegreeVertex.toString() + ">";				
+				String name = "<" + positiveDegreeVertex.getEvent().getName() + "-" + negativeDegreeVertex.getEvent().getName() + ">";	
 				double weight = -1;
 				if(nameWeightMap.containsKey(name)) {
 					weight = nameWeightMap.get(name);
