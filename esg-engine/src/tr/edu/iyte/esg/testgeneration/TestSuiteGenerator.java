@@ -114,7 +114,7 @@ public class TestSuiteGenerator {
 		ESG transformedESG = transformedESGGenerator.generateTransformedESG(coverageLength, ESG);
 		double stopTime1 = System.nanoTime();
 		double timeElapsed1 = stopTime1 - startTime1;
-		System.out.println("Execution time of ESG transformation in miliseconds  : "+ timeElapsed1 / (double) 1000000);
+//		System.out.println("Execution time of ESG transformation in miliseconds  : "+ timeElapsed1 / (double) 1000000);
 		
 		double startTime2 = System.nanoTime();
 		Set<EventSequence> completeEventSequences = generateCompleteEventSequenceSet(transformedESG);
@@ -130,9 +130,9 @@ public class TestSuiteGenerator {
 		}
 		double stopTime3 = System.nanoTime();
 		double timeElapsed3 = stopTime3 - startTime3;
-		System.out.println("Execution time of test sequence generation in miliseconds  : "+ (timeElapsed2 + timeElapsed3) / (double) 1000000);
+//		System.out.println("Execution time of test sequence generation in miliseconds  : "+ (timeElapsed2 + timeElapsed3) / (double) 1000000);
 		
-		System.out.println("Total execution time of ESG test generation  : "+ (timeElapsed1 + timeElapsed2 + timeElapsed3) / (double) 1000000);
+//		System.out.println("Total execution time of ESG test generation  : "+ (timeElapsed1 + timeElapsed2 + timeElapsed3) / (double) 1000000);
 		
 		testSuite.setCompleteEventSequences(newCESs);
 
