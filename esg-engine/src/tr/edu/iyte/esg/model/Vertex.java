@@ -38,7 +38,7 @@ public abstract class Vertex implements Convertable {
 	
 	@Override
 	public String toString() {
-		return getEvent().getName() + " ";
+		return getEvent().getName();
 	}
 
 	public int getDegree() {
