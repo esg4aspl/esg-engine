@@ -143,40 +143,54 @@ public class ESGValidator extends AbstractValidator implements IValidator<ESG> {
 	}
 
 	private boolean checkSourceVertexReachingTargetVertex(Vertex source, Vertex target, ESG context) {
-
-		boolean visited[] = new boolean[context.getVertexList().size()];
+		
+//		System.out.println("source " + source.toString());
+//		System.out.println("target " + target.toString());
+		boolean visited[] = new boolean[context.getLastVertexID() + 1];
 		Queue<Vertex> queue = new LinkedList<Vertex>();
 		visited[source.getID()] = true;
 		queue.add(source);
 
 		while (queue.size() != 0) {
 			source = queue.poll();
-			//System.out.println("POLLED " + source.toString());
+//			System.out.println("POLLED " + source.toString());
 
 			Vertex adjacent;
 			List<Vertex> adjacencyList = new LinkedList<Vertex>();
 			Set<Vertex> adjacencySet = context.getVertexMap().get(source);
-			//System.out.println("adjacencySet == null " + adjacencySet == null);
+						
+			boolean isAdjacencySetNull = adjacencySet == null;
+//			System.out.println("adjacencySet == null " + isAdjacencySetNull);
+
 			if(adjacencySet == null && !source.isPseudoEndVertex()) {
+//				System.out.println("RETURN FALSE");
 				return false;
 			}else {
+//				for (Vertex v : adjacencySet) {
+//					System.out.print("ADJACENCY SET " +v.getID() + "-" + v.toString());
+//				}
+//				System.out.println();
+				
 				adjacencyList.addAll(adjacencySet);
-				//System.out.print("adjacency List of polled: ".toUpperCase());
-				//adjacencyList.forEach(e->System.out.print(e + " "));
-				//System.out.println();
+			
+//				System.out.print("adjacency List of polled: ".toUpperCase());
+//				adjacencyList.forEach(e->System.out.print(e + " "));
+//				System.out.println();
 				Iterator<Vertex> adjacentIterator = adjacencyList.iterator();
 
 				while (adjacentIterator.hasNext()) {
 
 					adjacent = adjacentIterator.next();
-					//System.out.println("ADJACENT " + adjacent.toString());
+//					System.out.println("ADJACENT " + adjacent.toString() + " " + adjacent.getID() + " " + visited[adjacent.getID()]);
+					
 
 					if (adjacent.equals(target)) {
+//						System.out.println("REACHED TARGET");
 						return true;
 					}
 
 					if (!visited[adjacent.getID()] && !adjacent.isPseudoEndVertex()) {
-						//System.out.println(adjacent.toString() + " VISITED");
+//					System.out.println(adjacent.toString() + " VISITED");
 						visited[adjacent.getID()] = true;
 						queue.add(adjacent);
 					}
@@ -184,6 +198,7 @@ public class ESGValidator extends AbstractValidator implements IValidator<ESG> {
 			}
 		}
 
+//		System.out.println("RETURN FALSE");
 		return false;
 	}
 
@@ -282,19 +297,25 @@ public class ESGValidator extends AbstractValidator implements IValidator<ESG> {
 	public boolean isValid(ESG context) {
 		Vertex startVertex = context.getPseudoStartVertex();		
 		boolean isStartVertexReachingAllVertices = true;
-		
+				
 		Vertex endVertex = context.getPseudoEndVertex();		
 		boolean isAllVerticesReachingEndVertex = true;
-		
+				
 		for (Vertex vertex : context.getVertexList()) {
 			if (!vertex.isPseudoStartVertex()) {
 				isStartVertexReachingAllVertices = isStartVertexReachingAllVertices && checkSourceVertexReachingTargetVertex(startVertex, vertex, context);
+//				System.out.println("isStartVertexReachingAllVertices " + isStartVertexReachingAllVertices);
 			}
+			
 			if (!vertex.isPseudoEndVertex()) {
 				isAllVerticesReachingEndVertex = isAllVerticesReachingEndVertex
 						&& checkSourceVertexReachingTargetVertex(vertex, endVertex, context);
+//				System.out.println("isAllVerticesReachingEndVertex " + isAllVerticesReachingEndVertex);
 			}
 		}
+		
+//		System.out.println("isStartVertexReachingAllVertices " + isStartVertexReachingAllVertices);
+//		System.out.println("isAllVerticesReachingEndVertex " + isAllVerticesReachingEndVertex);
 		
 		return isStartVertexReachingAllVertices && isAllVerticesReachingEndVertex;
 	}
