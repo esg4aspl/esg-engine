@@ -11,7 +11,7 @@ public class TestSequenceFileUtilities {
 	
 	public static void readTestSequencesWriteAnalysis(String testSeqFilePath, String coverageAnalysisFilePath) {
 		//System.out.println(filePath);
-		List<String> testSequencesList = TestSequenceCoverageAnalyser.testCasesFromFile(testSeqFilePath);
+		List<String> testSequencesList = TestSequenceCoverageAnalysisFromFile.testCasesFromFile(testSeqFilePath);
 		int numberOfSequences = testSequencesList.size();
 		int numberOfEvents = TestSequenceCoverageAnalyser.numberOfEvents(testSequencesList);
 		//System.out.println(numberOfSequences);
