@@ -1,9 +1,5 @@
 package tr.edu.iyte.esg.coverageanalysis;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,10 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
-import javax.xml.parsers.ParserConfigurationException;
-import org.xml.sax.SAXException;
 
-import tr.edu.iyte.esg.conversion.mxe.MXEFiletoESGConverter;
 import tr.edu.iyte.esg.esgtransforming.TransformedESGGenerator;
 import tr.edu.iyte.esg.eventsequence.EventSequence;
 import tr.edu.iyte.esg.model.ESG;
@@ -31,24 +24,6 @@ import tr.edu.iyte.esg.model.sequenceesg.Sequence;
 
 public class TestSequenceCoverageAnalyser {
 
-	public static void analyseCoverageFromFile(int coverageLength, String ESGFilePath, String testCaseFilePath,
-			String coverageAnalysisFilePath) {
-		ESG productESG = buildESGFromMXEFile(ESGFilePath);
-
-		List<String> testCases = testCasesFromFile(testCaseFilePath);
-		List<String> edgeList = esgEdgeListForTestCasesFromFile(coverageLength, productESG);
-
-		Map<String, Integer> edgeCoverageMap = edgeCoverageMap(edgeList, testCases);
-		List<String> uncoveredEdgeList = uncoveredEdgeList(edgeCoverageMap);
-
-		try {
-			coverageAnalysisFileWriter(coverageAnalysisFilePath, edgeCoverageMap, productESG.getVertexList().size(),
-					productESG.getEdgeList().size(), testCases.size(), numberOfEvents(testCases), uncoveredEdgeList.size(),
-					percentageOfCoverage(edgeList, uncoveredEdgeList));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
 
 	public static void analyseCoverage(int coverageLength, ESG productESG, Set<EventSequence> cesSet,String coverageAnalysisFilePath) {
 
@@ -67,32 +42,6 @@ public class TestSequenceCoverageAnalyser {
 		}
 	}
 
-	public static List<String> testCasesFromFile(String filePath) {
-		List<String> lineList = new LinkedList<String>();
-		File file = new File(filePath);
-
-		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-			String line;
-			try {
-				while ((line = br.readLine()) != null) {
-					if(!line.equals(""))
-						lineList.add(line);
-				}
-			} catch (IOException e) {
-
-				e.printStackTrace();
-			}
-		} catch (FileNotFoundException e) {
-
-			e.printStackTrace();
-		} catch (IOException e1) {
-
-			e1.printStackTrace();
-		}
-
-		return lineList;
-	}
-
 	public static List<String> testCasesFromEventSequenceSet(Set<EventSequence> cesSet) {
 		List<String> lineList = new LinkedList<String>();
 		Iterator<EventSequence> cesSetIterator = cesSet.iterator();
@@ -103,54 +52,6 @@ public class TestSequenceCoverageAnalyser {
 		}
 
 		return lineList;
-	}
-
-	public static ESG buildESGFromMXEFile(String fileName) {
-		ESG ESG = null;
-		try {
-			ESG = MXEFiletoESGConverter.parseMXEFileForESGSimpleCreation(fileName);
-		} catch (SAXException | IOException | ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return ESG;
-	}
-	
-	public static ESG buildESGFromDOTFile(String fileName) {
-		ESG ESG = null;
-
-		return ESG;
-	}
-
-	public static List<String> esgEdgeListForTestCasesFromFile(int coverageLength, ESG ESG) {
-		int numberOfTransformations = coverageLength -2 ;
-		if (coverageLength == 2) {
-			return nonTransformedESGEdgeListForTestCasesFromFile(ESG);
-		} else {
-
-			TransformedESGGenerator transformedESGGenerator = new TransformedESGGenerator();
-			ESG transformedESG = transformedESGGenerator.generateTransformedESG(coverageLength, ESG);
-
-			List<String> edgeList = new LinkedList<String>();
-
-			for (Edge edge : transformedESG.getRealEdgeList()) {
-
-				Vertex source = edge.getSource();
-				Sequence<Vertex> sourceSequence = ((VertexRefinedBySequence) source).getSequence();
-				Vertex target = edge.getTarget();
-				Sequence<Vertex> targetSequence = ((VertexRefinedBySequence) target).getSequence();
-
-				StringBuilder sb = new StringBuilder();
-				for (int i = 0; i < sourceSequence.getSize(); i++) {
-					sb.append(sourceSequence.getElement(i).toString().trim().replaceAll(" ", "_"));
-					sb.append(", ");
-				}
-				sb.append(targetSequence.getElement(numberOfTransformations).toString().trim().replaceAll(" ", "_"));
-
-				edgeList.add(sb.toString());
-			}
-			return edgeList;
-		}
 	}
 
 	public static List<String> esgEdgeListForTestCasesFromEventSequenceSet(int coverageLength, ESG ESG) {
@@ -182,19 +83,6 @@ public class TestSequenceCoverageAnalyser {
 			}
 			return edgeList;
 		}
-	}
-
-	public static List<String> nonTransformedESGEdgeListForTestCasesFromFile(ESG ESG) {
-		List<String> edgeList = new LinkedList<String>();
-
-		for (Edge edge : ESG.getRealEdgeList()) {
-			String edgeName = edge.getSource().getEvent().getName().replaceAll(" ", "_") + ", "
-					+ edge.getTarget().getEvent().getName().replaceAll(" ", "_");
-			edgeList.add(edgeName);
-		}
-
-		return edgeList;
-
 	}
 
 	public static List<String> nonTransformedESGEdgeListForTestCasesFromEventSequenceSet(ESG ESG) {
