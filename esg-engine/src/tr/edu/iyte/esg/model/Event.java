@@ -18,6 +18,14 @@ public abstract class Event {
 		return name;
 	}
 	
+	public boolean isPseudoStartEvent() {
+		return name.trim().equals("[");
+	}
+	
+	public boolean isPseudoEndEvent() {
+		return name.trim().equals("]");
+	}
+	
 	@Override
 	public String toString() {
 		
