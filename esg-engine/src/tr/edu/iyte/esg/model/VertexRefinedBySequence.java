@@ -4,6 +4,12 @@ import tr.edu.iyte.esg.model.sequenceesg.Sequence;
 
 public class VertexRefinedBySequence extends Vertex {
 	private Sequence<Vertex> sequence;
+	
+	public VertexRefinedBySequence(int ID, Event event) {
+        super(ID, event);
+        this.sequence = new Sequence<Vertex>();
+	}
+  
 
 	public VertexRefinedBySequence(int ID, Event event, Sequence<Vertex> sequence) {
 		super(ID, event);

@@ -29,11 +29,11 @@ public abstract class Vertex implements Convertable {
 	}
 
 	public boolean isPseudoStartVertex() {
-		return false;
+		return event.isPseudoStartEvent();
 	}
 
 	public boolean isPseudoEndVertex() {
-		return false;
+		return event.isPseudoEndEvent();
 	}
 	
 	@Override

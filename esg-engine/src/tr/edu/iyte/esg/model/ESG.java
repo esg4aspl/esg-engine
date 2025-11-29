@@ -1,12 +1,12 @@
 package tr.edu.iyte.esg.model;
 
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import tr.edu.iyte.esg.model.decisiontable.DecisionTable;
@@ -47,37 +47,26 @@ public class ESG {
 	public ESG(ESG esg) {
 		this.ID = esg.getID();
 		this.name = esg.getName();
-		vertexList = new ArrayList<Vertex>();
-		for (Vertex vertex : esg.getVertexList())
-			vertexList.add(vertex);
-		edgeList = new ArrayList<Edge>();
-		for (Edge edge : esg.getEdgeList())
-			edgeList.add(edge);
+
+		vertexList = new ArrayList<>(esg.getVertexList());
+		edgeList = new ArrayList<Edge>(esg.getEdgeList());
 		eventList = new ArrayList<Event>(esg.getEventList());
-		for (Event event : esg.getEventList())
-			eventList.add(event);
-		decisionTableMap = new LinkedHashMap<Vertex, DecisionTable>();
-		for (Entry<Vertex, DecisionTable> entry : esg.getDecisionTableMap().entrySet())
-			decisionTableMap.put(entry.getKey(), entry.getValue());
+		entryVertexSet = new LinkedHashSet<Vertex>(esg.getEntryVertexSet());
+		exitVertexSet = new LinkedHashSet<Vertex>(esg.getExitVertexSet());
+
+		decisionTableMap = new LinkedHashMap<Vertex, DecisionTable>(esg.getDecisionTableMap());
+
 		lastVertexID = esg.getLastVertexID();
 		lastEdgeID = esg.getLastEdgeID();
 		lastEventID = esg.getLastEventID();
 		lastDecisionTableID = esg.getLastDecisionTableID();
 		lastSubEsgID = esg.getLastSubEsgID();
-		vertexMap = new HashMap<Vertex, Set<Vertex>>();
-		Set<Vertex> keySet = esg.getVertexMap().keySet();
-		for (Vertex key : keySet) {
-			Set<Vertex> targetSet = new LinkedHashSet<Vertex>();
-			for (Vertex value : esg.getVertexMap().get(key))
-				targetSet.add(value);
-			vertexMap.put(key, targetSet);
-		}
-		entryVertexSet = new LinkedHashSet<Vertex>();
-		for (Vertex vertex : esg.getEntryVertexSet())
-			entryVertexSet.add(vertex);
-		exitVertexSet = new LinkedHashSet<Vertex>();
-		for (Vertex vertex : esg.getExitVertexSet())
-			exitVertexSet.add(vertex);
+
+		vertexMap = new LinkedHashMap<>();
+	    for (Map.Entry<Vertex, Set<Vertex>> entry : esg.getVertexMap().entrySet()) {
+	        vertexMap.put(entry.getKey(), new LinkedHashSet<>(entry.getValue()));
+	    }
+
 	}
 
 	public int getID() {
