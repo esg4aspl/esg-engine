@@ -7,7 +7,7 @@ public class VertexComparator implements Comparator<Vertex> {
 
 	@Override
 	public int compare(Vertex vertex0, Vertex vertex1) {
-		return Integer.valueOf(vertex0.getID()).compareTo(Integer.valueOf(vertex1.getID()));
+		return Integer.compare(vertex0.getID(), vertex1.getID());
 	}
 	
 }

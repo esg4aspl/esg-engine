@@ -1,6 +1,7 @@
 package tr.edu.iyte.esg.eventsequencegeneration;
 
 import java.util.ArrayList;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -14,7 +15,6 @@ import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
 
-import tr.edu.iyte.esg.coverageanalysis.TestSequenceCoverageAnalyser;
 import tr.edu.iyte.esg.coverageanalysis.TestSequenceCoverageAnalysisFromFile;
 import tr.edu.iyte.esg.model.ESG;
 import tr.edu.iyte.esg.model.Vertex;

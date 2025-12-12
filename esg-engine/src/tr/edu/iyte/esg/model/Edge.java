@@ -49,7 +49,26 @@ public abstract class Edge {
 	public abstract String getColor();
 	
 	public String toString() {
-		return "<" + getSource().getEvent().getName() + " - " + getTarget().getEvent().getName() + ">"; 
+		return  getSource().getEvent().getName() + "|" + getTarget().getEvent().getName(); 
+	}
+	
+	@Override
+	public int hashCode() {
+		return getID();
+	}
+
+	@Override
+	public boolean equals(Object other) {
+		if (this == other)
+			return true;
+
+		if (other == null)
+			return false;
+
+		if (other instanceof Edge) {
+			return (this.getID() == ((Edge) other).getID());
+		} else
+			return false;
 	}
 
 }

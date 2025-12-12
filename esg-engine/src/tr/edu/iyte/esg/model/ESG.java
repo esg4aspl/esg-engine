@@ -1,7 +1,6 @@
 package tr.edu.iyte.esg.model;
 
 import java.util.ArrayList;
-
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -16,45 +15,59 @@ public class ESG {
 	protected int ID;
 	final private String name;
 	private int lastVertexID, lastEdgeID, lastEventID, lastDecisionTableID, lastSubEsgID;
-	private List<Vertex> vertexList;
-	private List<Edge> edgeList;
-	private List<Event> eventList;
+
+	private Map<Integer, Vertex> vertexIDMap;
+	private Map<Integer, Edge> edgeIDMap;
+	private Map<Integer, Event> eventIDMap;
+
+	private Map<String, Vertex> vertexNameMap;
+	private Map<String, Edge> edgeNameMap;
+	private Map<String, Event> eventNameMap;
+
 	private Map<Vertex, DecisionTable> decisionTableMap;
-	// TODO private List<Label> labelList;
-	private Map<Vertex, Set<Vertex>> vertexMap;
+
 	private Set<Vertex> entryVertexSet;
 	private Set<Vertex> exitVertexSet;
+
+	private Map<Vertex, Set<Vertex>> vertexMap;
 
 	public ESG(int ID, String name) {
 		this.ID = ID;
 		this.name = name;
-		vertexList = new ArrayList<Vertex>();
-		edgeList = new ArrayList<Edge>();
-		eventList = new ArrayList<Event>();
+
+		vertexIDMap = new LinkedHashMap<>();
+		edgeIDMap = new LinkedHashMap<>();
+		eventIDMap = new LinkedHashMap<>();
+
 		decisionTableMap = new LinkedHashMap<Vertex, DecisionTable>();
-		// TODO work on ESG issuing IDs
+
 		lastVertexID = -1;
 		lastEdgeID = -1;
 		lastEventID = -1;
 		lastDecisionTableID = -1;
 		lastSubEsgID = -1;
-		// TODO labelList = new private ArrayList<Label>();
+
 		vertexMap = new HashMap<Vertex, Set<Vertex>>();
 		entryVertexSet = new LinkedHashSet<Vertex>();
 		exitVertexSet = new LinkedHashSet<Vertex>();
+
+		vertexNameMap = new HashMap<>();
+		edgeNameMap = new HashMap<>();
+		eventNameMap = new HashMap<>();
 	}
 
 	public ESG(ESG esg) {
 		this.ID = esg.getID();
 		this.name = esg.getName();
 
-		vertexList = new ArrayList<>(esg.getVertexList());
-		edgeList = new ArrayList<Edge>(esg.getEdgeList());
-		eventList = new ArrayList<Event>(esg.getEventList());
-		entryVertexSet = new LinkedHashSet<Vertex>(esg.getEntryVertexSet());
-		exitVertexSet = new LinkedHashSet<Vertex>(esg.getExitVertexSet());
+		vertexIDMap = new LinkedHashMap<>(esg.vertexIDMap);
+		edgeIDMap = new LinkedHashMap<>(esg.edgeIDMap);
+		eventIDMap = new LinkedHashMap<>(esg.eventIDMap);
 
-		decisionTableMap = new LinkedHashMap<Vertex, DecisionTable>(esg.getDecisionTableMap());
+		entryVertexSet = new LinkedHashSet<>(esg.getEntryVertexSet());
+		exitVertexSet = new LinkedHashSet<>(esg.getExitVertexSet());
+
+		decisionTableMap = new LinkedHashMap<>(esg.getDecisionTableMap());
 
 		lastVertexID = esg.getLastVertexID();
 		lastEdgeID = esg.getLastEdgeID();
@@ -62,11 +75,15 @@ public class ESG {
 		lastDecisionTableID = esg.getLastDecisionTableID();
 		lastSubEsgID = esg.getLastSubEsgID();
 
+		// Deep copy vertexMap
 		vertexMap = new LinkedHashMap<>();
-	    for (Map.Entry<Vertex, Set<Vertex>> entry : esg.getVertexMap().entrySet()) {
-	        vertexMap.put(entry.getKey(), new LinkedHashSet<>(entry.getValue()));
-	    }
+		for (Map.Entry<Vertex, Set<Vertex>> entry : esg.getVertexMap().entrySet()) {
+			vertexMap.put(entry.getKey(), new LinkedHashSet<>(entry.getValue()));
+		}
 
+		vertexNameMap = new HashMap<>(esg.vertexNameMap);
+		edgeNameMap = new HashMap<>(esg.edgeNameMap);
+		eventNameMap = new HashMap<>(esg.eventNameMap);
 	}
 
 	public int getID() {
@@ -78,15 +95,15 @@ public class ESG {
 	}
 
 	public List<Vertex> getVertexList() {
-		return vertexList;
+		return new ArrayList<>(vertexIDMap.values());
 	}
 
 	public List<Edge> getEdgeList() {
-		return edgeList;
+		return new ArrayList<>(edgeIDMap.values());
 	}
 
 	public List<Event> getEventList() {
-		return eventList;
+		return new ArrayList<>(eventIDMap.values());
 	}
 
 	public Map<Vertex, DecisionTable> getDecisionTableMap() {
@@ -98,34 +115,52 @@ public class ESG {
 	}
 
 	public Vertex getVertexByID(int ID) {
-		for (Vertex vertex : vertexList) {
-			if (ID == vertex.getID())
-				return vertex;
-		}
-		return null;
+		return vertexIDMap.get(ID);
 	}
 
 	public Vertex getVertexByEventName(String eventName) {
-		for (Vertex vertex : vertexList) {
-			if (vertex.getEvent().getName().equals(eventName))
-				return vertex;
-		}
-		return null;
-
+		return vertexNameMap.get(eventName);
 	}
-
+	
+	public Event getEventByID(int ID) {
+		return eventIDMap.get(ID);
+	}
+	
+	public Event getEventByEventName(String eventName) {
+		return eventNameMap.get(eventName);
+	}
+	
+	public Edge getEdgeByID(int ID) {
+		return edgeIDMap.get(ID);
+	}
+	
 	public Edge getEdgeBySourceEventNameTargetEventName(String source, String target) {
-		for (Edge edge : edgeList) {
-			if (edge.getSource().getEvent().getName().equals(source)
-					&& edge.getTarget().getEvent().getName().equals(target)) {
-				return edge;
+		String key = source + "|" + target;
+		return edgeNameMap.get(key);
+	}
+	
+	// Get all edges connected to a vertex by event name (either as source or target)
+	public Set<Edge> getEdgesByEventName(String eventName) {
+		Set<Edge> edgeSet = new LinkedHashSet<>();
+
+		Vertex vertex = vertexNameMap.get(eventName);
+
+		// If the vertex does not exist, return the empty set immediately
+		if (vertex == null) {
+			return edgeSet;
+		}
+
+		for (Edge edge : edgeIDMap.values()) {
+			if (edge.getSource().equals(vertex) || edge.getTarget().equals(vertex)) {
+				edgeSet.add(edge);
 			}
 		}
-		return null;
+		
+		return edgeSet;
 	}
 
 	public Vertex getPseudoStartVertex() {
-		for (Vertex vertex : vertexList) {
+		for (Vertex vertex : vertexIDMap.values()) {
 			if (vertex.isPseudoStartVertex())
 				return vertex;
 		}
@@ -133,7 +168,7 @@ public class ESG {
 	}
 
 	public Vertex getPseudoEndVertex() {
-		for (Vertex vertex : vertexList) {
+		for (Vertex vertex : vertexIDMap.values()) {
 			if (vertex.isPseudoEndVertex())
 				return vertex;
 		}
@@ -151,8 +186,7 @@ public class ESG {
 	public List<Vertex> getRealVertexList() {
 		List<Vertex> realVertexList = new ArrayList<Vertex>();
 
-		for (Vertex vertex : vertexList) {
-
+		for (Vertex vertex : vertexIDMap.values()) {
 			if (vertex.isPseudoEndVertex() || vertex.isPseudoStartVertex()) {
 				continue;
 			} else {
@@ -165,8 +199,7 @@ public class ESG {
 	public List<Edge> getRealEdgeList() {
 		List<Edge> realEdgeList = new ArrayList<Edge>();
 
-		for (Edge edge : edgeList) {
-
+		for (Edge edge : edgeIDMap.values()) {
 			if (edge.getSource().isPseudoStartVertex() || edge.getTarget().isPseudoEndVertex()) {
 				continue;
 			} else {
@@ -177,15 +210,58 @@ public class ESG {
 	}
 
 	public void addVertex(Vertex vertex) {
-		vertexList.add(vertex);
+
+		int vertexID = vertex.getID();
+		int eventID = vertex.getEvent().getID();
+		Event event = vertex.getEvent();
+		String eventName = event.getName();
+
+		vertexIDMap.put(vertexID, vertex);
+		vertexNameMap.put(eventName, vertex);
+
+		if (!eventIDMap.containsKey(eventID) || !eventNameMap.containsKey(eventName)) {
+			addEvent(event);
+		}
 	}
 
 	public void removeVertex(Vertex vertex) {
-		vertexList.remove(vertex);
+		int vertexID = vertex.getID();
+		int eventID = vertex.getEvent().getID();
+		Event event = vertex.getEvent();
+		String eventName = event.getName();
+
+		vertexIDMap.remove(vertexID);
+		vertexNameMap.remove(eventName);
+
+		if (eventIDMap.containsKey(eventID) || eventNameMap.containsKey(eventName)) {
+			removeEvent(event);
+		}
+
+	}
+
+	public void addEvent(Event event) {
+		int eventID = event.getID();
+		String eventName = event.getName();
+		eventIDMap.put(eventID, event);
+		eventNameMap.put(eventName, event);
+
+	}
+
+	public void removeEvent(Event event) {
+		int eventID = event.getID();
+		String eventName = event.getName();
+
+		eventIDMap.remove(eventID);
+		eventNameMap.remove(eventName);
 	}
 
 	public void addEdge(Edge edge) {
-		edgeList.add(edge);
+
+		edgeIDMap.put(edge.getID(), edge);
+
+		String key = edge.toString();
+		edgeNameMap.put(key, edge);
+
 		Set<Vertex> targetSet = null;
 
 		edge.getSource().outDegree();
@@ -205,8 +281,6 @@ public class ESG {
 			targetSet = new LinkedHashSet<Vertex>();
 		}
 
-		// TODO encapsulate the following in try-catch block
-		// in case try to add existing Target Vertex
 		if (!edge.getSource().equals(edge.getTarget()))
 			targetSet.add(edge.getTarget());
 
@@ -215,12 +289,14 @@ public class ESG {
 
 	public void removeEdge(Edge edge) {
 
-		edgeList.remove(edge);
-//		System.out.println(edge.toString());
+		edgeIDMap.remove(edge.getID());
+
+		String key = edge.toString();
+		edgeNameMap.remove(key);
+
 		Set<Vertex> targetSet = null;
 
 		edge.getSource().inDegree();
-
 		edge.getTarget().outDegree();
 
 		if (edge.getSource().isPseudoStartVertex()) {
@@ -233,25 +309,15 @@ public class ESG {
 
 		if (vertexMap.containsKey(edge.getSource())) {
 			targetSet = vertexMap.get(edge.getSource());
-			if (targetSet.size() == 1) {
-				vertexMap.remove(edge.getSource(), targetSet);
-			} else {
-				targetSet.remove(edge.getTarget());
 
+			targetSet.remove(edge.getTarget());
+
+			if (targetSet.isEmpty()) {
+				vertexMap.remove(edge.getSource());
 			}
-
 		} else {
 			vertexMap.remove(edge.getSource());
 		}
-
-	}
-
-	public void addEvent(Event event) {
-		eventList.add(event);
-	}
-
-	public void removeEvent(Event event) {
-		eventList.remove(event);
 	}
 
 	public void addDecisionTable(Vertex vertex, DecisionTable decisionTable) {
@@ -261,6 +327,7 @@ public class ESG {
 	public void removeDecisionTable(Vertex vertex, DecisionTable decisionTable) {
 		decisionTableMap.remove(vertex, decisionTable);
 	}
+
 
 	public void addVertexList(List<Vertex> vertexList) {
 		for (Vertex vertex : vertexList) {
@@ -281,33 +348,34 @@ public class ESG {
 	}
 
 	private String vertexListToString() {
-		String vertexListToString = "Vertex List as (ID)Event: \n";
-		for (Vertex vertex : vertexList)
-			vertexListToString += "(" + vertex.getID() + ")" + vertex.getEvent().getName() + ", ";
-		vertexListToString += "\n";
-		return vertexListToString;
+		StringBuilder sb = new StringBuilder("Vertex List as (ID)Event: \n");
+		for (Vertex vertex : vertexIDMap.values()) {
+			sb.append("(").append(vertex.getID()).append(")").append(vertex.getEvent().getName()).append(", ");
+		}
+		sb.append("\n");
+		return sb.toString();
 	}
 
 	private String edgeListToString() {
-		String edgeListToString = "Edge List as (ID): \n";
-		for (Edge edge : edgeList)
-			edgeListToString += "(" + edge.getID() + ")" + "<" + edge.getSource().getEvent().getName() + "-"
-					+ edge.getTarget().getEvent().getName() + ">" + ", ";
-		edgeListToString += "\n";
-		return edgeListToString;
+		StringBuilder sb = new StringBuilder("Edge List as (ID): \n");
+		for (Edge edge : edgeIDMap.values()) {
+			sb.append("(").append(edge.getID()).append(")<").append(edge.getSource().getEvent().getName()).append("-")
+					.append(edge.getTarget().getEvent().getName()).append(">, ");
+		}
+		sb.append("\n");
+		return sb.toString();
 	}
 
 	private String vertexMapToString() {
-		Set<Vertex> keySet = vertexMap.keySet();
-		String edgeMapToString = "Vertex Map as <(ID)Event, (ID)Event>:\n";
-		for (Vertex key : keySet) {
+		StringBuilder sb = new StringBuilder("Vertex Map as <(ID)Event, (ID)Event>:\n");
+		for (Vertex key : vertexMap.keySet()) {
 			for (Vertex value : vertexMap.get(key)) {
-				edgeMapToString += "<" + "(" + key.getID() + ")" + key.getEvent().getName() + ", " + "(" + value.getID()
-						+ ")" + value.getEvent().getName() + ">\n";
+				sb.append("<(").append(key.getID()).append(")").append(key.getEvent().getName()).append(", (")
+						.append(value.getID()).append(")").append(value.getEvent().getName()).append(">\n");
 			}
 		}
-		edgeMapToString += "\n";
-		return edgeMapToString;
+		sb.append("\n");
+		return sb.toString();
 	}
 
 	public int getLastVertexID() {
@@ -331,36 +399,27 @@ public class ESG {
 	}
 
 	public int getNextVertexID() {
-		lastVertexID++;
-		return lastVertexID;
+		return ++lastVertexID;
 	}
 
 	public int getNextEdgeID() {
-		lastEdgeID++;
-		return lastEdgeID;
+		return ++lastEdgeID;
 	}
 
 	public int getNextEventID() {
-		lastEventID++;
-		return lastEventID;
+		return ++lastEventID;
 	}
 
 	public int getNextDecisionTableID() {
-		lastDecisionTableID++;
-		return lastDecisionTableID;
+		return ++lastDecisionTableID;
 	}
 
 	public int getNextSubEsgID() {
-		lastSubEsgID++;
-		return lastSubEsgID;
+		return ++lastSubEsgID;
 	}
 
 	@Override
 	public String toString() {
-		String toString = "ESG " + ID + ", " + name + "\n";
-		toString += vertexListToString();
-		toString += edgeListToString();
-		toString += vertexMapToString();
-		return toString;
+		return "ESG " + ID + ", " + name + "\n" + vertexListToString() + edgeListToString() + vertexMapToString();
 	}
 }

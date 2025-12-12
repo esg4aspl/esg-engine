@@ -58,10 +58,21 @@ public abstract class Vertex implements Convertable {
 	}
 	
 	@Override
-	public boolean equals(Object obj) {
-		if(this.getEvent().getName().equals(((Vertex)obj).getEvent().getName())) {
+	public int hashCode() {
+		return getID();
+	}
+
+	@Override
+	public boolean equals(Object other) {
+		if (this == other)
 			return true;
-		}
-		return false;
+
+		if (other == null)
+			return false;
+
+		if (other instanceof Vertex) {
+			return (this.getID() == ((Vertex) other).getID());
+		} else
+			return false;
 	}
 }

@@ -1,6 +1,7 @@
 package tr.edu.iyte.esg.model.validation;
 
 import java.util.List;
+
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
@@ -159,10 +160,10 @@ public class ESGValidator extends AbstractValidator implements IValidator<ESG> {
 			List<Vertex> adjacencyList = new LinkedList<Vertex>();
 			Set<Vertex> adjacencySet = context.getVertexMap().get(source);
 						
-			boolean isAdjacencySetNull = adjacencySet == null;
+			boolean isAdjacencySetNull = (adjacencySet == null);
 //			System.out.println("adjacencySet == null " + isAdjacencySetNull);
 
-			if(adjacencySet == null && !source.isPseudoEndVertex()) {
+			if(isAdjacencySetNull && !source.isPseudoEndVertex()) {
 //				System.out.println("RETURN FALSE");
 				return false;
 			}else {

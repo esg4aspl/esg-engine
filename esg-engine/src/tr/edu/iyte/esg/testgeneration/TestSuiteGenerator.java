@@ -1,6 +1,7 @@
 package tr.edu.iyte.esg.testgeneration;
 
 import java.util.LinkedHashSet;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class TestSuiteGenerator {
 
 	public TestSuite generateTestSuiteESGWithDecisionTable(ESG ESGWithDT) {
 		Map<Vertex, DecisionTable> dtMap = ESGWithDT.getDecisionTableMap();
-		
+
 		Set<EventSequence> completeEventSequences = new LinkedHashSet<EventSequence>();
 
 		for (Entry<Vertex, DecisionTable> entry : dtMap.entrySet()) {
@@ -46,21 +47,22 @@ public class TestSuiteGenerator {
 			for (Rule rule : dt.getActionTable().keySet()) {
 
 				Set<Action> actionSet = dt.getActionTable().get(rule);
-				for(Action action : actionSet) {
+				for (Action action : actionSet) {
 					eventSequenceDT.getEventSequence().add(vertexRefinedByDT);
 					int indexOfVertex = eventSequenceDT.getEventSequence().size() - 1;
-					eventSequenceDT.addRuleVertexPair(indexOfVertex,vertexRefinedByDT, rule);
+					eventSequenceDT.addRuleVertexPair(indexOfVertex, vertexRefinedByDT, rule);
 					eventSequenceDT.getEventSequence().add(action.getActionEvent());
 				}
 			}
-			
+
 			completeEventSequences.add(eventSequence);
 		}
 		TestSuite testSuite = new TestSuite(ESGWithDT);
 		testSuite.setCompleteEventSequences(completeEventSequences);
-		
+
 		return testSuite;
 	}
+
 	/**
 	 * Generates the test suite of a given ESG
 	 * 
@@ -68,7 +70,7 @@ public class TestSuiteGenerator {
 	 * @return
 	 */
 	public TestSuite generateTestSuite(ESG testESG) {
-		
+
 		ESG ESG = new ESG(testESG);
 
 		Set<EventSequence> completeEventSequences = generateCompleteEventSequenceSet(ESG);
@@ -78,7 +80,7 @@ public class TestSuiteGenerator {
 		return testSuite;
 
 	}
-	
+
 	/**
 	 * Generates the test suite of a given ESG
 	 * 
@@ -97,16 +99,16 @@ public class TestSuiteGenerator {
 	}
 
 	/**
-	 * Transforms the given ESG "coverageLength - 2" times and generates its test suite 
-	 * If coverageLength is k, it generates "coverageLength-1"_ESG
-	 * For example when coverageLength=2, 1_ESG is generated and it covers event pairs
+	 * Transforms the given ESG "coverageLength - 2" times and generates its test
+	 * suite If coverageLength is k, it generates "coverageLength-1"_ESG For example
+	 * when coverageLength=2, 1_ESG is generated and it covers event pairs
 	 * 
 	 * @param coverageLength
 	 * @param testESG
 	 * @return
 	 */
 	public TestSuite generateTestSuite(int coverageLength, ESG testESG) {
-		
+
 		ESG ESG = new ESG(testESG);
 
 		TransformedESGGenerator transformedESGGenerator = new TransformedESGGenerator();
@@ -115,35 +117,34 @@ public class TestSuiteGenerator {
 		double stopTime1 = System.nanoTime();
 		double timeElapsed1 = stopTime1 - startTime1;
 //		System.out.println("Execution time of ESG transformation in miliseconds  : "+ timeElapsed1 / (double) 1000000);
-		
+
 		double startTime2 = System.nanoTime();
 		Set<EventSequence> completeEventSequences = generateCompleteEventSequenceSet(transformedESG);
 		double stopTime2 = System.nanoTime();
 		double timeElapsed2 = stopTime2 - startTime2;
-		
+
 		TestSuite testSuite = new TestSuite(transformedESG);
 		Set<EventSequence> newCESs = new LinkedHashSet<EventSequence>();
-		
+
 		double startTime3 = System.nanoTime();
 		for (EventSequence es : completeEventSequences) {
 			newCESs.add(removeRepetitionsFromEventSequence(coverageLength, es));
 		}
 		double stopTime3 = System.nanoTime();
 		double timeElapsed3 = stopTime3 - startTime3;
-//		System.out.println("Execution time of test sequence generation in miliseconds  : "+ (timeElapsed2 + timeElapsed3) / (double) 1000000);
-		
-//		System.out.println("Total execution time of ESG test generation  : "+ (timeElapsed1 + timeElapsed2 + timeElapsed3) / (double) 1000000);
-		
+		System.out.println("Execution time of test sequence generation in miliseconds  : "+ (timeElapsed2 + timeElapsed3) / (double) 1000000);
+		System.out.println("Total execution time of ESG test generation  : "+ (timeElapsed1 + timeElapsed2 + timeElapsed3) / (double) 1000000);
+
 		testSuite.setCompleteEventSequences(newCESs);
 
 		return testSuite;
 
 	}
-	
+
 	/**
-	 * Transforms the given ESG "coverageLength - 2" times and generates its test suite 
-	 * If coverageLength is k, it generates "coverageLength-1"_ESG
-	 * For example when coverageLength=2, 1_ESG is generated and it covers event pairs
+	 * Transforms the given ESG "coverageLength - 2" times and generates its test
+	 * suite If coverageLength is k, it generates "coverageLength-1"_ESG For example
+	 * when coverageLength=2, 1_ESG is generated and it covers event pairs
 	 * 
 	 * @param coverageLength
 	 * @param testESG
@@ -154,7 +155,7 @@ public class TestSuiteGenerator {
 		ESG ESG = new ESG(testESG);
 
 		TransformedESGGenerator transformedESGGenerator = new TransformedESGGenerator();
-		ESG transformedESG = transformedESGGenerator.generateTransformedESG(coverageLength , ESG);
+		ESG transformedESG = transformedESGGenerator.generateTransformedESG(coverageLength, ESG);
 
 		FaultyEventSequenceGenerator faultyEventSequenceGenerator = new FaultyEventSequenceGenerator(transformedESG);
 		Set<EventSequence> faultyEventSequences = faultyEventSequenceGenerator.generateFaultyEventSequenceSet();
@@ -164,10 +165,10 @@ public class TestSuiteGenerator {
 		Set<EventSequence> newFCESs = new LinkedHashSet<EventSequence>();
 		for (EventSequence es : faultyEventSequences) {
 			EventSequence newFCES = removeRepetitionsFromEventSequence(coverageLength, es);
-			if(!newFCESs.contains(newFCES)) {
+			if (!newFCESs.contains(newFCES)) {
 				newFCESs.add(newFCES);
 			}
-			
+
 		}
 
 		testSuite.setCompleteEventSequences(newFCESs);
@@ -175,11 +176,11 @@ public class TestSuiteGenerator {
 		return testSuite;
 
 	}
-	
+
 	/**
-	 * Transforms the given ESG "coverageLength - 2" times and generates its test suite 
-	 * If coverageLength is k, it generates "coverageLength-1"_ESG
-	 * For example when coverageLength=2, 1_ESG is generated and it covers event pairs
+	 * Transforms the given ESG "coverageLength - 2" times and generates its test
+	 * suite If coverageLength is k, it generates "coverageLength-1"_ESG For example
+	 * when coverageLength=2, 1_ESG is generated and it covers event pairs
 	 * 
 	 * @param coverageLength
 	 * @param testESG
@@ -190,7 +191,7 @@ public class TestSuiteGenerator {
 
 		TransformedESGGenerator transformedESGGenerator = new TransformedESGGenerator();
 		ESG transformedESG = transformedESGGenerator.generateTransformedESG(coverageLength, ESG);
-		
+
 		TestSuiteGeneratorJGraphCPPBased alternativeTestGenerator = new TestSuiteGeneratorJGraphCPPBased();
 
 		Set<EventSequence> completeEventSequences = alternativeTestGenerator.generateTestSuite(transformedESG);
@@ -207,28 +208,30 @@ public class TestSuiteGenerator {
 		return testSuite;
 
 	}
-	
+
 	public TestSuite generateTestSuiteCPPSolverBased(int coverageLength, ESG testESG) {
 
 		ESG ESG = new ESG(testESG);
 
 		TransformedESGGenerator transformedESGGenerator = new TransformedESGGenerator();
 		ESG transformedESG = transformedESGGenerator.generateTransformedESG(coverageLength, ESG);
-		
-		ESG stronglyConnectedTransformedESG = StronglyConnectedBalancedESGUtilities.transformESGtoStronglyConnectedESG(transformedESG);
-		
-		TestSuiteGeneratorCPPSolverBased CPPSolver = new TestSuiteGeneratorCPPSolverBased(stronglyConnectedTransformedESG.getVertexList().size());
+
+		ESG stronglyConnectedTransformedESG = StronglyConnectedBalancedESGUtilities
+				.transformESGtoStronglyConnectedESG(transformedESG);
+
+		TestSuiteGeneratorCPPSolverBased CPPSolver = new TestSuiteGeneratorCPPSolverBased(
+				stronglyConnectedTransformedESG.getVertexList().size());
 		CPPSolver.createEdgeInfo(stronglyConnectedTransformedESG);
 		CPPSolver.solve();
-		
+
 		CPPSolver.printCPT(0);
-		
+
 		TestSuite testSuite = new TestSuite(transformedESG);
 
 		return testSuite;
 
 	}
-	
+
 	/**
 	 * Generates the test suite of a given sequence ESG
 	 * 
@@ -246,7 +249,7 @@ public class TestSuiteGenerator {
 		testSuite.setCompleteEventSequences(newCESs);
 		return testSuite;
 	}
-	
+
 	/**
 	 * Generates the test suite of a given sequence ESG by cleaning certain events
 	 * 
@@ -260,7 +263,7 @@ public class TestSuiteGenerator {
 		TestSuite testSuite = new TestSuite(sesg);
 		Set<EventSequence> newCESs = new LinkedHashSet<EventSequence>();
 		for (EventSequence es : completeEventSequences) {
-			if(es.length() > 0) {
+			if (es.length() > 0) {
 				newCESs.add(removeRepetitionsFromEventSequence(coverageLength, es, deletenames));
 			}
 		}
@@ -268,38 +271,32 @@ public class TestSuiteGenerator {
 		return testSuite;
 	}
 
-	
 	private Set<EventSequence> generateCompleteEventSequenceSet(ESG ESG) {
-	
+
 		EventSequenceGeneratorHierholzerAlg eventSequenceGenerator = new EventSequenceGeneratorHierholzerAlg();
 		EulerCycleToCompleteEventSequenceGenerator cesGenerator = new EulerCycleToCompleteEventSequenceGenerator();
-		//ESGtoJgraphConverter jGraphConverter = new ESGtoJgraphConverter();
+
 		StronglyConnectedBalancedESGGenerator balancedESGGenerator = new StronglyConnectedBalancedESGGenerator();
 
-		Graph<Vertex, Edge> balancedAndStronglyConnectedESG = balancedESGGenerator.generateBalancedAndStronglyConnectedESG(ESG);
+		Graph<Vertex, Edge> balancedAndStronglyConnectedESG = balancedESGGenerator
+				.generateBalancedAndStronglyConnectedESG(ESG);
 
-
-		//Graph<Vertex, Edge> jGraph = jGraphConverter.buildJGraphFromESG(balancedAndStronglyConnectedESG);
 		GraphPath<Vertex, Edge> eulerCycle = eventSequenceGenerator.getEulerianCycle(balancedAndStronglyConnectedESG);
 
-		
-		//System.out.println(eulerCycle.toString());
 		Set<EventSequence> completeEventSequences = cesGenerator.CESgenerator(eulerCycle);
-		//Set<EventSequence> completeEventSequences = cesGenerator.CESgeneratorWithPseudoEvents(eulerCycle);
 
 		return completeEventSequences;
 	}
-	
+
 	private Set<EventSequence> generateCompleteEventSequenceSetWithPseudoEvents(ESG ESG) {
 		EventSequenceGeneratorHierholzerAlg eventSequenceGenerator = new EventSequenceGeneratorHierholzerAlg();
 		EulerCycleToCompleteEventSequenceGenerator cesGenerator = new EulerCycleToCompleteEventSequenceGenerator();
-	//	ESGtoJgraphConverter jGraphConverter = new ESGtoJgraphConverter();
 
 		StronglyConnectedBalancedESGGenerator balancedESGGenerator = new StronglyConnectedBalancedESGGenerator();
 
-		Graph<Vertex, Edge> balancedAndStronglyConnectedESG = balancedESGGenerator.generateBalancedAndStronglyConnectedESG(ESG);
+		Graph<Vertex, Edge> balancedAndStronglyConnectedESG = balancedESGGenerator
+				.generateBalancedAndStronglyConnectedESG(ESG);
 
-	//	Graph<Vertex, Edge> jGraph = jGraphConverter.buildJGraphFromESG(balancedAndStronglyConnectedESG);
 		GraphPath<Vertex, Edge> eulerCycle = eventSequenceGenerator.getEulerianCycle(balancedAndStronglyConnectedESG);
 		Set<EventSequence> completeEventSequences = cesGenerator.CESgeneratorWithPseudoEvents(eulerCycle);
 
@@ -308,6 +305,7 @@ public class TestSuiteGenerator {
 
 	/**
 	 * removes repeated sequences in a given event sequence
+	 * 
 	 * @param coverageLength
 	 * @param eventSequence
 	 * @return
@@ -317,23 +315,10 @@ public class TestSuiteGenerator {
 		EventSequence newEventSequence = new EventSequence();
 		List<Vertex> eventSequenceList = new LinkedList<Vertex>();
 
-		/*
-		 * System.out.println("Event sequence " + eventSequence.length()); for (int i =
-		 * 0; i < eventSequence.length(); i++) { Vertex vertex =
-		 * eventSequence.getEventSequence().get(i); System.out.print(" " +
-		 * vertex.toString()); } System.out.println();
-		 */
 		for (int i = 0; i < eventSequence.length(); i++) {
 
 			Vertex vertex = eventSequence.getEventSequence().get(i);
 			Sequence<Vertex> sequence = ((VertexRefinedBySequence) vertex).getSequence();
-			/*
-			 * System.out.println("Sequence " + sequence.getSize()); for (int d = 0; d <
-			 * sequence.getSize(); d++) {
-			 * 
-			 * System.out.print(" " + sequence.getElement(d).getName()); }
-			 * System.out.println();
-			 */
 
 			if (i == 0) {
 				for (int j = 0; j < sequence.getSize(); j++) {
@@ -358,45 +343,48 @@ public class TestSuiteGenerator {
 
 		return newEventSequence;
 	}
- 
+
 	/**
-	 * removes repeated sequences in a given event sequence by also deleting certain events
+	 * removes repeated sequences in a given event sequence by also deleting certain
+	 * events
+	 * 
 	 * @param coverageLength
 	 * @param eventSequence
 	 * @param deletenames
 	 * @return
 	 */
-	private EventSequence removeRepetitionsFromEventSequence(int coverageLength, EventSequence eventSequence, List<String> deletenames) {
+	private EventSequence removeRepetitionsFromEventSequence(int coverageLength, EventSequence eventSequence,
+			List<String> deletenames) {
 		int numberOfTransformations = coverageLength - 2;
 		EventSequence newEventSequence = new EventSequence();
 		List<Vertex> eventSequenceList = new LinkedList<Vertex>();
-		
-		if(eventSequence.length() > 0) {
-			int i=0;
+
+		if (eventSequence.length() > 0) {
+			int i = 0;
 			boolean notAdded = true;
-			while(notAdded) {
-//System.out.println("--- "+eventSequence.toString()+" - "+i);
-				VertexRefinedBySequence vertex = (VertexRefinedBySequence)eventSequence.getEventSequence().get(i);
+			while (notAdded) {
+
+				VertexRefinedBySequence vertex = (VertexRefinedBySequence) eventSequence.getEventSequence().get(i);
 				Sequence<Vertex> sequence = vertex.getSequence();
 				for (int j = 0; j < sequence.getSize(); j++) {
 					Vertex v = sequence.getElement(j);
-					if(!deletenames.contains(v.getEvent().getName())) {
+					if (!deletenames.contains(v.getEvent().getName())) {
 						eventSequenceList.add(sequence.getElement(j));
 						notAdded = false;
 					}
 				}
 				i++;
 			}
-			while(i<eventSequence.length()) {
-				VertexRefinedBySequence vertex = (VertexRefinedBySequence)eventSequence.getEventSequence().get(i);
+			while (i < eventSequence.length()) {
+				VertexRefinedBySequence vertex = (VertexRefinedBySequence) eventSequence.getEventSequence().get(i);
 				Sequence<Vertex> sequence = vertex.getSequence();
 				int j = numberOfTransformations;
-				if(sequence.getSize() < numberOfTransformations) {
+				if (sequence.getSize() < numberOfTransformations) {
 					j = 0;
 				}
-				while(j < sequence.getSize()) {
+				while (j < sequence.getSize()) {
 					Vertex v = sequence.getElement(j);
-					if(!deletenames.contains(v.getEvent().getName())) {
+					if (!deletenames.contains(v.getEvent().getName())) {
 						eventSequenceList.add(sequence.getElement(j));
 					}
 					j++;
